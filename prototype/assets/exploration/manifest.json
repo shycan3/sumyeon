@@ -1,0 +1,811 @@
+{
+  "version": "svg-placeholder-1",
+  "status": "placeholder-review-ready",
+  "userApprovedAnchor": null,
+  "finalCharacterDesign": false,
+  "generatedRasterImages": false,
+  "camera": {
+    "width": 1600,
+    "height": 900,
+    "aspectRatio": "16:9",
+    "eyeHeightMetres": 1.65,
+    "horizontalFovDegrees": 72,
+    "vanishingPoint": [
+      800,
+      360
+    ]
+  },
+  "palette": {
+    "ink": "#0c1922",
+    "wall": "#294449",
+    "floor": "#182c35",
+    "teal": "#8cd7ce",
+    "paper": "#b6c7b8",
+    "red": "#b65b62",
+    "brass": "#b39a74"
+  },
+  "promptModules": {
+    "style": "Original restrained 2D illustration direction; cool hospital light, readable silhouettes, no named artist or protected character imitation.",
+    "region": "Hospital palette and first-person projection from visual bible.",
+    "shot": "Eye height 1.65m; horizontal FOV 72deg; centre vanishing point; no interface baked into art.",
+    "variation": "Replace room-specific props only after approved region anchor reference.",
+    "negative": "No UI, captions, logos, official character appearance invented from profession IDs."
+  },
+  "production": {
+    "tool": "Node.js code-authored SVG",
+    "toolVersion": "v24.19.0",
+    "workflowVersion": "svg-placeholder-1",
+    "source": "prototype/exploration-art-build.cjs",
+    "createdDate": "2026-10-11",
+    "generationMilliseconds": 7.03,
+    "revisionMilliseconds": null,
+    "approvalMilliseconds": null
+  },
+  "assets": [
+    {
+      "id": "hospital-corridor-bg",
+      "file": "hospital-corridor-bg.svg",
+      "type": "background",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": false,
+      "bytes": 1699,
+      "sha256": "f5edbc9e6d14ec3a2577ddd9ca152ce09604e70acd657ff7e770371475b9e993",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-corridor-bg",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 1.14,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-corridor-props",
+      "file": "hospital-corridor-props.svg",
+      "type": "props",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": true,
+      "bytes": 806,
+      "sha256": "9bc9defd656abcf8a360c370c814218769247abcc4f920d10c29e11801fd0d76",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-corridor-props",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.46,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-records-bg",
+      "file": "hospital-records-bg.svg",
+      "type": "background",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": false,
+      "bytes": 1698,
+      "sha256": "97ef7b29333eab71bf2cf4c5b370b0792aae4e39ea156b64d921f5a341854f9e",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-records-bg",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.39,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-records-props",
+      "file": "hospital-records-props.svg",
+      "type": "props",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": true,
+      "bytes": 1129,
+      "sha256": "d6f7b12fdeb5b3c35cb9d2f0270864dcc6d2b090f5a56c6fbd13265d8d790bb4",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-records-props",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.28,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-theatre-bg",
+      "file": "hospital-theatre-bg.svg",
+      "type": "background",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": false,
+      "bytes": 1698,
+      "sha256": "86fc1f0a6e201ea68fcdf4971391aa9ff9ee53436234859487bb850831370dd5",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-theatre-bg",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.28,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-theatre-props",
+      "file": "hospital-theatre-props.svg",
+      "type": "props",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": true,
+      "bytes": 1132,
+      "sha256": "01299585ab834e9a03b49de775f3fd5e4be30dbc94fe821caef5898719b58874",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-theatre-props",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.24,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-ward-bg",
+      "file": "hospital-ward-bg.svg",
+      "type": "background",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": false,
+      "bytes": 1695,
+      "sha256": "8be4a65fa222721a88901508592a2da094785b0d403d18e96a522e177e3c7abe",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-ward-bg",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.3,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-ward-props",
+      "file": "hospital-ward-props.svg",
+      "type": "props",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": true,
+      "bytes": 1151,
+      "sha256": "0ec991596795f39ac5236288f574791cb8c03b1f2c2acd0e5f3a0c56887b472d",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-ward-props",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.3,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-portal-bg",
+      "file": "hospital-portal-bg.svg",
+      "type": "background",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": false,
+      "bytes": 1697,
+      "sha256": "a74b615c0b974ad7a01d4d40f6c49dae8c2b7e037c19035fbfdbd5b8d7c65227",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-portal-bg",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.98,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "hospital-portal-props",
+      "file": "hospital-portal-props.svg",
+      "type": "props",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "transparent": true,
+      "bytes": 1007,
+      "sha256": "3a18886fab4b38c13f51a0c3cdd9b087903f64bdd216d11cf4a8a6ad40c3c9bd",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "hospital-portal-props",
+        "identity": "Shared provisional hospital geometry/palette"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "prototype-layout-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.28,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "profession-navigator-portrait",
+      "file": "profession-navigator-portrait.svg",
+      "type": "portrait-placeholder",
+      "dimensions": [
+        256,
+        320
+      ],
+      "transparent": true,
+      "bytes": 352,
+      "sha256": "98aa7aa75ee718a4190b4a338785599cf811895a20224478af89b81cd23d288c",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "profession-navigator-portrait",
+        "identity": "Anonymous silhouette only; await official face/hair/outfit anchor"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "placeholder-render-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.26,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "profession-diver-portrait",
+      "file": "profession-diver-portrait.svg",
+      "type": "portrait-placeholder",
+      "dimensions": [
+        256,
+        320
+      ],
+      "transparent": true,
+      "bytes": 348,
+      "sha256": "b7a1146d4269ec6de5fa86e9f0c9088f4abfe9de6a2126ddbb1cc1dde7d91297",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "profession-diver-portrait",
+        "identity": "Anonymous silhouette only; await official face/hair/outfit anchor"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "placeholder-render-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.22,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "profession-pilot-portrait",
+      "file": "profession-pilot-portrait.svg",
+      "type": "portrait-placeholder",
+      "dimensions": [
+        256,
+        320
+      ],
+      "transparent": true,
+      "bytes": 348,
+      "sha256": "34692926a6e065e6f29ac74f349b89e6a36729ee523a68d864bdf46b26a57b56",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "profession-pilot-portrait",
+        "identity": "Anonymous silhouette only; await official face/hair/outfit anchor"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "placeholder-render-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.57,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "profession-sounder-portrait",
+      "file": "profession-sounder-portrait.svg",
+      "type": "portrait-placeholder",
+      "dimensions": [
+        256,
+        320
+      ],
+      "transparent": true,
+      "bytes": 350,
+      "sha256": "a677f1b54030a31c846e637a43b16e4fc9c22c1a913fa8f164442dea99a2b3a0",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "profession-sounder-portrait",
+        "identity": "Anonymous silhouette only; await official face/hair/outfit anchor"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "placeholder-render-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.23,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "profession-salvager-portrait",
+      "file": "profession-salvager-portrait.svg",
+      "type": "portrait-placeholder",
+      "dimensions": [
+        256,
+        320
+      ],
+      "transparent": true,
+      "bytes": 351,
+      "sha256": "619c704127ddc3c51f94c956970347647cbf75c5dda34e6518a3b237bec82e7d",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "profession-salvager-portrait",
+        "identity": "Anonymous silhouette only; await official face/hair/outfit anchor"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "placeholder-render-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.24,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    },
+    {
+      "id": "profession-lightkeeper-portrait",
+      "file": "profession-lightkeeper-portrait.svg",
+      "type": "portrait-placeholder",
+      "dimensions": [
+        256,
+        320
+      ],
+      "transparent": true,
+      "bytes": 354,
+      "sha256": "715239c14d5c98cf6ed72fa9c04eec852464ad7e530eea95e7164b4b5f63f49e",
+      "anchorReference": null,
+      "promptRecipe": {
+        "modules": [
+          "style",
+          "region",
+          "shot",
+          "negative"
+        ],
+        "sceneVariation": "profession-lightkeeper-portrait",
+        "identity": "Anonymous silhouette only; await official face/hair/outfit anchor"
+      },
+      "source": "Original project-authored vector primitives",
+      "thirdPartyReferences": [],
+      "license": "No third-party art used; project asset redistribution license not yet specified",
+      "review": {
+        "geometry": "common-template-verified",
+        "contrast": "placeholder-render-verified",
+        "canon": "anonymous-placeholder-only",
+        "userApproval": "pending",
+        "finalStyle": "not-approved"
+      },
+      "timing": {
+        "generationMilliseconds": 0.22,
+        "timingScope": "SVG file write; visual design/render authoring tracked separately",
+        "designMilliseconds": null,
+        "revisionMilliseconds": null,
+        "approvalMilliseconds": null
+      },
+      "edits": [
+        {
+          "revision": 1,
+          "date": "2026-10-11",
+          "purpose": "Layout and landmark distinction prototype"
+        }
+      ]
+    }
+  ],
+  "qa": {
+    "date": "2026-10-11",
+    "viewports": [
+      1242,
+      390,
+      320
+    ],
+    "allHospitalLayersLoaded": true,
+    "pipelineHashVerified": true,
+    "reviewer": "Codex prototype layout QA",
+    "scope": "Vector layers and UI only; not official illustration or character-face approval",
+    "userApproved": false
+  }
+}
