@@ -1,0 +1,20 @@
+'use strict';
+const assert=require('node:assert/strict'),path=require('node:path'),os=require('node:os');
+let chromium;try{({chromium}=require(process.env.SUMYEON_PLAYWRIGHT_MODULE||'playwright'));}catch(error){if(process.env.SUMYEON_PLAYWRIGHT_MODULE)throw error;({chromium}=require(path.join(os.homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright')));}
+const BASE=process.env.SUMYEON_BASE_URL||'http://127.0.0.1:8765',KEY='sumyeon-exploration-session-1';
+const state=page=>page.evaluate(()=>explorationGame.snapshot());
+const resources=s=>{const r=s.run;return {time:r.timeRemaining,spent:r.timeSpent,allies:r.allies,gold:r.gold,deck:r.deck,moves:r.moves,hint:r.hint,hints:r.hintHistory,rewardSeed:r.rewardSeed};};
+async function click(page,selector){await page.locator(selector).click();await page.waitForFunction(()=>!document.querySelector('#screen').classList.contains('busy'));}
+(async()=>{const browser=await chromium.launch({headless:true});try{for(const width of [1242,390,320]){
+  const context=await browser.newContext({viewport:{width,height:844}}),page=await context.newPage(),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));await context.addInitScript(()=>localStorage.setItem('sumyeon-exploration-session-1-ui','{"animation":false}'));
+  await page.goto(BASE+'/exploration.html');await page.locator('details > summary').click();await page.locator('#seed').fill('77');await page.locator('[data-config="initialTime"]').fill('1');await click(page,'[data-action="begin"]');
+  const entry=(await state(page)).run.nodeId,dir=await page.locator('[data-action="move"]').first().getAttribute('data-value');await click(page,`[data-action="move"][data-value="${dir}"]`);const atNext=await state(page),next=atNext.run.nodeId;assert.equal(atNext.run.timeRemaining,0);
+  await click(page,'[data-action="map"]');assert.equal(await page.locator('.map-wrap .traversed').count(),1);assert.equal(await page.locator('.map-wrap .unknown').evaluateAll(nodes=>nodes.every(n=>!n.parentElement.hasAttribute('data-action'))),true);
+  const target=page.locator(`[data-action="fast-travel"][data-value="${entry}"]`);await target.focus();await page.screenshot({path:__dirname+`/exploration-travel-map-${width}.png`});await target.press('Enter');await page.waitForFunction(()=>!document.querySelector('#panel').open);assert.equal((await state(page)).run.nodeId,entry);assert.deepEqual(resources(await state(page)),resources(atNext));
+  await click(page,'[data-action="map"]');await click(page,`[data-action="fast-travel"][data-value="${next}"]`);assert.deepEqual(resources(await state(page)),resources(atNext));await page.reload();assert.equal((await state(page)).run.map.traversedEdges.length,1);
+  await click(page,'[data-action="map"]');await click(page,`[data-action="fast-travel"][data-value="${entry}"]`);const beforePaid=await state(page);await click(page,`[data-action="move"][data-value="${dir}"]`);assert.equal((await state(page)).run.moves,beforePaid.run.moves+1);assert.notDeepEqual((await state(page)).run.allies,beforePaid.run.allies);
+  // Real reload of an old save retains progress and conservatively reconstructs edges.
+  await page.evaluate(key=>{const old=JSON.parse(localStorage.getItem(key));delete old.run.map.traversedEdges;localStorage.setItem(key,JSON.stringify(old));},KEY);await page.reload();assert.equal((await state(page)).run.map.traversalMigration,'legacy-conservative');await click(page,'[data-action="map"]');assert.equal(await page.locator(`[data-action="fast-travel"][data-value="${entry}"]`).count(),1);
+  assert.deepEqual(errors,[]);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await context.close();console.log(`PASS ${width}: free travel by keyboard/click, zero-time invariants, paid arrow revisit, map fog, reload, legacy save`);
+}}finally{await browser.close();}})().catch(error=>{console.error(error);process.exitCode=1;});

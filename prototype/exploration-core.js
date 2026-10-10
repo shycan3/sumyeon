@@ -24,12 +24,16 @@
     }
     return {cost,timeSpent:time,hpUnits:units,changes,lethal:run.config.failurePolicy==='any-downed'?run.allies.some(a=>a.hp===0):run.allies.every(a=>a.hp===0)};
   }
-  function staticMap(map){const value=clone(map);for(const n of value.nodes){n.visited=false;for(const i of n.interactions)i.resolved=false;if(n.encounter)n.encounter.cleared=false;}return value;}
+  function staticMap(map){const value=clone(map);delete value.traversedEdges;delete value.traversalMigration;for(const n of value.nodes){n.visited=false;for(const i of n.interactions)i.resolved=false;if(n.encounter)n.encounter.cleared=false;}return value;}
   function canonicalMap(map,seed,c){M.validate(map,c.minExitDistance);if(JSON.stringify(staticMap(map))!==JSON.stringify(staticMap(M.generate(seed,map.depth,c.minExitDistance))))throw Error('생성 맵 기록 불일치');}
+  const edgeKey=(a,b)=>[a,b].sort().join('|');
   class Session{
     constructor(){this.s={version:VERSION,account:{gold:0,unlocked:[...BASE_POOL],seed:20261010,nextRun:1,settlements:[],unlockHistory:[]},run:null};}
     snapshot(){return clone(this.s);}
-    static restore(state){const s=new Session();s.s=clone(state);s.assert();return s;}
+    static restore(state){const s=new Session();s.s=clone(state);s.migrateTraversal();s.assert();return s;}
+    migrateTraversal(){const r=this.s.run;if(!r)return;for(const map of [...r.pastMaps,r.map]){if(map.traversedEdges!==undefined)continue;map.traversedEdges=[];map.traversalMigration='legacy-conservative';for(const e of r.telemetry||[]){if(e.type!=='move'||e.depth!==map.depth||!M.DIRECTIONS[e.direction])continue;const to=map.nodes.find(n=>n.id===e.node),from=to&&map.nodes.find(n=>n.exits[e.direction]===to.id);if(from?.visited&&to.visited){const key=edgeKey(from.id,to.id);if(!map.traversedEdges.includes(key))map.traversedEdges.push(key);}}}}
+    travelPath(targetId,depth=this.s.run?.depth){const r=this.active(),map=r.map,target=map.nodes.find(n=>n.id===targetId);if(depth!==r.depth||!target?.visited)throw Error('현재 심도에서 방문한 방만 선택할 수 있습니다.');const queue=[r.nodeId],previous={[r.nodeId]:null};for(let i=0;i<queue.length;i++){if(queue[i]===targetId)break;const node=map.nodes.find(n=>n.id===queue[i]);for(const id of Object.values(node.exits)){if(previous[id]!==undefined||!map.traversedEdges.includes(edgeKey(node.id,id)))continue;const next=map.nodes.find(n=>n.id===id);if(!next.visited||node.blocked||next.blocked)continue;previous[id]=node.id;queue.push(id);}}if(previous[targetId]===undefined)throw Error('직접 지나서 확인한 경로가 없습니다. 화살표로 경로를 확인하세요.');const path=[];for(let id=targetId;id!==null;id=previous[id])path.unshift(id);return path;}
+    fastTravel(targetId,depth=this.s.run?.depth){return this.transaction(()=>{const path=this.travelPath(targetId,depth);if(path.length===1)return path;const from=this.s.run.nodeId;this.s.run.nodeId=targetId;this.record('fast-travel',{from,to:targetId,path});return path;});}
     transaction(fn){const old=this.snapshot();try{const result=fn();this.assert();return result;}catch(e){this.s=old;throw e;}}
     node(){const r=this.s.run;return r?.map.nodes.find(n=>n.id===r.nodeId);}
     battle(){return this.s.run?.battle?C.Battle.restore(this.s.run.battle):null;}
@@ -43,14 +47,14 @@
       if(preferred.length>3||new Set(preferred).size!==preferred.length||preferred.some(id=>!C.TRAITS[id]))throw Error('선호 계열은 서로 다른 0~3개입니다.');
       const map=M.generate(seed,1,c.minExitDistance),id='expedition-'+this.s.account.nextRun++;
       this.s.run={id,seed,config:c,phase:'EXPLORING',timeRemaining:c.initialTime,timeSpent:0,depth:1,map,nodeId:map.entry,pastMaps:[],preferred:[...preferred],breakMode:!!options.breakMode,party:[...party],allies:party.map(id=>({id,hp:30,max:30,healCarry:0,costCarry:0})),deck:INITIAL_DECK.map((kind,i)=>({id:'r'+i,kind,upgraded:false})),nextCard:10,gold:0,rewardSeed:M.hash(seed+':rewards')||1,offers:[],battle:null,battleNode:null,settlement:null,telemetry:[],moves:0,hint:null,hintHistory:[],battleHistory:[]};
-      this.record('depart',{seed,preferred,config:c});return id;
+      map.traversedEdges=[];this.record('depart',{seed,preferred,config:c});return id;
     });}
     previewCost(cost){const r=this.s.run;if(!r||!Number.isInteger(cost)||cost<0)throw Error('비용 오류');return applyCost(clone(r),cost);}
     pay(cost,allowFatal=false){const r=this.s.run,p=this.previewCost(cost);if(p.lethal&&!allowFatal)throw Error('체력이 부족합니다. 귀환하거나 위험을 명시적으로 감수하세요.');const actual=applyCost(r,cost);this.record('cost',actual);return actual;}
     move(direction,allowFatal=false){return this.transaction(()=>{
       const r=this.active(),target=this.node().exits[direction];if(!M.DIRECTIONS[direction]||!target)throw Error('이 방향에는 통로가 없습니다.');
       const payment=this.pay(r.config.moveCost,allowFatal);if(payment.lethal)return this.settle('FAILED','초과 탐험 체력 한계');
-      r.nodeId=target;this.node().visited=true;r.moves++;this.record('move',{direction});this.updateHint();return payment;
+      const from=r.nodeId;r.nodeId=target;this.node().visited=true;const edge=edgeKey(from,target);if(!r.map.traversedEdges.includes(edge))r.map.traversedEdges.push(edge);r.moves++;this.record('move',{direction,from,to:target});this.updateHint();return payment;
     });}
     updateHint(){const r=this.s.run;if(r.moves%4===0&&!r.hintHistory.some(h=>h.depth===r.depth&&h.move===r.moves)){r.hint={depth:r.depth,move:r.moves,node:r.nodeId,text:M.hint(r.map,r.nodeId)};r.hintHistory.push(clone(r.hint));this.record('radio',r.hint);}}
     repeatHint(){return clone(this.s.run?.hint);}
@@ -71,7 +75,7 @@
       while(offers.length<3&&pool.length){const weights=pool.map(id=>{const d=C.DEFINITIONS[id],rare=d.rarity==='rare'?.12+r.depth*.06:d.rarity==='uncommon'?.65:1;return d.baseWeight*rare*(r.preferred.includes(C.traitFor(id))?r.config.preferenceWeight:1);}),total=weights.reduce((a,b)=>a+b,0);let target=random()*total,index=0;while(index<weights.length-1&&target>=weights[index])target-=weights[index++];offers.push(pool.splice(index,1)[0]);}return offers;
     }
     chooseReward(kind){return this.transaction(()=>{const r=this.s.run;if(r?.phase!=='REWARD'||kind!==null&&!r.offers.includes(kind))throw Error('현재 보상 후보가 아닙니다.');if(kind!==null)r.deck.push({id:'r'+r.nextCard++,kind,upgraded:false});r.offers=[];r.phase='EXPLORING';this.record('reward',{card:kind,traits:C.counts(r.deck)});});}
-    descend(allowFatal=false){return this.transaction(()=>{const r=this.active(),n=this.node();if(n.id!==r.map.exit||!n.encounter.cleared)throw Error('연결구를 발견하고 수문장을 넘어야 합니다.');if(r.depth>=r.config.maxDepth)throw Error('시험 원정의 마지막 심층입니다. 귀환하세요.');const payment=this.pay(r.config.descendCost,allowFatal);if(payment.lethal)return this.settle('FAILED','하강 중 체력 한계');r.pastMaps.push(clone(r.map));r.depth++;r.map=M.generate(r.seed,r.depth,r.config.minExitDistance);r.nodeId=r.map.entry;r.hint=null;this.record('descend');return payment;});}
+    descend(allowFatal=false){return this.transaction(()=>{const r=this.active(),n=this.node();if(n.id!==r.map.exit||!n.encounter.cleared)throw Error('연결구를 발견하고 수문장을 넘어야 합니다.');if(r.depth>=r.config.maxDepth)throw Error('시험 원정의 마지막 심층입니다. 귀환하세요.');const payment=this.pay(r.config.descendCost,allowFatal);if(payment.lethal)return this.settle('FAILED','하강 중 체력 한계');r.pastMaps.push(clone(r.map));r.depth++;r.map=M.generate(r.seed,r.depth,r.config.minExitDistance);r.map.traversedEdges=[];r.nodeId=r.map.entry;r.hint=null;this.record('descend');return payment;});}
     startCombat(allowFatal=false){return this.transaction(()=>{const r=this.active(),n=this.node(),enc=n.encounter;if(!enc||enc.cleared)throw Error('이곳에는 전투 대상이 없습니다.');const payment=this.pay(r.config.combatEntryCost,allowFatal);if(payment.lethal)return this.settle('FAILED','교전 진입 중 체력 한계');
       const enemies=enemiesFor(r,n);
       const b=new C.Battle({party:r.party,deck:r.deck,allies:r.allies,enemies,seed:M.hash(r.seed+':'+n.id+':combat'),breakMode:!!r.breakMode});r.battle=b.snapshot();r.battleNode=n.id;r.phase='COMBAT';this.record('combat-enter',{mandatory:enc.mandatory,enemies,traits:C.counts(r.deck)});return payment;
@@ -98,6 +102,7 @@
       if(!Array.isArray(r.preferred)||r.preferred.length>3||new Set(r.preferred).size!==r.preferred.length||r.preferred.some(id=>!C.TRAITS[id])||!Array.isArray(r.party)||r.party.length!==4||new Set(r.party).size!==4||r.party.some(id=>!C.ROLES.some(a=>a.id===id))||!Array.isArray(r.allies)||r.allies.length!==4||r.allies.some((a,i)=>a.id!==r.party[i]||!Number.isInteger(a.hp)||a.hp<0||!Number.isInteger(a.max)||a.max<1||a.hp>a.max||[a.healCarry,a.costCarry].some(v=>!Number.isInteger(v)||v<0||v>=SCALE)))throw Error('파티 저장 오류');
       if(!Array.isArray(r.deck)||r.deck.length<6||new Set(r.deck.map(c=>c.id)).size!==r.deck.length||r.deck.some(c=>!/^r\d+$/.test(c.id)||c.kind==='basic'||!C.CARDS[c.kind]||typeof c.upgraded!=='boolean')||!Number.isInteger(r.nextCard)||r.deck.some(c=>Number(c.id.slice(1))>=r.nextCard))throw Error('원정 덱 오류');
       if(!Array.isArray(r.offers)||r.offers.length>3||new Set(r.offers).size!==r.offers.length||r.offers.some(id=>!a.unlocked.includes(id))||(r.phase==='REWARD')!==!!r.offers.length)throw Error('보상 저장 오류');
+      for(const map of [...r.pastMaps,r.map]){if(!Array.isArray(map.traversedEdges)||new Set(map.traversedEdges).size!==map.traversedEdges.length||map.traversedEdges.some(key=>{if(typeof key!=='string')return true;const ids=key.split('|'),a=map.nodes.find(n=>n.id===ids[0]),b=map.nodes.find(n=>n.id===ids[1]);return ids.length!==2||key!==edgeKey(...ids)||!a?.visited||!b?.visited||!Object.values(a.exits).includes(b.id);}))throw Error('확인한 통로 기록 오류');}
       canonicalMap(r.map,r.seed,r.config);if(r.map.depth!==r.depth||!r.map.nodes.some(n=>n.id===r.nodeId&&n.visited)||!Array.isArray(r.pastMaps)||r.pastMaps.length!==r.depth-1)throw Error('현재 위치 오류');r.pastMaps.forEach((m,i)=>{if(m.depth!==i+1)throw Error('심층 기록 오류');canonicalMap(m,r.seed,r.config);});
       if(!Array.isArray(r.telemetry)||r.telemetry.some((e,i)=>e.seq!==i+1)||!Array.isArray(r.hintHistory)||r.hintHistory.some(h=>!Number.isInteger(h.depth)||h.depth<1||h.depth>r.depth||!Number.isInteger(h.move)||h.move<1)||!Array.isArray(r.battleHistory))throw Error('탐험 기록 오류');
       if(r.hint&&(r.hint.depth!==r.depth||!r.hintHistory.some(h=>JSON.stringify(h)===JSON.stringify(r.hint))))throw Error('무전 기록 오류');
@@ -106,5 +111,5 @@
       if(r.phase==='EXPLORING'&&r.allies.every(a=>a.hp===0))throw Error('전멸 상태 오류');
     }
   }
-  const api={Session,DEFAULTS,BASE_POOL,INITIAL_DECK,TRIAL_POLICIES,config,applyCost,SCALE};if(typeof module!=='undefined')module.exports=api;root.Exploration=api;
+  const api={Session,DEFAULTS,BASE_POOL,INITIAL_DECK,TRIAL_POLICIES,config,applyCost,SCALE,edgeKey};if(typeof module!=='undefined')module.exports=api;root.Exploration=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
