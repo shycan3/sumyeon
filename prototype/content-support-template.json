@@ -1,0 +1,17 @@
+{
+ "schemaVersion":2,"contentVersion":1,"status":"authoring-only","partySlot":3,
+ "tradeoff":"단일 회복과 선제 보호막을 제공하지만 기초 덱에는 전체 회복이 없습니다. 기본 회복 주기도 의무관보다 느리며, 전체 회복은 이번 원정의 보상을 얻어 편성해야 합니다.",
+ "character":{"id":"noa","playable":true,"role":3,"name":"노아","tag":"제작 체험 · 예방 중심 지원가","base":["noa_patch","noa_guard"],"reward":["noa_choir"],"stances":["지원","견제"],"line":"상처가 되기 전에, 내가 막을게.","desc":"부상자를 보살피며 미리 펼친 보호막으로 피해를 줄입니다. 기초 덱에 전체 회복이 없어 여럿이 동시에 다치면 대응이 느립니다.","basicProfile":{"range":220,"speed":42,"damage":3,"period":3}},
+ "cards":{
+  "noa_patch":{"name":"작은 봉합","role":3,"kind":"heal","power":28,"time":4,"prep":0,"limit":3,"source":"base","traits":["resonance"],"desc":"살아 있는 아군 하나를 28 회복 · 다음 명령 4초"},
+  "noa_guard":{"name":"아직 아프지 않도록","role":3,"kind":"ward","power":24,"duration":4,"time":4.5,"prep":0,"limit":3,"source":"base","traits":["escort"],"desc":"살아 있는 아군 하나에게 보호막 24 · 4초 지속 · 다음 명령 4.5초"},
+  "noa_choir":{"name":"모두에게 닿는 기도","role":3,"kind":"healAll","power":18,"time":7,"prep":0.35,"limit":1,"source":"reward","traits":["resonance"],"desc":"살아 있는 아군 전체를 18 회복 · 원정 보상 · 다음 명령 7초"}
+ },
+ "skills":{},
+ "presentation":{
+  "noa_patch":{"tier":"basic","style":"heal","pose":"default","color":"#a6d9ca","line":"괜찮아. 다시 일어나자.","art":"assets/noa-patch.svg"},
+  "noa_guard":{"tier":"accent","style":"ward","pose":"default","color":"#e1c99b","line":"여기까지는 내가 지킬게.","art":"assets/noa-guard.svg"},
+  "noa_choir":{"tier":"signature","style":"heal","pose":"default","color":"#b3dfcd","line":"너희 모두에게, 닿기를.","art":"assets/noa-choir.svg","portrait":"assets/noa-portrait.svg"}
+ },
+ "startingReplacements":[{"from":"heal","to":"noa_patch"},{"from":"wave","to":"noa_guard"}]
+}

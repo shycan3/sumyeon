@@ -1,0 +1,312 @@
+{
+  "editor": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "variants": [
+        {
+          "token": "guard:true",
+          "visibleText": "차단 방패\n◆ 호위\n진화\n편성 1장 · 대기 0장",
+          "evolutionBadge": "flex",
+          "rect": {
+            "width": 312,
+            "height": 111
+          }
+        },
+        {
+          "token": "guard:false",
+          "visibleText": "차단 방패\n◆ 호위\n일반\n편성 1장 · 대기 0장",
+          "evolutionBadge": null,
+          "rect": {
+            "width": 312,
+            "height": 111
+          }
+        }
+      ],
+      "scrollBefore": {
+        "article": {
+          "scroll": 50,
+          "height": 303,
+          "total": 353
+        },
+        "outer": {
+          "scroll": 0,
+          "height": 363,
+          "total": 363
+        }
+      },
+      "scrollAfter": {
+        "article": {
+          "scroll": 50,
+          "height": 284,
+          "total": 353
+        },
+        "outer": {
+          "scroll": 0,
+          "height": 344,
+          "total": 344
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "variants": [
+        {
+          "token": "guard:true",
+          "visibleText": "차단 방패\n◆ 호위\n진화\n편성 1장 · 대기 0장",
+          "evolutionBadge": "flex",
+          "rect": {
+            "width": 142,
+            "height": 103
+          }
+        },
+        {
+          "token": "guard:false",
+          "visibleText": "차단 방패\n◆ 호위\n일반\n편성 1장 · 대기 0장",
+          "evolutionBadge": null,
+          "rect": {
+            "width": 142,
+            "height": 103
+          }
+        }
+      ],
+      "scrollBefore": {
+        "article": {
+          "scroll": 0,
+          "height": 396,
+          "total": 396
+        },
+        "outer": {
+          "scroll": 0,
+          "height": 479,
+          "total": 479
+        }
+      },
+      "scrollAfter": {
+        "article": {
+          "scroll": 0,
+          "height": 377,
+          "total": 377
+        },
+        "outer": {
+          "scroll": 0,
+          "height": 460,
+          "total": 460
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "variants": [
+        {
+          "token": "guard:true",
+          "visibleText": "차단 방패\n◆ 호위\n진화\n편성 1장 · 대기 0장",
+          "evolutionBadge": "flex",
+          "rect": {
+            "width": 116,
+            "height": 93
+          }
+        },
+        {
+          "token": "guard:false",
+          "visibleText": "차단 방패\n◆ 호위\n일반\n편성 1장 · 대기 0장",
+          "evolutionBadge": null,
+          "rect": {
+            "width": 116,
+            "height": 93
+          }
+        }
+      ],
+      "scrollBefore": {
+        "article": {
+          "scroll": 83,
+          "height": 118,
+          "total": 201
+        },
+        "outer": {
+          "scroll": 0,
+          "height": 208,
+          "total": 208
+        }
+      },
+      "scrollAfter": {
+        "article": {
+          "scroll": 83,
+          "height": 99,
+          "total": 201
+        },
+        "outer": {
+          "scroll": 0,
+          "height": 189,
+          "total": 189
+        }
+      }
+    }
+  ],
+  "drawers": {
+    "situationAfterEscape": false,
+    "multiple": [
+      {
+        "class": "battle-log-panel",
+        "rect": {
+          "x": 614,
+          "y": 614.8125,
+          "w": 648,
+          "h": 87
+        }
+      }
+    ],
+    "afterEscape": []
+  },
+  "moments": {
+    "winner": 1,
+    "endReason": null,
+    "actors": [
+      {
+        "id": "a0",
+        "name": "호위병",
+        "side": 0
+      },
+      {
+        "id": "a1",
+        "name": "세린",
+        "side": 0
+      },
+      {
+        "id": "a2",
+        "name": "지원 사수",
+        "side": 0
+      },
+      {
+        "id": "a3",
+        "name": "야전 의무관",
+        "side": 0
+      },
+      {
+        "id": "e0",
+        "name": "추격 검사",
+        "side": 1
+      },
+      {
+        "id": "e1",
+        "name": "추격 사수",
+        "side": 1
+      }
+    ],
+    "events": [
+      {
+        "kind": "heal",
+        "at": 0.5000000000000001,
+        "actor": "a3",
+        "target": "a0",
+        "amount": 4,
+        "key": null,
+        "shared": false,
+        "origin": "basic"
+      },
+      {
+        "kind": "heal",
+        "at": 2.700000000000002,
+        "actor": "a3",
+        "target": "a1",
+        "amount": 4,
+        "key": null,
+        "shared": false,
+        "origin": "basic"
+      },
+      {
+        "kind": "heal",
+        "at": 4.8999999999999835,
+        "actor": "a3",
+        "target": "a2",
+        "amount": 4,
+        "key": null,
+        "shared": false,
+        "origin": "basic"
+      },
+      {
+        "kind": "ko",
+        "at": 5.219999999999977,
+        "actor": "e0",
+        "target": "a3",
+        "amount": 1,
+        "key": null,
+        "shared": false,
+        "origin": "enemy"
+      },
+      {
+        "kind": "ko",
+        "at": 6.879999999999941,
+        "actor": "e0",
+        "target": "a0",
+        "amount": 1.92,
+        "key": null,
+        "shared": false,
+        "origin": "enemy"
+      },
+      {
+        "kind": "ko",
+        "at": 8.37999999999991,
+        "actor": "e1",
+        "target": "a1",
+        "amount": 5,
+        "key": "shot",
+        "shared": false,
+        "origin": "enemy"
+      },
+      {
+        "kind": "ko",
+        "at": 11.039999999999853,
+        "actor": "a2",
+        "target": "e0",
+        "amount": 21.8,
+        "key": "shot",
+        "shared": false,
+        "origin": "card",
+        "cardKey": "shot"
+      },
+      {
+        "kind": "ko",
+        "at": 11.399999999999846,
+        "actor": "e1",
+        "target": "a2",
+        "amount": 5,
+        "key": "shot",
+        "shared": false,
+        "origin": "enemy"
+      }
+    ],
+    "display": [
+      {
+        "at": 11.039999999999853,
+        "key": "shot",
+        "failure": false,
+        "related": false,
+        "text": "속사 · 지원 사수 → 추격 검사 · 적 처치 21.8"
+      },
+      {
+        "at": 4.8999999999999835,
+        "key": null,
+        "failure": false,
+        "related": false,
+        "text": "기본 행동 · 야전 의무관 → 지원 사수 · 위기 회복 4"
+      },
+      {
+        "at": 2.700000000000002,
+        "key": null,
+        "failure": false,
+        "related": false,
+        "text": "기본 행동 · 야전 의무관 → 세린 · 위기 회복 4"
+      }
+    ],
+    "panel": "이번 덱이 보여준 변화\n\n패배 · 11.4초 · 남은 HP 0\n\n원정 출발 덱 기준 · 이번 교전의 실제 기록\n\n카드 구성·진화 변화 없음\n\n✦\n세린\n잔광 검무\n✦ 공명\n공격 · 이동\n사용 1회\n\n피해 63\n\n➶\n지원 사수\n속사\n↗ 추격\n공격\n사용 1회\n\n피해 21.8\n\n아군 기여 장면 · 변경 카드 우선\n\n11초 · 속사 · 지원 사수 → 추격 검사 · 적 처치 21.8\n\n4.9초 · 기본 행동 · 야전 의무관 → 지원 사수 · 위기 회복 4\n\n2.7초 · 기본 행동 · 야전 의무관 → 세린 · 위기 회복 4\n\n아군 전투불능 · 첫 발생 장면\n\n5.2초 · 적 행동 · 추격 검사 → 야전 의무관 · 아군 전투불능 1\n\n6.9초 · 적 행동 · 추격 검사 → 호위병 · 아군 전투불능 1.9\n\n기록된 특성 장면 없음\n\n카드별 합산 기록입니다. 진화·사본별 효과는 분리되지 않습니다. 미사용만으로 약한 카드라고 판단할 수 없습니다.\n\n덱 비교 연습\n\n시간·남은 HP와 카드 효과를 함께 비교하세요. 덱 변경으로 난수 소비가 달라져 한 번의 결과가 승리 원인을 증명하지는 않습니다."
+  }
+}

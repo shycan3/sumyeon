@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),assert=require('assert'),crypto=require('crypto'),ctx=vm.createContext({window:{}});
+for(const f of ['data','character-data','trial-character','ultimate-data','strategy-encounters','actor-ai','engine','campaign','character-engine','ultimate-engine','ultimate-diagnostics','character-campaign'])vm.runInContext(fs.readFileSync(__dirname+'/'+f+'.js','utf8'),ctx);
+const {CharacterData:K,GameData:D,CharacterBattle:B}=ctx.window,copy=x=>JSON.parse(JSON.stringify(x));
+function clean(s){delete s.identityVersion;delete s.party;for(const a of s.actors){delete a.slot;}for(const deck of s.decks)for(const area of ['draw','hand','discard','excluded'])for(const c of deck[area])delete c.casterSlot;return s;}
+const rows=[];
+for(const version of [0,1])for(const preset of K.startingDecks)for(const seed of [7,37])for(const policy of ['attack','protect'])for(const enemy of [3,6,7,'boss']){
+ const pool=K.templatePool(preset.template),cards=pool.ids.map(id=>copy(pool.pool.find(c=>c.id===id)));if(seed===37){cards[0].upgraded=true;const index=cards.findIndex(c=>c.key==='serin_dash');cards[index]={...cards[index],key:'serin_chain',source:'reward'};}
+ const config={identityVersion:1,party:K.defaultParty?.(),seed,levels:[1,1,1,1],hp:D.roles.map((_,i)=>D.maxHP(i,1)),stances:[0,1,0,0],formationVersion:2,formation:[1,2,4,11],targetingRulesVersion:1,spatialRulesVersion:1,combatRulesVersion:version,encounter:copy(enemy==='boss'?version?K.strategyBoss:K.phasedBoss:version?K.strategyBattles[enemy]:K.tacticalBattles[enemy]),depth:enemy==='boss'?5:2,elite:false,timing:'mixed',control:'auto',autoPolicy:policy,autoTraitVersion:1,traits:true,tactic:preset.id==='pursuit'?'relay':null,cards};
+ const b=new B(config),hash=crypto.createHash('sha256');for(let i=0;i<10000&&!b.s.ended;i++){b.step(.02);if(i%50===0)hash.update(JSON.stringify(clean(b.snapshot())));}hash.update(JSON.stringify(clean(b.snapshot())));rows.push({version,preset:preset.id,seed,policy,enemy,winner:b.s.winner,time:b.s.t,hash:hash.digest('hex')});
+}
+const file=__dirname+'/identity-compat-baseline.json';if(process.argv.includes('--capture')){assert(!fs.existsSync(file),'do not overwrite the pre-refactor baseline');fs.writeFileSync(file,JSON.stringify(rows,null,2));console.log('Captured',rows.length,'pre-refactor combat traces');}else{assert.deepEqual(rows,JSON.parse(fs.readFileSync(file,'utf8')));console.log('PASS',rows.length,'pre-refactor full combat traces (identity metadata excluded only)');}

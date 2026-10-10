@@ -1,0 +1,962 @@
+[
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 28.199999999999488,
+    "hash": "dd80c17d835ecc43c5359422943161ca5f247fc96fac711d59b45e45afe0379b"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 48.140000000001926,
+    "hash": "1cde144777cc1a637d844ac52e1ed30282926ddc6c46978049872a600a8a0598"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 27.359999999999506,
+    "hash": "a156eb95ff88bfa899e3e0a8f3b57099c1b53837db6958a29a7be05faff40eab"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 36.66000000000013,
+    "hash": "9c6b6db4242804391bda11944e673c11348364de0e1f331e80fb84b387bc875e"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 35.459999999999944,
+    "hash": "baaeeee23faff0e9c403c9ff2fd628e5f4621c6c438f6ec03f26f9ae960042a4"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 47.740000000001864,
+    "hash": "ee22a2801d0d7ddeaf2db1f33d41a205cfd79556982c2f14c4fc2b2052c0a436"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 30.45999999999944,
+    "hash": "bc55588a904cecd37841563f14a5ae6cd3ba2b9404197cef000ab8a0b0005087"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 42.14000000000099,
+    "hash": "b1ee74326fdfb9fbff71d47877c312c6080898e132def7339a8c8dbf65ea9c8f"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 30.679999999999435,
+    "hash": "1718ea6b19fae21c997cad9600a2353f595469eceab08110bee9bf03a7849c61"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 67.16000000000378,
+    "hash": "2279f8baa6e4db773fe05bee7b86915e831bafa093876b3f7fe4e33898a93c74"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 30.339999999999442,
+    "hash": "e4d30833a0682ad1f4c399a605db1d2eb61dd4089175ddaa1ef411d701eb08fd"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 40.60000000000075,
+    "hash": "0978ca8ffd4f38890c577cf68232aa3b12bd0707a44fa1fa370b8f52a7014671"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 34.19999999999975,
+    "hash": "97d272a5b622885be29800b22fac3ac4aaf0200fe02733ba4d5c73a978871389"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 65.14000000000418,
+    "hash": "f5565f2d42bf314ff0c1b424556cf8ede7d9fdd48f6e24a26698e8951b14878c"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 33.63999999999966,
+    "hash": "29b4dc177e3a833ad1f21ec530bb907135c178aeb91187bf7f269a7f2f74be00"
+  },
+  {
+    "version": 0,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 40.60000000000075,
+    "hash": "60362b60db6972bd4d2c58d87e96ffd6ad817a62e4dd2c8f9f6a4bc4448158b0"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 29.279999999999465,
+    "hash": "202f9262898f50ff6a567d3f222ec306f59c9a394ed0d8a8f2944abe6620ffe4"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 59.840000000003755,
+    "hash": "1b015e6a1a6fe1dd2b979bf259b6de807d5003180af21b9d0421ed45f18c0df5"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 27.939999999999493,
+    "hash": "637ae683bb46d4a4c79c563459417c5b2c93ab6ba127ac02948d1f2a96a3ce3f"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 42.380000000001026,
+    "hash": "4dd8e5c612170581f8191b2c0ffad4f4c36ab072e7dd9f509235ad1c9e7dc12a"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 41.100000000000826,
+    "hash": "ac9680f7e68c23aae0ccf80a2a3d1d4b51bca337830b7c4bf3a9ab43ce465db4"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 57.90000000000345,
+    "hash": "d0cd5949975e02e981d1522b5ebe8583c0919dd8f998e7e62cc35abd0553adcc"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 33.77999999999968,
+    "hash": "cab7913f0fea13fad2b3d6660e5e423ffeeebf153d9e043a0ce1455370f506c3"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 42.380000000001026,
+    "hash": "174ae6f64b4412522af4173a18f89915e724969c85788e1ea52fc0cb33d65e77"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 21.95999999999962,
+    "hash": "cccbddf78896b6bd968ed01ec11221727e43a2e157e229aaa2e760210ab1ed65"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 42.120000000000985,
+    "hash": "9b10a30dbbac2ae16c2af792d5508b07a7e31f1c1b5eaa31c7ba5763eba40f71"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 21.45999999999963,
+    "hash": "fdf6e085d60ba5a1676fe47f1c2543a79404e369ad54b2c17d7285fa956fc401"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 29.819999999999453,
+    "hash": "bd22495cc0444199dada113abb08201c089bef8a55903bda86ec20d707b6f35e"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 25.73999999999954,
+    "hash": "90ba75987a37eed95bda37196b0226d5ba2d9210f26e5dd27992aa892929ad13"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 57.84000000000344,
+    "hash": "cb4026828ae1369c9afa31ff25d9aa3ff743083226aface533269d45cf8c76c8"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 26.319999999999528,
+    "hash": "48339f0653b0b5044afd3e6e870beda3e430adc1ccc3534c5b87660ed26d5e6e"
+  },
+  {
+    "version": 0,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 35.21999999999991,
+    "hash": "233e117aaf9517c3734bd673dd29959afda41fd488b52b372844db2cf3f0673a"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 17.079999999999725,
+    "hash": "d7889a821906b0f59dbd8289282017dc772ac226eac6d2c698c73648023137fe"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 35.980000000000025,
+    "hash": "23dcb1881ba1382604aa38f8151314fdb75f545298cc92c3f34a34794f4465ea"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 26.799999999999518,
+    "hash": "41b8791f90af8b629f28390c87fd4fa04db0b6450ca7b20205eb3c9e5ae85edb"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 35.459999999999944,
+    "hash": "1fac35c2a6c17700d1b471de20797aed943a7c68d6a03b32a01e4d34d9299305"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 19.059999999999683,
+    "hash": "ae83b1fa631b79003cfcc132070fc43527bfec9a2b93e5c68c2482b26752c8e7"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 44.60000000000137,
+    "hash": "5cd7a6ef9812c6bc7b233b63ac6b30348c9bdf1b1c01d8394448308b0c53b8bc"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 28.899999999999473,
+    "hash": "88921f4e8b0f88ebafdff3372e3470881b89271e7c737045f0df84235ca00d63"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 37.44000000000025,
+    "hash": "a0c25cde857ca6696f82ab729ad7aa8d4c767300b67fa0f64d39a7105520e945"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 18.75999999999969,
+    "hash": "89c9364400c27dda64a9f093912fb1c0b7ed49da338d54f5165cb64bb18eae04"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 36.60000000000012,
+    "hash": "1bfee65c501e6fd32f50d0a3bb86cf53f71787cdba784fd23aa80853bbf0e3cb"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 23.619999999999585,
+    "hash": "fb2122d2441644e32de3af54aceed8a10a20f941d6f15ee53248901026c4a305"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 32.03999999999941,
+    "hash": "327ca298f3450dc093bbd757f6950b93c1fd5838b94354345f6bd2f9ec6be8db"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 13.319999999999805,
+    "hash": "d9b3d8647557b309e2ff349b29b31fc208b509badfa388ee6c192526b51c51d7"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 38.58000000000043,
+    "hash": "20414d5abdd3d6c38b8dbe48a07f2c4afb603407a4045310bc6877c9b65ca507"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 21.07999999999964,
+    "hash": "500cd5148388490e99abcc6f39b61ec76d33b32d4732bc602d53aa3b78afad1a"
+  },
+  {
+    "version": 0,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 33.939999999999706,
+    "hash": "c357f91090ccd937700b3cc67c3597d9fc4c844c5b4bfa1ffb2b5771eaca9830"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 32.15999999999943,
+    "hash": "d5af313b7d12cd9d64a55a1bbf94ab8d4ce5a9e221b22aabe3536a2867991cf9"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 54.86000000000298,
+    "hash": "1b8395728744b3bd2ca61093787cf0a813d8eddbf69435fca3a423e58e0033f9"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 27.13999999999951,
+    "hash": "0d0169f963f15a5b8b722fb73325347f38f54b81de855e626c1b1e1409442274"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 34.65999999999982,
+    "hash": "159b6e812c3102b8d9665480143bd07a55a0e993e5c1c292d0335089f13f0712"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 1,
+    "time": 34.07999999999973,
+    "hash": "3275dd800760920a9a817373ea2568ab0cec5e5f2d49cd8d8b49f9387e4029fb"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 72.16000000000278,
+    "hash": "c337619a8fed2da638d41d519a0d628366b6da328aa380024599bf456b70f05b"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 28.05999999999949,
+    "hash": "67f673e2ce8ddf2c2262031acd771475a38edd4ef503355605dddd493e7ab6ca"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 41.90000000000095,
+    "hash": "29246104f57cb0359930fb9c5a973b87202f1e12dc1f9854b763264ee90f8155"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 34.19999999999975,
+    "hash": "b26b08bd025e897fc9c97388ca3b8652ae4f046e06d2e1b668f0c302371b0f4b"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 1,
+    "time": 180,
+    "hash": "b89195222ae7cc673139cdbf9d00678ea47a72d766dfa1726ea9eae6ae766393"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 24.33999999999957,
+    "hash": "bed3050bc96e1823aefd63867c8b7cbaf26fb4cbf3bd6f84ed6210cd9ac5b64a"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 42.60000000000106,
+    "hash": "926ce95a367a38695bc6aa87eb36a5cdcf50aad2f9eab34c0185a2e9d7755073"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 1,
+    "time": 41.52000000000089,
+    "hash": "cd9ce8c3e2411b9b8ac52b46cf8716093bd9a7abee6c9d198e7265d3b6c63ed3"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 1,
+    "time": 115.11999999999423,
+    "hash": "2c4cb1189bb8a12c5132fa92f7f095a989fff13d95198a6d1250c6e8ee9894f1"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 27.779999999999497,
+    "hash": "8d1cc15ecdbec112a6d3b22e2bc45fe90ab554360b6f1712bbffb3359a14b067"
+  },
+  {
+    "version": 1,
+    "preset": "escort",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 42.60000000000106,
+    "hash": "b7a7debae6d7ae16742d38435023a9641633eb4f18a71f75d05146ada328b0bf"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 1,
+    "time": 106.09999999999603,
+    "hash": "9e1902b19be9b314dcffda28bb6abec1e24d1ab702c6ffb6b13164073bb1e68b"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 1,
+    "time": 94.63999999999831,
+    "hash": "a2328763ba33c6560d8fd659ce3287501e5e903a66269bd4bd9b56ba76d209dc"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 27.259999999999508,
+    "hash": "1e7ac3218dc7fd8ee4917a1ae2ae06c05bf8edfff06b8dcde94b782f73c29532"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 39.180000000000526,
+    "hash": "330fb4f31fc8eaff16d668a75abe7236414469f32ca668aee369e20b9cbf36bb"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 1,
+    "time": 44.52000000000136,
+    "hash": "d24931821c962e2229dc148d37c910837d25d25d9c536f6c0c23db64d610bc79"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 89.35999999999936,
+    "hash": "6d6c0673ff966d4deddbac71ae0a98d21b20234efd57128c85f8dfddce2de23f"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 30.059999999999448,
+    "hash": "cb387034ed05f7d61567df0090b5fe98539457389971d850010c8aa3001d3fdf"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 42.560000000001054,
+    "hash": "2610205011343cec6734c49cc2bc4a0c097537850abaed133be7f63f645af108"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 26.25999999999953,
+    "hash": "465c8f618e1d511fc1af8958a00decd9a7ff8e44ae373ee3555dc68363023fd1"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 78.30000000000156,
+    "hash": "a0ae5904f5c835a46acfce422e246535731d836d0bf32e8d414304652da7cf76"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 24.25999999999957,
+    "hash": "14e44ec743a92efc9acf7bd3dfed064e3b7cd8c5f4409b67a48c47d60ba00f3c"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 42.66000000000107,
+    "hash": "84fcad992581ac3fb736ccf4eb7ece5b5f3196b43c54011d8a04b1009465f805"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 31.91999999999941,
+    "hash": "f3dfa12821f86b1ddbc6c676298c7b12be6f33ff0081ce8322e308a10924ebea"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 87.43999999999974,
+    "hash": "385b23e1befe08d4102938ac3b78554bfc0714e179816d927aafca90876330dd"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 22.49999999999961,
+    "hash": "e353337a535a98041d3424d4d8d301197fd5dcaaf9f8ec4d92ab21bb345d8d93"
+  },
+  {
+    "version": 1,
+    "preset": "pursuit",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 87.79999999999967,
+    "hash": "e011b5354e1f0b2ee03f287a539b3fe7bfe4e9487f8072b79bccb1274ce0e918"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 13.319999999999805,
+    "hash": "4f60ccea1989b5699ddf81c759e3b42a1da662ad534b582637a576e57c8bc1c4"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 46.14000000000161,
+    "hash": "523f181b5458c1342d2b910b16cb4f597f077553027682a95a97c4a8ebeb1442"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 21.339999999999634,
+    "hash": "f1a1483b2a617338317529ee48fc4d4dfb1d750c9214eed70657374972baa7e4"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 34.29999999999976,
+    "hash": "2b56ebc224eef736dc79f50a1dec39c8c40aff68693f64414977aa0be438d425"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 13.319999999999805,
+    "hash": "2a1adece6ed618440b0125eccd95842f3f99c6c76628ff1e77f78f94d18877e3"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 82.46000000000073,
+    "hash": "2f5de1528f331028ca2034ffa98acce1b34d43d600d136fd8aec58e56cd8ecb7"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 24.73999999999956,
+    "hash": "be1ce216cfef7fec686e2e1d94a1af5bda6173d45cb1b327e166baece16441fd"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 7,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 38.74000000000046,
+    "hash": "fc38401576ab373ad9acf08110c3f74b59ddc7b5f90968cb2daad8ee9c907a68"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 3,
+    "winner": 0,
+    "time": 18.75999999999969,
+    "hash": "7d6ec636e9dafd996c5d1fd46548a4e06a7ac2080897bfc996ceb2715bc3955d"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 6,
+    "winner": 0,
+    "time": 58.42000000000353,
+    "hash": "4a71d1a87f5361dd06dc92c4087b0249c9bc80b624c2c6a286fce114b761773b"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": 7,
+    "winner": 0,
+    "time": 22.099999999999618,
+    "hash": "61cd147bf6c7227942f656afbe5627ea2f6cadb33db66a2c6fdf72a7c7b873ef"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "attack",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 37.7200000000003,
+    "hash": "ded9c041beb2b69116a1c7bac6acbd903b62daf3f3d19f3f3e3d46337a8c373c"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 3,
+    "winner": 0,
+    "time": 13.319999999999805,
+    "hash": "749375b7cef056fb46ff0fbb8c7787539a092510d0558a34a03387634958f649"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 6,
+    "winner": 0,
+    "time": 69.34000000000334,
+    "hash": "ed4f14b89c182eff2daa8f6d5b204305e112c78757b92f86ea755de632859077"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": 7,
+    "winner": 0,
+    "time": 22.559999999999608,
+    "hash": "d497d11000f1ed36338daa6f336c6c702304cb0a82b2ee263d84c429dc1fffbb"
+  },
+  {
+    "version": 1,
+    "preset": "resonance",
+    "seed": 37,
+    "policy": "protect",
+    "enemy": "boss",
+    "winner": 0,
+    "time": 37.7200000000003,
+    "hash": "6ac94a0c064491ab509d3b74ccac2dc91ceb685823c8170cf82032857a15790d"
+  }
+]

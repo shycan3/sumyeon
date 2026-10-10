@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>수면 · 자동 원정 연구실</title>
+  <link rel="stylesheet" href="party-expedition-lab.css?v=tactics-final1">
+</head>
+<body>
+<main>
+  <header class="page-heading">
+    <div><a class="eyebrow" href="party-expedition.html">수면 / 심층 원정으로 돌아가기 ↗</a><h1>자동 원정 연구실</h1><p>경로부터 보상과 전투까지 반복하고, 선택과 결과를 함께 기록합니다.</p></div>
+    <span class="isolation">실제 원정 저장과 분리</span>
+  </header>
+  <section class="panel setup-panel" aria-labelledby="setup-title">
+    <div class="section-heading"><h2 id="setup-title">실험 설정</h2><span id="batch-size">총 10회 원정</span></div>
+    <form id="lab-config">
+      <div class="config-grid">
+        <label>시작 시드<input id="seed-start" type="number" value="1" min="1" max="2147483647" step="1" required></label>
+        <label>시드 개수<input id="seed-count" type="number" value="10" min="1" max="100" step="1" required></label>
+        <label>선택 정책<select id="policy"><option value="balanced">균형</option><option value="aggressive">공격 중시</option><option value="cautious">생존 중시</option><option value="all">세 정책 비교</option></select></label>
+        <label>파티<select id="party-mode"><option value="standard">표준 3조합</option><option value="current">직접 편성한 1조합</option><option value="all">전체 15조합</option></select></label>
+        <label>난이도<select id="difficulty"><option value="normal">일반</option><option value="calm">잔잔한 항로</option></select></label>
+        <label>브레이크<select id="break-mode"><option value="off">사용 안 함</option><option value="on">사용</option></select></label>
+      </div>
+      <fieldset id="manual-party" hidden><legend>네 명 선택</legend><div id="party-checks" class="party-checks"></div></fieldset>
+      <p id="party-description" class="muted"></p>
+      <p class="muted">한 배치는 최대 500회입니다. 시드 개수 × 정책 수 × 파티 수로 계산합니다.</p>
+      <details class="advanced"><summary>실행 제한</summary><div class="config-grid compact"><label>원정당 최대 결정 수<input id="max-steps" type="number" value="1500" min="10" max="10000" step="1" required></label><label>전투당 최대 라운드<input id="max-rounds" type="number" value="60" min="1" max="200" step="1" required></label></div><p class="muted">한도를 넘긴 원정은 패배가 아닌 중단으로 기록합니다.</p></details>
+      <div class="controls"><button id="start" class="primary" type="submit">반복 원정 시작</button><button id="pause" type="button" disabled>일시정지</button><button id="stop" type="button" disabled>중단</button><span id="status" role="status" aria-live="polite">실험을 시작할 수 있습니다.</span></div>
+    </form>
+  </section>
+  <section class="panel live-panel" aria-labelledby="live-title">
+    <div class="section-heading"><h2 id="live-title">진행 상황</h2><span id="progress-label">0 / 0회</span></div>
+    <progress id="progress" value="0" max="1" aria-label="완료한 원정"></progress>
+    <div class="live-grid"><div><span class="eyebrow">현재 원정</span><p id="current-run">대기 중</p></div><div><span class="eyebrow">현재 결정과 이유</span><p id="current-decision">시작하면 실제 선택 과정을 표시합니다.</p></div></div>
+    <div class="metrics" id="metrics" aria-label="승패 집계"><div><span>완료 원정</span><strong>0</strong><small>승리 0 · 패배 0</small></div><div><span>완료 전투</span><strong>0</strong><small>승리 0 · 패배 0</small></div><div><span>중단 / 오류</span><strong>0 / 0</strong><small>승패 통계에서 분리</small></div></div>
+  </section>
+  <section class="panel" aria-labelledby="signals-title"><div class="section-heading"><h2 id="signals-title">검토할 신호</h2><div class="download-controls"><button id="download-json" type="button" disabled>전체 로그 JSON</button><button id="download-csv" type="button" disabled>전투 요약 CSV</button></div></div><p class="muted">자동 정책에서 관찰된 결과입니다. 카드 사용과 승리의 상관관계는 인과관계나 사람의 재미를 증명하지 않습니다.</p><ul id="signals"><li>완료된 원정이 쌓이면 비교할 신호를 표시합니다.</li></ul></section>
+  <section class="panel" aria-labelledby="encounters-title"><div class="section-heading"><h2 id="encounters-title">적 조우별 결과</h2><span class="muted">조우 × 구역 × 파티 × 정책</span></div><div class="table-scroll"><table><thead><tr><th>적 조우</th><th>구역</th><th>파티 / 정책</th><th>완료 전투 수</th><th>승 / 패 / 중단 / 오류</th><th>평균 HP 피해</th><th>평균 보호 흡수</th><th>평균 라운드</th><th>사망</th></tr></thead><tbody id="encounters"><tr><td colspan="9" class="empty">아직 기록이 없습니다.</td></tr></tbody></table></div><p class="muted">피해는 실제 HP 감소량, 보호 흡수는 보호가 막은 피해입니다. 회복 후 최종 HP와는 다릅니다. 평균은 완료된 전투만 포함합니다.</p><p id="reach" class="muted">구역별 도달 정보를 표시합니다. 후반 조우는 그곳까지 살아남은 원정만 경험합니다.</p></section>
+  <section class="panel" aria-labelledby="cards-title"><div class="section-heading"><h2 id="cards-title">카드 사용</h2><span class="muted">보유는 덱 포함 기준 · 기본 공격은 항상 사용 가능</span></div><div class="table-scroll"><table><thead><tr><th>카드</th><th>사용 횟수</th><th>보유 / 손패 도달 / 사용 전투</th><th>사용 전투 승 / 패</th><th>적 HP 피해</th><th>회복</th><th>보호 획득</th></tr></thead><tbody id="cards"><tr><td colspan="7" class="empty">아직 기록이 없습니다.</td></tr></tbody></table></div><p class="muted">피해·회복·보호는 카드 실행 순간의 캐릭터·유물 효과를 포함합니다. 후속 턴의 효과는 해당 카드에 소급하지 않습니다.</p></section>
+  <section class="panel" aria-labelledby="battles-title"><div class="section-heading"><h2 id="battles-title">전투 기록</h2><label class="inline-label">결과<select id="battle-filter"><option value="all">전체</option><option value="won">승리</option><option value="lost">패배</option><option value="aborted">중단</option><option value="error">오류</option></select></label></div><div class="table-scroll"><table><thead><tr><th>시드</th><th>구역 / 적</th><th>정책 / 파티</th><th>결과</th><th>라운드</th><th>HP 피해 / 흡수</th><th>상세</th></tr></thead><tbody id="battles"><tr><td colspan="7" class="empty">아직 기록이 없습니다.</td></tr></tbody></table></div><div class="pagination"><button id="battle-prev" type="button" disabled>이전</button><span id="battle-page">0개 전투</span><button id="battle-next" type="button" disabled>다음</button></div></section>
+  <section class="panel" aria-labelledby="runs-title"><div class="section-heading"><h2 id="runs-title">원정 결과</h2><span id="run-count" class="muted">최근 30회</span></div><div class="table-scroll"><table><thead><tr><th>시드</th><th>정책 / 파티</th><th>결과</th><th>전투 수</th><th>종료 이유</th><th>기록</th></tr></thead><tbody id="runs"><tr><td colspan="6" class="empty">아직 기록이 없습니다.</td></tr></tbody></table></div></section>
+</main>
+<dialog id="detail-dialog"><div class="dialog-heading"><h2 id="detail-title">전투 상세</h2><button id="detail-close" type="button" aria-label="상세 닫기">×</button></div><div id="detail-content"></div></dialog>
+<script src="party-expedition-catalog.js?v=tactics-final1"></script>
+<script src="party-expedition-core.js?v=tactics-final1"></script>
+<script src="party-expedition-voyage-combat.js?v=tactics-final1"></script>
+<script src="party-expedition-run.js?v=tactics-final1"></script>
+<script src="party-expedition-encounters.js?v=tactics-final1"></script>
+<script src="party-expedition-voyage.js?v=tactics-final1"></script>
+<script src="party-expedition-auto.js?v=tactics-final1"></script>
+<script src="party-expedition-automation.js?v=tactics-final1"></script>
+<script src="party-expedition-telemetry.js?v=tactics-final1"></script>
+<script src="party-expedition-simulation.js?v=tactics-final1"></script>
+<script src="party-expedition-presentation.js?v=tactics-final1"></script>
+<script src="party-expedition-lab.js?v=tactics-final1"></script>
+</body>
+</html>
+

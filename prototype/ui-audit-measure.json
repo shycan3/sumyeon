@@ -1,0 +1,1520 @@
+[
+  {
+    "width": 1280,
+    "height": 720,
+    "stage": "home",
+    "screen": "other",
+    "actions": [],
+    "small": [
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 5종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "5종 / 6종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "임시 동료 · 보호",
+        "font": 12
+      }
+    ],
+    "scrollers": []
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "stage": "starting",
+    "screen": "starting",
+    "actions": [
+      {
+        "action": "starting-confirm",
+        "text": "이 덱으로 원정 출발",
+        "w": 168,
+        "h": 44,
+        "visible": false
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 5종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "↗ 추격",
+        "font": 11
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 665,
+        "clientH": 558,
+        "scrollW": 910,
+        "clientW": 910
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "stage": "map",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "전투 시작",
+        "w": 838,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "1 · 교전",
+        "font": 10
+      },
+      {
+        "text": "2 · 휴식/강화",
+        "font": 10
+      },
+      {
+        "text": "3 · 교전/교전",
+        "font": 10
+      },
+      {
+        "text": "4 · 정비",
+        "font": 10
+      },
+      {
+        "text": "5 · 강적/휴식",
+        "font": 10
+      },
+      {
+        "text": "6 · 경계의 수호자",
+        "font": 10
+      },
+      {
+        "text": "덱 20장 · 대기 0장",
+        "font": 11
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-side",
+        "scrollH": 976,
+        "clientH": 558,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "stage": "map2",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "휴식 선택",
+        "w": 396,
+        "h": 44,
+        "visible": true
+      },
+      {
+        "action": "enter",
+        "text": "강화 선택",
+        "w": 396,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "1 · 교전",
+        "font": 10
+      },
+      {
+        "text": "2 · 휴식/강화",
+        "font": 10
+      },
+      {
+        "text": "3 · 교전/교전",
+        "font": 10
+      },
+      {
+        "text": "4 · 정비",
+        "font": 10
+      },
+      {
+        "text": "5 · 강적/휴식",
+        "font": 10
+      },
+      {
+        "text": "6 · 경계의 수호자",
+        "font": 10
+      },
+      {
+        "text": "덱 20장 · 대기 0장",
+        "font": 11
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-side",
+        "scrollH": 976,
+        "clientH": 558,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "stage": "battle",
+    "screen": "map",
+    "actions": [],
+    "small": [],
+    "scrollers": [
+      {
+        "class": "selected-detail",
+        "scrollH": 91,
+        "clientH": 71,
+        "scrollW": 348,
+        "clientW": 348
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "stage": "reward",
+    "screen": "reward",
+    "actions": [
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 269,
+        "h": 44,
+        "visible": true
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 269,
+        "h": 44,
+        "visible": true
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 269,
+        "h": 44,
+        "visible": true
+      },
+      {
+        "action": "skip",
+        "text": "보상 넘기기",
+        "w": 112,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 5종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "미활성 · 지켜낸 뒤 다음 공격 카드로 반격",
+        "font": 12
+      }
+    ],
+    "scrollers": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "stage": "home",
+    "screen": "other",
+    "actions": [],
+    "small": [
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 5종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      }
+    ],
+    "scrollers": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "stage": "starting",
+    "screen": "starting",
+    "actions": [
+      {
+        "action": "starting-confirm",
+        "text": "이 덱으로 원정 출발",
+        "w": 168,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 5종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "호위 0단계",
+        "font": 10
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "starting-options workspace-options workspace-rail",
+        "scrollH": 220,
+        "clientH": 220,
+        "scrollW": 1253,
+        "clientW": 364
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "stage": "map",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "전투 시작",
+        "w": 320,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      }
+    ],
+    "scrollers": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "stage": "map2",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "휴식 선택",
+        "w": 146,
+        "h": 44,
+        "visible": true
+      },
+      {
+        "action": "enter",
+        "text": "강화 선택",
+        "w": 146,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 430,
+        "clientH": 423,
+        "scrollW": 366,
+        "clientW": 366
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "stage": "battle",
+    "screen": "map",
+    "actions": [],
+    "small": [],
+    "scrollers": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "stage": "reward",
+    "screen": "reward",
+    "actions": [
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 280,
+        "h": 44,
+        "visible": true
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 280,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 280,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "skip",
+        "text": "보상 넘기기",
+        "w": 112,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 5종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "호위 0단계",
+        "font": 10
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "card-area workspace-rail",
+        "scrollH": 426,
+        "clientH": 426,
+        "scrollW": 939,
+        "clientW": 364
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "stage": "home",
+    "screen": "other",
+    "actions": [],
+    "small": [
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 5종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 8
+      }
+    ],
+    "scrollers": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "stage": "starting",
+    "screen": "starting",
+    "actions": [
+      {
+        "action": "starting-confirm",
+        "text": "이 덱으로 원정 출발",
+        "w": 168,
+        "h": 44,
+        "visible": false
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 5종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "호위 0단계",
+        "font": 10
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 606,
+        "clientH": 222,
+        "scrollW": 296,
+        "clientW": 296
+      },
+      {
+        "class": "starting-options workspace-options workspace-rail",
+        "scrollH": 239,
+        "clientH": 239,
+        "scrollW": 1015,
+        "clientW": 294
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "stage": "map",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "전투 시작",
+        "w": 250,
+        "h": 44,
+        "visible": false
+      }
+    ],
+    "small": [
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 8
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 394,
+        "clientH": 147,
+        "scrollW": 296,
+        "clientW": 296
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "stage": "map2",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "휴식 선택",
+        "w": 111,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "enter",
+        "text": "강화 선택",
+        "w": 111,
+        "h": 44,
+        "visible": false
+      }
+    ],
+    "small": [
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "Lv.1",
+        "font": 8
+      },
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 8
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 448,
+        "clientH": 147,
+        "scrollW": 296,
+        "clientW": 296
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "stage": "battle",
+    "screen": "map",
+    "actions": [],
+    "small": [],
+    "scrollers": []
+  },
+  {
+    "width": 320,
+    "height": 568,
+    "stage": "reward",
+    "screen": "reward",
+    "actions": [
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 221,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 221,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 221,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "skip",
+        "text": "보상 넘기기",
+        "w": 112,
+        "h": 44,
+        "visible": false
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "1단계",
+        "font": 8
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "0단계",
+        "font": 8
+      },
+      {
+        "text": "2종 / 5종 · 다음 단계",
+        "font": 8
+      },
+      {
+        "text": "호위 0단계",
+        "font": 10
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 148,
+        "clientH": 4,
+        "scrollW": 296,
+        "clientW": 296
+      },
+      {
+        "class": "card-area workspace-rail",
+        "scrollH": 37,
+        "clientH": 13,
+        "scrollW": 760,
+        "clientW": 294
+      },
+      {
+        "class": "kit-card visual-card",
+        "scrollH": 411,
+        "clientH": 20,
+        "scrollW": 241,
+        "clientW": 241
+      },
+      {
+        "class": "kit-card visual-card",
+        "scrollH": 374,
+        "clientH": 20,
+        "scrollW": 241,
+        "clientW": 241
+      },
+      {
+        "class": "kit-card visual-card",
+        "scrollH": 418,
+        "clientH": 20,
+        "scrollW": 241,
+        "clientW": 241
+      }
+    ]
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "stage": "home",
+    "screen": "other",
+    "actions": [],
+    "small": [
+      {
+        "text": "임시 동료 · 보호",
+        "font": 12
+      },
+      {
+        "text": "추격과 엄호의 검객",
+        "font": 12
+      },
+      {
+        "text": "임시 동료 · 원거리",
+        "font": 12
+      },
+      {
+        "text": "임시 동료 · 회복",
+        "font": 12
+      },
+      {
+        "text": "Lv.1",
+        "font": 12.5
+      },
+      {
+        "text": "Lv.1",
+        "font": 12.5
+      },
+      {
+        "text": "Lv.1",
+        "font": 12.5
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 503,
+        "clientH": 249,
+        "scrollW": 474,
+        "clientW": 474
+      },
+      {
+        "class": "workspace-side",
+        "scrollH": 444,
+        "clientH": 249,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "stage": "starting",
+    "screen": "starting",
+    "actions": [
+      {
+        "action": "starting-confirm",
+        "text": "이 덱으로 원정 출발",
+        "w": 168,
+        "h": 44,
+        "visible": false
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "미활성 · 지켜낸 뒤 다음 공격 카드로 반격",
+        "font": 12
+      },
+      {
+        "text": "차단 방패 · 도발",
+        "font": 12
+      },
+      {
+        "text": "호위 0단계",
+        "font": 15
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 780,
+        "clientH": 180,
+        "scrollW": 474,
+        "clientW": 474
+      },
+      {
+        "class": "workspace-side",
+        "scrollH": 407,
+        "clientH": 180,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "stage": "map",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "전투 시작",
+        "w": 402,
+        "h": 44,
+        "visible": false
+      }
+    ],
+    "small": [
+      {
+        "text": "1 · 교전",
+        "font": 10
+      },
+      {
+        "text": "2 · 휴식/강화",
+        "font": 10
+      },
+      {
+        "text": "3 · 교전/교전",
+        "font": 10
+      },
+      {
+        "text": "4 · 정비",
+        "font": 10
+      },
+      {
+        "text": "5 · 강적/휴식",
+        "font": 10
+      },
+      {
+        "text": "6 · 경계의 수호자",
+        "font": 10
+      },
+      {
+        "text": "140 / 140 HP",
+        "font": 12
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 437,
+        "clientH": 179,
+        "scrollW": 474,
+        "clientW": 474
+      },
+      {
+        "class": "workspace-side",
+        "scrollH": 976,
+        "clientH": 179,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "stage": "map2",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "휴식 선택",
+        "w": 402,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "enter",
+        "text": "강화 선택",
+        "w": 402,
+        "h": 44,
+        "visible": false
+      }
+    ],
+    "small": [
+      {
+        "text": "1 · 교전",
+        "font": 10
+      },
+      {
+        "text": "2 · 휴식/강화",
+        "font": 10
+      },
+      {
+        "text": "3 · 교전/교전",
+        "font": 10
+      },
+      {
+        "text": "4 · 정비",
+        "font": 10
+      },
+      {
+        "text": "5 · 강적/휴식",
+        "font": 10
+      },
+      {
+        "text": "6 · 경계의 수호자",
+        "font": 10
+      },
+      {
+        "text": "140 / 140 HP",
+        "font": 12
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-main",
+        "scrollH": 762,
+        "clientH": 179,
+        "scrollW": 474,
+        "clientW": 474
+      },
+      {
+        "class": "workspace-side",
+        "scrollH": 976,
+        "clientH": 179,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "stage": "battle",
+    "screen": "map",
+    "actions": [],
+    "small": [],
+    "scrollers": [
+      {
+        "class": "selected-detail",
+        "scrollH": 91,
+        "clientH": 83,
+        "scrollW": 308,
+        "clientW": 308
+      }
+    ]
+  },
+  {
+    "width": 844,
+    "height": 390,
+    "stage": "reward",
+    "screen": "reward",
+    "actions": [
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 123,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 123,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 123,
+        "h": 44,
+        "visible": false
+      },
+      {
+        "action": "skip",
+        "text": "보상 넘기기",
+        "w": 112,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "미활성 · 지켜낸 뒤 다음 공격 카드로 반격",
+        "font": 12
+      },
+      {
+        "text": "차단 방패 · 도발",
+        "font": 12
+      },
+      {
+        "text": "호위 0단계",
+        "font": 15
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-side",
+        "scrollH": 407,
+        "clientH": 179,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "stage": "home",
+    "screen": "other",
+    "actions": [],
+    "small": [
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 5종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "5종 / 6종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "세린 · 기초 카드",
+        "font": 11
+      }
+    ],
+    "scrollers": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "stage": "starting",
+    "screen": "starting",
+    "actions": [
+      {
+        "action": "starting-confirm",
+        "text": "이 덱으로 원정 출발",
+        "w": 168,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 5종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "↗ 추격",
+        "font": 11
+      }
+    ],
+    "scrollers": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "stage": "map",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "전투 시작",
+        "w": 326,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "1 · 교전",
+        "font": 10
+      },
+      {
+        "text": "2 · 휴식/강화",
+        "font": 10
+      },
+      {
+        "text": "3 · 교전/교전",
+        "font": 10
+      },
+      {
+        "text": "4 · 정비",
+        "font": 10
+      },
+      {
+        "text": "5 · 강적/휴식",
+        "font": 10
+      },
+      {
+        "text": "6 · 경계의 수호자",
+        "font": 10
+      },
+      {
+        "text": "덱 20장 · 대기 0장",
+        "font": 11
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-side",
+        "scrollH": 976,
+        "clientH": 813,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "stage": "map2",
+    "screen": "map",
+    "actions": [
+      {
+        "action": "enter",
+        "text": "휴식 선택",
+        "w": 326,
+        "h": 44,
+        "visible": true
+      },
+      {
+        "action": "enter",
+        "text": "강화 선택",
+        "w": 326,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "1 · 교전",
+        "font": 10
+      },
+      {
+        "text": "2 · 휴식/강화",
+        "font": 10
+      },
+      {
+        "text": "3 · 교전/교전",
+        "font": 10
+      },
+      {
+        "text": "4 · 정비",
+        "font": 10
+      },
+      {
+        "text": "5 · 강적/휴식",
+        "font": 10
+      },
+      {
+        "text": "6 · 경계의 수호자",
+        "font": 10
+      },
+      {
+        "text": "덱 20장 · 대기 0장",
+        "font": 11
+      }
+    ],
+    "scrollers": [
+      {
+        "class": "workspace-side",
+        "scrollH": 976,
+        "clientH": 813,
+        "scrollW": 309,
+        "clientW": 309
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "stage": "battle",
+    "screen": "map",
+    "actions": [],
+    "small": [],
+    "scrollers": [
+      {
+        "class": "selected-detail",
+        "scrollH": 91,
+        "clientH": 83,
+        "scrollW": 308,
+        "clientW": 308
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "stage": "reward",
+    "screen": "reward",
+    "actions": [
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 98,
+        "h": 68,
+        "visible": true
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 98,
+        "h": 68,
+        "visible": true
+      },
+      {
+        "action": "pick-reward",
+        "text": "이 카드 선택",
+        "w": 98,
+        "h": 68,
+        "visible": true
+      },
+      {
+        "action": "skip",
+        "text": "보상 넘기기",
+        "w": 112,
+        "h": 44,
+        "visible": true
+      }
+    ],
+    "small": [
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 3종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "1단계",
+        "font": 11
+      },
+      {
+        "text": "3종 / 4종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "0단계",
+        "font": 11
+      },
+      {
+        "text": "2종 / 5종 · 다음 단계",
+        "font": 11
+      },
+      {
+        "text": "원정 카드 한 장 선택 · 획득 넘기기 가능",
+        "font": 11
+      }
+    ],
+    "scrollers": []
+  }
+]

@@ -1,0 +1,97 @@
+{
+  "summarySpace": {
+    "before": {
+      "cards": false,
+      "paused": false
+    },
+    "after": {
+      "cards": false,
+      "paused": true
+    }
+  },
+  "liveFocus": {
+    "before": {
+      "tag": "DIV",
+      "id": "1:base:13",
+      "scroll": 0
+    },
+    "after": {
+      "tag": "BODY",
+      "scroll": 0
+    }
+  },
+  "closeTools": {
+    "before": {
+      "paused": true,
+      "control": "auto"
+    },
+    "after": {
+      "paused": false,
+      "control": "auto"
+    }
+  },
+  "reward": {
+    "takeDisabled": false,
+    "bodyHeight": 569,
+    "incomingBottom": 684.90625,
+    "visibleBodyBottom": 746.625,
+    "compareFullyVisible": true,
+    "selectedCandidate": "세린\n이어지는 섬광\n↗ 추격\n공격 · 이동\n선택됨",
+    "compares": "빠지는 카드 · 대기로\n♜\n호위병\n차단 방패\n◆ 호위\n보호\n비교 중\n\n다음 적 카드 공격 1회를 아군 전체에서 차단\n\n지속 2.5초 · 다음 명령 5초\n\n들어오는 카드\n✦\n세린\n이어지는 섬광\n↗ 추격\n공격 · 이동\n비교 중\n\nHP 절반 이하 적에게 피해 2배 · 처치하면 다른 적에게 추가 돌진 1회\n\n기본 피해 42 · 준비 0.2초 · 다음 명령 5초"
+  },
+  "editor": {
+    "totalGroups": 12,
+    "railWidth": 360,
+    "railScrollWidth": 3727,
+    "bodyHeight": 586,
+    "firstCardHeight": 492,
+    "firstVisibleButtons": [
+      {
+        "label": "편성에 넣기",
+        "visible": true
+      },
+      {
+        "label": "편성에서 빼기",
+        "visible": true
+      }
+    ]
+  },
+  "previousAfterEvolution": {
+    "canCompare": false,
+    "buttonDisabled": true,
+    "reason": "이 덱으로 연습 시작\n이번 교전 덱으로\n변경 전 덱으로\n\n변경 전 덱은 당시 보유 카드로 정확히 복원 가능한 경우에만 비교합니다. 처분되거나 진화 전 카드가 없으면 사용할 수 없습니다."
+  },
+  "battle1280": {
+    "arena": {
+      "width": 1212,
+      "height": 208.296875
+    },
+    "effectiveCanvas": {
+      "width": 512.7307692307693,
+      "height": 208.296875
+    },
+    "momentHeight": 36
+  },
+  "battle320": {
+    "arena": {
+      "width": 280,
+      "height": 239.6875
+    },
+    "effectiveCanvas": {
+      "width": 280,
+      "height": 113.75
+    },
+    "momentHeight": 0
+  },
+  "battle844": {
+    "arena": {
+      "width": 792,
+      "height": 108
+    },
+    "effectiveCanvas": {
+      "width": 265.84615384615387,
+      "height": 108
+    },
+    "momentHeight": 0
+  }
+}

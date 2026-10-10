@@ -1,0 +1,24 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),assert=require('assert'),ctx=vm.createContext({window:{}});
+for(const f of ['data','character-data','actor-ai','engine','campaign','character-engine','character-campaign','battle-practice'])vm.runInContext(fs.readFileSync(__dirname+'/'+f+'.js','utf8'),ctx,{filename:f});
+const W=ctx.window,{Formation:F,CharacterCampaign:C,CharacterBattle:B,BattlePractice:P,CharacterData:K,GameData:D}=W,copy=x=>JSON.parse(JSON.stringify(x));
+function campaign(list=F.recommended){const c=new C.Campaign();c.start(7);assert(c.setFormation(list,1));c.enter(c.run.map[0][0].id);return c;}
+function finish(b){for(let i=0;i<10000&&!b.s.ended;i++)b.step(.02);assert(b.s.ended);}
+assert(F.valid(F.recommended));for(const bad of [[0,0,1,2],[0,1,2,6],[0,1,2],[0,1,2,'3'],null])assert(!F.valid(bad));
+assert.deepEqual(copy(F.move(F.recommended,0,1)),[1,0,2,5]);assert.deepEqual(copy(F.move(F.recommended,0,4)),[4,1,2,5]);assert(!F.move(F.recommended,-1,4));
+const c=campaign(),b=c.battle;
+for(let i=0;i<4;i++){const p=F.point(c.run.formation[i]),a=b.get('a'+i);assert.equal(a.x,p.x);assert.equal(a.y,p.y);}
+assert(!c.setFormation([4,1,2,5]),'battle editing locked');
+const other=campaign([4,1,0,5]).battle;for(let i=0;i<75;i++){b.step(.02);other.step(.02);}assert.notDeepEqual(b.s.actors.map(a=>[a.x,a.y]),other.s.actors.map(a=>[a.x,a.y]),'actual movement differs');
+const front=campaign().battle,rear=campaign([4,1,0,5]).battle;for(const battle of [front,rear]){battle.s.strategy='front';battle.get('e0').x=450;battle.get('e0').y=135;}assert.notEqual(front.inspectAI('e0').attackTarget,rear.inspectAI('e0').attackTarget,'distance-based enemy target differs');
+const saved=c.snapshot(),first=new C.Campaign(C.validate(copy(saved))),second=new C.Campaign(C.validate(copy(saved)));for(let i=0;i<150;i++){first.battle.step(.02);second.battle.step(.02);}assert.deepEqual(first.snapshot(),second.snapshot());
+for(const change of [s=>s.run.formation=[0,0,1,2],s=>s.run.battle.formation=[4,1,2,5],s=>s.run.battleStart.config.formation=[0,0,1,2]]){const bad=copy(saved);change(bad);assert.throws(()=>C.validate(bad));}
+// Old active battles keep their coordinates; the next battle gets a recommended layout.
+const old=copy(saved);delete old.run.formation;delete old.run.battle.formation;delete old.run.battleStart.config.formation;const restored=new C.Campaign(C.validate(old));assert.equal(restored.battle.get('a0').x,old.run.battle.actors[0].x);assert.deepEqual(copy(restored.run.formation),copy(F.recommended));
+// Lane preference never overrides card holds, healing, purposes or a busy actor.
+const a=b.get('a2'),e=b.get('e0');e.x=600;e.y=195;a.x=390;a.y=195;a.busy=0;a.repositionHoldUntil=b.s.t+2;const before={x:a.x,y:a.y};b.executeBasicIntent(a,b.inspectAI(a.id),.02);assert.deepEqual({x:a.x,y:a.y},before);delete a.repositionHoldUntil;a.busy=b.s.t+2;b.executeBasicIntent(a,b.inspectAI(a.id),.02);assert.deepEqual({x:a.x,y:a.y},before);
+const runs=[];for(const layout of [F.recommended,[4,1,0,5],[0,3,4,5]]){const q=campaign(layout);finish(q.battle);runs.push({layout:copy(layout),winner:q.battle.s.winner,time:q.battle.s.t,hp:q.battle.alive(0).reduce((n,a)=>n+a.hp,0)});}
+assert(new Set(runs.map(r=>r.time+':'+r.hp)).size>1,'outcomes differ beyond UI');
+const q=campaign();finish(q.battle);const original=C.summarizeBattle(q.battle,q.run.battleStart),snapshot=JSON.stringify(q.snapshot()),session=new P.Session(original);assert(session.start());finish(session.battle);assert.equal(session.battle.s.t,q.battle.s.t);assert.deepEqual(session.battle.s.stats,q.battle.s.stats);assert(session.setFormation([4,1,0,5]));assert(session.start());assert.deepEqual(copy(session.battle.s.formation),[4,1,0,5]);assert.equal(JSON.stringify(q.snapshot()),snapshot,'practice isolated');assert(!session.setFormation(F.recommended));
+const boss=new C.Campaign();boss.start(7);boss.run.depth=5;boss.enter(boss.run.map[5][0].id);for(let i=0;i<1000&&!boss.battle.hazard();i++)boss.battle.step(.02);const hazard=boss.battle.hazard();assert(hazard);for(const actor of boss.battle.alive(0)){actor.x=hazard.x;actor.y=hazard.y;}boss.battle.relocate({key:'boss_retreat',actor:'a0',side:0,at:boss.battle.s.t});const ranger=boss.battle.get('a2'),position={x:ranger.x,y:ranger.y};assert(!boss.battle.inside(ranger));assert.equal(boss.battle.inspectAI(ranger.id).move.mode,'none');ranger.busy=0;boss.battle.executeBasicIntent(ranger,boss.battle.inspectAI(ranger.id),.02);assert.deepEqual({x:ranger.x,y:ranger.y},position,'actual reposition beats preferred lane');
+fs.writeFileSync(__dirname+'/formation-results.json',JSON.stringify(runs,null,2));console.log('PASS: placement/swap/validation, live movement and enemy target differences, saved continuation, old save compatibility, action priority and actual hazard relocation, reproducible practice and isolation.',runs);

@@ -1,0 +1,25 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),vm=require('vm'),ctx=vm.createContext({window:{}});
+for(const f of ['data','character-data','reward-impact'])vm.runInContext(fs.readFileSync(__dirname+'/'+f+'.js','utf8'),ctx);
+const {GameData:D,CharacterData:K,RewardImpact:I}=ctx.window,plain=x=>JSON.parse(JSON.stringify(x));
+function deck(template){let n=0;return Object.entries(template).flatMap(([key,count])=>Array.from({length:count},()=>({id:'card:'+n++,key,upgraded:false})));}
+const base=deck({guard:3,taunt:3,serin_parry:1,serin_dash:3,shot:3,heal:3,wave:3,bash:1});assert.equal(D.validateDeck(base.map(c=>c.id),base),'');
+const parry=base.find(c=>c.key==='serin_parry'),incoming={id:'incoming',key:'serin_chain',upgraded:false};parry.upgraded=true;
+const frozen=JSON.stringify(base),x=I.analyze(base,parry.id,incoming);assert.equal(JSON.stringify(base),frozen,'previews must not modify equipped cards');
+assert(x.warnings.some(w=>w.type==='evolution'));assert(x.warnings.some(w=>w.capability==='shieldSelf'));assert(x.warnings.some(w=>w.trait==='escort'));assert(I.traitText(x).includes('호위 3→2종 · 1→0단계'));
+assert.deepEqual(plain(x.copies[0]),{key:'serin_parry',name:D.cards.serin_parry.name,before:1,after:0,beforeEvolved:1,afterEvolved:0});
+const oneHeal=deck({guard:3,taunt:3,serin_parry:3,serin_dash:3,shot:3,heal:1,wave:3,bash:1});const heal=oneHeal.find(c=>c.key==='heal');const h=I.analyze(oneHeal,heal.id,incoming);
+assert(h.warnings.some(w=>w.capability==='healSingle'));assert(!h.lost.includes('healAll'),'group healing remains');assert(!h.warnings.some(w=>w.text.includes('기본')),'card loss must not claim loss of basic AI');
+const twoHeal=deck({guard:3,taunt:3,serin_parry:3,serin_dash:3,shot:3,heal:2,wave:3});const duplicate=I.analyze(twoHeal,twoHeal.find(c=>c.key==='heal').id,incoming);
+assert(!duplicate.warnings.some(w=>w.capability==='healSingle'));assert(duplicate.traits.find(t=>t.id==='resonance').before===duplicate.traits.find(t=>t.id==='resonance').after,'removing a duplicate preserves its trait type');
+const equal=I.analyze(base,parry.id,{id:'same-normal',key:parry.key});assert(equal.warnings.some(w=>w.type==='evolution'));assert.equal(equal.copies[0].before,equal.copies[0].after);assert(!equal.warnings.some(w=>w.type==='trait'||w.type==='capability'));
+const defensive=deck({guard:1,serin_parry:1});assert(I.analyze(defensive,defensive[0].id,{id:'cover',key:'serin_cover'}).warnings.some(w=>w.capability==='block'),'a new ally shield must not be presented as replacing card attack blocking');
+const taunt=deck({taunt:1,heal:1});assert(I.analyze(taunt,taunt[0].id,{id:'retreat',key:'boss_retreat'}).warnings.some(w=>w.capability==='taunt'),'reposition does not replace taunt');
+const local=I.analyze(taunt,taunt[1].id,{id:'circle',key:'medic_circle'});assert(local.warnings.some(w=>w.capability==='healSingle'));assert(local.gained.includes('healNearby'),'nearby healing has a distinct scope');
+assert.equal(I.analyze(base,'missing',incoming),null);assert.equal(I.analyze(base,parry.id,{id:base[0].id,key:'shot'}),null);assert.equal(I.analyze(base,parry.id,{key:'unknown'}),null);
+assert.deepEqual(plain(I.capabilities({key:'boss_retreat'})),['reposition']);assert.deepEqual(plain(I.capabilities({key:'boss_rescue'})),['rescue']);assert.deepEqual(plain(I.capabilities({key:'medic_circle'})),['healNearby']);assert.deepEqual(plain(I.capabilities({key:'wave'})),['healAll']);assert.deepEqual(plain(I.capabilities({key:'serin_parry'})),['shieldSelf','counter']);assert.deepEqual(plain(I.capabilities({key:'serin_cover'})),['shieldAlly','escortMove','share','counter']);
+for(const key of K.characters.flatMap(c=>[...c.base,...c.reward]))assert(I.capabilities({key}).length,'missing capability: '+key);
+const safe=I.safeReplacement(base,incoming);assert(safe&&!safe.upgraded);assert(!I.analyze(base,safe.id,incoming).warnings.length);assert.equal(JSON.stringify(base),frozen);
+assert.equal(I.safeReplacement(base.map(c=>({...c,upgraded:true})),incoming),null,'keep rewards in reserve when every replacement loses an evolved card');
+assert.equal(I.safeReplacement(base,{id:'new-shot',key:'shot'}).key,'shot','copy cap only allows replacing an existing shot');
+console.log('PASS immutable previews, exact copy/evolution/trait losses, distinct card functions, duplicate safety, legal conservative swaps and reserve fallback');

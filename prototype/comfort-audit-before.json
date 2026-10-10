@@ -1,0 +1,198 @@
+{
+  "drawer": {
+    "closed": {
+      "y": 198.78125,
+      "h": 197.6875
+    },
+    "open": {
+      "y": 198.78125,
+      "h": 226.6875
+    },
+    "after": {
+      "y": 198.78125,
+      "h": 197.6875
+    }
+  },
+  "live": [
+    {
+      "t": 0,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 0.4000000000000001,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 0.8000000000000004,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 1.2000000000000006,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 1.600000000000001,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 2.0000000000000013,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 2.4000000000000017,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 2.800000000000002,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 3.2000000000000024,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 3.6000000000000028,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 4.000000000000003,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 4.399999999999994,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 4.799999999999986,
+      "y": 198.78125,
+      "h": 197.6875,
+      "aiHeight": 24,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 5.199999999999977,
+      "y": 198.78125,
+      "h": 183.6875,
+      "aiHeight": 38,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 5.599999999999969,
+      "y": 198.78125,
+      "h": 183.6875,
+      "aiHeight": 38,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 5.99999999999996,
+      "y": 198.78125,
+      "h": 183.6875,
+      "aiHeight": 38,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 6.3999999999999515,
+      "y": 198.78125,
+      "h": 183.6875,
+      "aiHeight": 38,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 6.799999999999943,
+      "y": 198.78125,
+      "h": 183.6875,
+      "aiHeight": 38,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 7.1999999999999345,
+      "y": 198.78125,
+      "h": 183.6875,
+      "aiHeight": 38,
+      "threatHeight": 25,
+      "partyHeight": 62
+    },
+    {
+      "t": 7.599999999999926,
+      "y": 198.78125,
+      "h": 183.6875,
+      "aiHeight": 38,
+      "threatHeight": 25,
+      "partyHeight": 62
+    }
+  ],
+  "targetFocus": {
+    "before": "e0",
+    "after": {
+      "tag": "BODY"
+    }
+  },
+  "reward": {
+    "scroll": 0,
+    "max": 0,
+    "after": 0
+  },
+  "practice": {
+    "before": true,
+    "after": false,
+    "speedAfterStart": "1",
+    "pause": {
+      "state": true,
+      "label": "관전 일시정지"
+    }
+  }
+}

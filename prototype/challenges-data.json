@@ -1,0 +1,242 @@
+[
+  {
+    "challenge": "siege",
+    "deck": "escort",
+    "policy": "attack",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 105.67999999999972,
+    "hp": 497.319
+  },
+  {
+    "challenge": "siege",
+    "deck": "escort",
+    "policy": "attack",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 140.51999999999956,
+    "hp": 373.74459200000007
+  },
+  {
+    "challenge": "siege",
+    "deck": "escort",
+    "policy": "protect",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 117.0400000000015,
+    "hp": 519.22
+  },
+  {
+    "challenge": "siege",
+    "deck": "escort",
+    "policy": "protect",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 162.62000000000302,
+    "hp": 525.679
+  },
+  {
+    "challenge": "siege",
+    "deck": "pursuit",
+    "policy": "attack",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 112.36000000000075,
+    "hp": 514.02
+  },
+  {
+    "challenge": "siege",
+    "deck": "pursuit",
+    "policy": "attack",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 150.04000000000104,
+    "hp": 508.2900000000001
+  },
+  {
+    "challenge": "siege",
+    "deck": "pursuit",
+    "policy": "protect",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 121.98000000000226,
+    "hp": 477.75000000000006
+  },
+  {
+    "challenge": "siege",
+    "deck": "pursuit",
+    "policy": "protect",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 169.02000000000402,
+    "hp": 474.50300000000004
+  },
+  {
+    "challenge": "siege",
+    "deck": "resonance",
+    "policy": "attack",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 91.83999999999864,
+    "hp": 441.56100000000004
+  },
+  {
+    "challenge": "siege",
+    "deck": "resonance",
+    "policy": "attack",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 137.04000000000008,
+    "hp": 312.07626000000005
+  },
+  {
+    "challenge": "siege",
+    "deck": "resonance",
+    "policy": "protect",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 109.74000000000035,
+    "hp": 553
+  },
+  {
+    "challenge": "siege",
+    "deck": "resonance",
+    "policy": "protect",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 151.48000000000127,
+    "hp": 408.8646400000002
+  },
+  {
+    "challenge": "ration",
+    "deck": "escort",
+    "policy": "attack",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 77.31999999999863,
+    "hp": 438.8632
+  },
+  {
+    "challenge": "ration",
+    "deck": "escort",
+    "policy": "attack",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 113.27999999999967,
+    "hp": 294.23459999999994
+  },
+  {
+    "challenge": "ration",
+    "deck": "escort",
+    "policy": "protect",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 93.63999999999899,
+    "hp": 486.334
+  },
+  {
+    "challenge": "ration",
+    "deck": "escort",
+    "policy": "protect",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 119.21999999999836,
+    "hp": 366.34872800000016
+  },
+  {
+    "challenge": "ration",
+    "deck": "pursuit",
+    "policy": "attack",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 85.59999999999937,
+    "hp": 541.06448
+  },
+  {
+    "challenge": "ration",
+    "deck": "pursuit",
+    "policy": "attack",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 117.4399999999996,
+    "hp": 432.6384399999999
+  },
+  {
+    "challenge": "ration",
+    "deck": "pursuit",
+    "policy": "protect",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 99.89999999999955,
+    "hp": 538.0740000000001
+  },
+  {
+    "challenge": "ration",
+    "deck": "pursuit",
+    "policy": "protect",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 130.93999999999983,
+    "hp": 453.337032
+  },
+  {
+    "challenge": "ration",
+    "deck": "resonance",
+    "policy": "attack",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 66.23999999999886,
+    "hp": 513.1280000000002
+  },
+  {
+    "challenge": "ration",
+    "deck": "resonance",
+    "policy": "attack",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 92.99999999999872,
+    "hp": 261.4541039999997
+  },
+  {
+    "challenge": "ration",
+    "deck": "resonance",
+    "policy": "protect",
+    "route": "safe",
+    "success": true,
+    "goal": false,
+    "time": 74.49999999999912,
+    "hp": 492.004
+  },
+  {
+    "challenge": "ration",
+    "deck": "resonance",
+    "policy": "protect",
+    "route": "growth",
+    "success": true,
+    "goal": true,
+    "time": 106.11999999999837,
+    "hp": 346.9132560000003
+  }
+]

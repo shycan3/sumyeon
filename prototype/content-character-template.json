@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "status": "authoring-only",
+  "character": {
+    "id": "sample_ranger",
+    "playable": true,
+    "role": 2,
+    "name": "제작 검증용 사수",
+    "tag": "제작 예제 · 서비스 미등록",
+    "base": ["sample_shot"],
+    "reward": ["sample_burst"],
+    "stances": ["기동", "집중"],
+    "basicProfile": {"range": 240, "speed": 45, "damage": 3.5, "period": 2.1}
+  },
+  "cards": {
+    "sample_shot": {"name": "간결한 조준", "role": 2, "kind": "attack", "power": 27, "time": 4, "prep": 0.3, "limit": 3, "source": "base", "traits": ["pursuit"], "desc": "적 하나에게 피해 27"},
+    "sample_burst": {"name": "나누어 쏘기", "role": 2, "kind": "attack", "power": 12, "time": 7, "prep": 0.4, "limit": 1, "source": "reward", "traits": ["resonance"], "desc": "적 하나에게 피해 12씩 3타"}
+  },
+  "skills": {"sample_burst": {"type": "comboStrike", "target": "enemy", "offsets": [0.22, 0.44], "recovery": 0.6, "reason": "공유 연속 사격"}},
+  "presentation": {"sample_shot": {"tier": "basic", "art": "shared-shot"}, "sample_burst": {"tier": "accent", "art": "shared-shot"}},
+  "partySlot": 2,
+  "startingReplacement": {"from": "shot", "to": "sample_shot"},
+  "tradeoff": "빠른 사격과 이동을 조금 낮추고 단일 카드 피해를 늘림. 대표 연사 이후 명령 회복이 길다."
+}

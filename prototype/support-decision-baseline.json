@@ -1,0 +1,3229 @@
+{
+  "summary": [
+    {
+      "version": 0,
+      "battles": 0,
+      "wins": 0,
+      "casts": 0,
+      "opportunities": 0,
+      "missed": 0,
+      "maxPreparedWait": 0
+    },
+    {
+      "version": 1,
+      "battles": 0,
+      "wins": 0,
+      "casts": 0,
+      "opportunities": 0,
+      "missed": 0,
+      "maxPreparedWait": 0
+    }
+  ],
+  "samples": [],
+  "regressions": [
+    {
+      "preset": "escort",
+      "seed": 63,
+      "policy": "protect",
+      "version": 0,
+      "success": false,
+      "boss": {
+        "record": {
+          "version": 1,
+          "engineVersion": 1,
+          "config": {
+            "autoUltimateVersion": 0,
+            "ultimateDiagnosticsVersion": 1,
+            "ultimateRulesVersion": 1,
+            "signatureMode": "standard",
+            "contentRulesVersion": 0,
+            "identityVersion": 1,
+            "party": [
+              {
+                "slot": 0,
+                "characterId": "guardian"
+              },
+              {
+                "slot": 1,
+                "characterId": "serin"
+              },
+              {
+                "slot": 2,
+                "characterId": "ranger"
+              },
+              {
+                "slot": 3,
+                "characterId": "medic"
+              }
+            ],
+            "combatRulesVersion": 1,
+            "spatialRulesVersion": 1,
+            "formationVersion": 2,
+            "targetingRulesVersion": 1,
+            "formation": [
+              1,
+              2,
+              4,
+              11
+            ],
+            "seed": 2391573114,
+            "levels": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "hp": [
+              0,
+              116.4852,
+              106,
+              94.44000000000001
+            ],
+            "stances": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "depth": 5,
+            "elite": false,
+            "encounter": {
+              "name": "낙하 수호자의 문",
+              "strategy": "boss",
+              "hint": "7초 주기의 원형 낙하 뒤 HP 50%에서 8초 주기의 부상자 중심 직선 공격으로 바뀝니다. 차단·보호·회복 또는 이동 카드로 대응하고 빈틈에 공격하세요. 모든 위험을 무료로 회피하지 않습니다.",
+              "mechanic": {
+                "actor": "e0",
+                "radius": 155,
+                "power": 95,
+                "windup": 1.6,
+                "interval": 7,
+                "start": 8,
+                "recovery": 3,
+                "maxRecovery": 5,
+                "vulnerability": 0.4,
+                "shape": "circle"
+              },
+              "enemies": [
+                {
+                  "role": 1,
+                  "name": "낙하의 수호자",
+                  "hp": 400,
+                  "boss": true
+                }
+              ],
+              "phase2": {
+                "actor": "e0",
+                "attackKey": "line_zone",
+                "radius": 155,
+                "power": 70,
+                "windup": 2.2,
+                "interval": 8,
+                "start": 8,
+                "recovery": 3,
+                "maxRecovery": 5,
+                "vulnerability": 0.4,
+                "shape": "line",
+                "length": 500,
+                "width": 100,
+                "angle": 1.5707963267948966
+              },
+              "threat": "낙하 7초 → HP 50% 직선 8초 · 반복 강공격",
+              "responses": [
+                "차단·보호·회복 후 빈틈 공격",
+                "구출·재배치 + 집중 공격"
+              ],
+              "tradeoff": "공격만 이어가면 전열 체력이 소모되고, 방어만 이어가면 처치가 늦어집니다."
+            },
+            "timing": "mixed",
+            "control": "auto",
+            "autoPolicy": "protect",
+            "autoTraitVersion": 1,
+            "traits": true,
+            "tactic": null
+          },
+          "pool": [
+            {
+              "id": "1:base:0",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:1",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:2",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:3",
+              "key": "taunt",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:4",
+              "key": "taunt",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:5",
+              "key": "taunt",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:6",
+              "key": "serin_parry",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:7",
+              "key": "serin_parry",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:8",
+              "key": "serin_parry",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:9",
+              "key": "serin_dash",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:10",
+              "key": "serin_dash",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:11",
+              "key": "serin_dash",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:12",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:13",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:14",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:15",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:16",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:17",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:18",
+              "key": "wave",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:19",
+              "key": "wave",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:reward:1",
+              "key": "boss_rescue",
+              "characterId": "serin",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:reward:2",
+              "key": "serin_cover",
+              "characterId": "serin",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:reward:3",
+              "key": "boss_retreat",
+              "characterId": "guardian",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:reward:4",
+              "key": "serin_dance",
+              "characterId": "serin",
+              "source": "base",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 1
+            }
+          ],
+          "deck": [
+            "1:reward:1",
+            "1:base:1",
+            "1:base:2",
+            "1:base:3",
+            "1:base:4",
+            "1:base:5",
+            "1:base:6",
+            "1:base:7",
+            "1:base:8",
+            "1:base:9",
+            "1:reward:2",
+            "1:base:11",
+            "1:reward:3",
+            "1:base:13",
+            "1:base:14",
+            "1:reward:4",
+            "1:base:16",
+            "1:base:17",
+            "1:base:18",
+            "1:base:19"
+          ]
+        },
+        "grown": {
+          "winner": 1,
+          "time": 39.28000000000054,
+          "hp": 0,
+          "opportunities": 0,
+          "missed": 0,
+          "cards": {
+            "serin_parry": 5,
+            "shot": 1,
+            "wave": 1,
+            "serin_dance": 1
+          },
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 39.88000000000054,
+            "rows": [
+              {
+                "at": 23.79999999999958,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 24.099999999999575,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 24.099999999999575,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 28.11999999999949,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 28.11999999999949,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 34.119999999999735,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 34.119999999999735,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 39.28000000000054,
+                "seconds": {
+                  "command": 15.48000000000096,
+                  "value": 0,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        },
+        "plain": {
+          "winner": 0,
+          "time": 38.12000000000036,
+          "hp": 36.365199999999994,
+          "opportunities": 0,
+          "missed": 0,
+          "cards": {
+            "serin_parry": 5,
+            "shot": 1,
+            "heal": 1,
+            "serin_dance": 1
+          },
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 100,
+                "casts": 0,
+                "readyAt": 22.05999999999962
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 38.72000000000036,
+            "rows": [
+              {
+                "at": 22.339999999999613,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 25.119999999999553,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 25.119999999999553,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.139999999999425,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 31.139999999999425,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 35.139999999999894,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 35.139999999999894,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "ended"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": "ended",
+                "at": 38.12000000000036,
+                "seconds": {
+                  "command": 15.780000000000747,
+                  "value": 0,
+                  "ended": 0
+                }
+              }
+            ]
+          }
+        }
+      },
+      "choices": [
+        {
+          "depth": 0,
+          "kind": "card",
+          "key": "boss_rescue",
+          "cardId": "1:reward:1"
+        },
+        {
+          "depth": 1,
+          "kind": "evolve",
+          "key": "wave",
+          "cardId": "1:base:18"
+        },
+        {
+          "depth": 1,
+          "kind": "evolve",
+          "key": "wave",
+          "cardId": "1:base:19"
+        },
+        {
+          "depth": 2,
+          "kind": "card",
+          "key": "serin_cover",
+          "cardId": "1:reward:2"
+        },
+        {
+          "depth": 3,
+          "kind": "card",
+          "key": "boss_retreat",
+          "cardId": "1:reward:3"
+        },
+        {
+          "depth": 4,
+          "kind": "evolve",
+          "key": "serin_parry",
+          "cardId": "1:base:6"
+        },
+        {
+          "depth": 4,
+          "kind": "evolve",
+          "key": "serin_parry",
+          "cardId": "1:base:7"
+        },
+        {
+          "depth": 4,
+          "kind": "card",
+          "key": "serin_dance",
+          "cardId": "1:reward:4"
+        }
+      ],
+      "results": [
+        {
+          "name": "다섯 칼날의 포위",
+          "winner": 0,
+          "hp": [
+            107.37599999999999,
+            87.49279999999986,
+            106,
+            106
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 100,
+                "casts": 0,
+                "readyAt": 12.59999999999982
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 31.63999999999943,
+            "rows": [
+              {
+                "at": 13.139999999999809,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 14.059999999999789,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 14.059999999999789,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 22.079999999999618,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 22.079999999999618,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 30.099999999999447,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 30.099999999999447,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.039999999999427,
+                "actor": "a1",
+                "reason": "ended"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": "ended",
+                "at": 31.039999999999427,
+                "seconds": {
+                  "command": 17.89999999999962,
+                  "value": 0,
+                  "ended": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "길목의 추격대",
+          "winner": 0,
+          "hp": [
+            0,
+            129,
+            106,
+            106
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 90,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 20.639999999999663,
+            "rows": [],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 20.03999999999966,
+                "seconds": {}
+              }
+            ]
+          }
+        },
+        {
+          "name": "균열 창기사",
+          "winner": 0,
+          "hp": [
+            0,
+            90.68520000000001,
+            102.43,
+            73.24000000000001
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 100,
+                "casts": 0,
+                "readyAt": 20.59999999999965
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 34.73999999999974,
+            "rows": [
+              {
+                "at": 21.03999999999964,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 21.09999999999964,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 21.09999999999964,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 29.119999999999468,
+                "actor": "a1",
+                "reason": "hold"
+              },
+              {
+                "at": 29.739999999999455,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 29.739999999999455,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 34.13999999999974,
+                "actor": "a1",
+                "reason": "ended"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": "ended",
+                "at": 34.13999999999974,
+                "seconds": {
+                  "command": 12.48000000000011,
+                  "value": 0,
+                  "hold": 0.6199999999999868,
+                  "ended": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "낙하 수호자의 문",
+          "winner": 1,
+          "hp": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 39.88000000000054,
+            "rows": [
+              {
+                "at": 23.79999999999958,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 24.099999999999575,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 24.099999999999575,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 28.11999999999949,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 28.11999999999949,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 34.119999999999735,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 34.119999999999735,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 39.28000000000054,
+                "seconds": {
+                  "command": 15.48000000000096,
+                  "value": 0,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "preset": "escort",
+      "seed": 63,
+      "policy": "protect",
+      "version": 1,
+      "success": false,
+      "boss": {
+        "record": {
+          "version": 1,
+          "engineVersion": 1,
+          "config": {
+            "autoUltimateVersion": 1,
+            "ultimateDiagnosticsVersion": 1,
+            "ultimateRulesVersion": 1,
+            "signatureMode": "standard",
+            "contentRulesVersion": 0,
+            "identityVersion": 1,
+            "party": [
+              {
+                "slot": 0,
+                "characterId": "guardian"
+              },
+              {
+                "slot": 1,
+                "characterId": "serin"
+              },
+              {
+                "slot": 2,
+                "characterId": "ranger"
+              },
+              {
+                "slot": 3,
+                "characterId": "medic"
+              }
+            ],
+            "combatRulesVersion": 1,
+            "spatialRulesVersion": 1,
+            "formationVersion": 2,
+            "targetingRulesVersion": 1,
+            "formation": [
+              1,
+              2,
+              4,
+              11
+            ],
+            "seed": 2391573114,
+            "levels": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "hp": [
+              0,
+              116.4852,
+              106,
+              94.44000000000001
+            ],
+            "stances": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "depth": 5,
+            "elite": false,
+            "encounter": {
+              "name": "낙하 수호자의 문",
+              "strategy": "boss",
+              "hint": "7초 주기의 원형 낙하 뒤 HP 50%에서 8초 주기의 부상자 중심 직선 공격으로 바뀝니다. 차단·보호·회복 또는 이동 카드로 대응하고 빈틈에 공격하세요. 모든 위험을 무료로 회피하지 않습니다.",
+              "mechanic": {
+                "actor": "e0",
+                "radius": 155,
+                "power": 95,
+                "windup": 1.6,
+                "interval": 7,
+                "start": 8,
+                "recovery": 3,
+                "maxRecovery": 5,
+                "vulnerability": 0.4,
+                "shape": "circle"
+              },
+              "enemies": [
+                {
+                  "role": 1,
+                  "name": "낙하의 수호자",
+                  "hp": 400,
+                  "boss": true
+                }
+              ],
+              "phase2": {
+                "actor": "e0",
+                "attackKey": "line_zone",
+                "radius": 155,
+                "power": 70,
+                "windup": 2.2,
+                "interval": 8,
+                "start": 8,
+                "recovery": 3,
+                "maxRecovery": 5,
+                "vulnerability": 0.4,
+                "shape": "line",
+                "length": 500,
+                "width": 100,
+                "angle": 1.5707963267948966
+              },
+              "threat": "낙하 7초 → HP 50% 직선 8초 · 반복 강공격",
+              "responses": [
+                "차단·보호·회복 후 빈틈 공격",
+                "구출·재배치 + 집중 공격"
+              ],
+              "tradeoff": "공격만 이어가면 전열 체력이 소모되고, 방어만 이어가면 처치가 늦어집니다."
+            },
+            "timing": "mixed",
+            "control": "auto",
+            "autoPolicy": "protect",
+            "autoTraitVersion": 1,
+            "traits": true,
+            "tactic": null
+          },
+          "pool": [
+            {
+              "id": "1:base:0",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:1",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:2",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:3",
+              "key": "taunt",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:4",
+              "key": "taunt",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:5",
+              "key": "taunt",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:6",
+              "key": "serin_parry",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:7",
+              "key": "serin_parry",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:8",
+              "key": "serin_parry",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:9",
+              "key": "serin_dash",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:10",
+              "key": "serin_dash",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:11",
+              "key": "serin_dash",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:12",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:13",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:14",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:15",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:16",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:17",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:18",
+              "key": "wave",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:19",
+              "key": "wave",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:reward:1",
+              "key": "boss_rescue",
+              "characterId": "serin",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:reward:2",
+              "key": "serin_cover",
+              "characterId": "serin",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:reward:3",
+              "key": "boss_retreat",
+              "characterId": "guardian",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:reward:4",
+              "key": "serin_dance",
+              "characterId": "serin",
+              "source": "base",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 1
+            }
+          ],
+          "deck": [
+            "1:reward:1",
+            "1:base:1",
+            "1:base:2",
+            "1:base:3",
+            "1:base:4",
+            "1:base:5",
+            "1:base:6",
+            "1:base:7",
+            "1:base:8",
+            "1:base:9",
+            "1:reward:2",
+            "1:base:11",
+            "1:reward:3",
+            "1:base:13",
+            "1:base:14",
+            "1:reward:4",
+            "1:base:16",
+            "1:base:17",
+            "1:base:18",
+            "1:base:19"
+          ]
+        },
+        "grown": {
+          "winner": 1,
+          "time": 39.28000000000054,
+          "hp": 0,
+          "opportunities": 0,
+          "missed": 0,
+          "cards": {
+            "serin_parry": 5,
+            "shot": 1,
+            "wave": 1,
+            "serin_dance": 1
+          },
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 39.88000000000054,
+            "rows": [
+              {
+                "at": 23.79999999999958,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 24.099999999999575,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 24.099999999999575,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 28.11999999999949,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 28.11999999999949,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 34.119999999999735,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 34.119999999999735,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 39.28000000000054,
+                "seconds": {
+                  "command": 15.48000000000096,
+                  "value": 0,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        },
+        "plain": {
+          "winner": 0,
+          "time": 38.12000000000036,
+          "hp": 36.365199999999994,
+          "opportunities": 0,
+          "missed": 0,
+          "cards": {
+            "serin_parry": 5,
+            "shot": 1,
+            "heal": 1,
+            "serin_dance": 1
+          },
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 100,
+                "casts": 0,
+                "readyAt": 22.05999999999962
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 38.72000000000036,
+            "rows": [
+              {
+                "at": 22.339999999999613,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 25.119999999999553,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 25.119999999999553,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.139999999999425,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 31.139999999999425,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 35.139999999999894,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 35.139999999999894,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "ended"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": "ended",
+                "at": 38.12000000000036,
+                "seconds": {
+                  "command": 15.780000000000747,
+                  "value": 0,
+                  "ended": 0
+                }
+              }
+            ]
+          }
+        }
+      },
+      "choices": [
+        {
+          "depth": 0,
+          "kind": "card",
+          "key": "boss_rescue",
+          "cardId": "1:reward:1"
+        },
+        {
+          "depth": 1,
+          "kind": "evolve",
+          "key": "wave",
+          "cardId": "1:base:18"
+        },
+        {
+          "depth": 1,
+          "kind": "evolve",
+          "key": "wave",
+          "cardId": "1:base:19"
+        },
+        {
+          "depth": 2,
+          "kind": "card",
+          "key": "serin_cover",
+          "cardId": "1:reward:2"
+        },
+        {
+          "depth": 3,
+          "kind": "card",
+          "key": "boss_retreat",
+          "cardId": "1:reward:3"
+        },
+        {
+          "depth": 4,
+          "kind": "evolve",
+          "key": "serin_parry",
+          "cardId": "1:base:6"
+        },
+        {
+          "depth": 4,
+          "kind": "evolve",
+          "key": "serin_parry",
+          "cardId": "1:base:7"
+        },
+        {
+          "depth": 4,
+          "kind": "card",
+          "key": "serin_dance",
+          "cardId": "1:reward:4"
+        }
+      ],
+      "results": [
+        {
+          "name": "다섯 칼날의 포위",
+          "winner": 0,
+          "hp": [
+            107.37599999999999,
+            87.49279999999986,
+            106,
+            106
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 100,
+                "casts": 0,
+                "readyAt": 12.59999999999982
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 31.63999999999943,
+            "rows": [
+              {
+                "at": 13.139999999999809,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 14.059999999999789,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 14.059999999999789,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 22.079999999999618,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 22.079999999999618,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 30.099999999999447,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 30.099999999999447,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.039999999999427,
+                "actor": "a1",
+                "reason": "ended"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": "ended",
+                "at": 31.039999999999427,
+                "seconds": {
+                  "command": 17.89999999999962,
+                  "value": 0,
+                  "ended": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "길목의 추격대",
+          "winner": 0,
+          "hp": [
+            0,
+            129,
+            106,
+            106
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 90,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 20.639999999999663,
+            "rows": [],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 20.03999999999966,
+                "seconds": {}
+              }
+            ]
+          }
+        },
+        {
+          "name": "균열 창기사",
+          "winner": 0,
+          "hp": [
+            0,
+            90.68520000000001,
+            102.43,
+            73.24000000000001
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 100,
+                "casts": 0,
+                "readyAt": 20.59999999999965
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 34.73999999999974,
+            "rows": [
+              {
+                "at": 21.03999999999964,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 21.09999999999964,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 21.09999999999964,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 29.119999999999468,
+                "actor": "a1",
+                "reason": "hold"
+              },
+              {
+                "at": 29.739999999999455,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 29.739999999999455,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 34.13999999999974,
+                "actor": "a1",
+                "reason": "ended"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": "ended",
+                "at": 34.13999999999974,
+                "seconds": {
+                  "command": 12.48000000000011,
+                  "value": 0,
+                  "hold": 0.6199999999999868,
+                  "ended": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "낙하 수호자의 문",
+          "winner": 1,
+          "hp": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 39.88000000000054,
+            "rows": [
+              {
+                "at": 23.79999999999958,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 24.099999999999575,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 24.099999999999575,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 28.11999999999949,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 28.11999999999949,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 34.119999999999735,
+                "actor": "a1",
+                "reason": "value"
+              },
+              {
+                "at": 34.119999999999735,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 38.12000000000036,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 39.28000000000054,
+                "seconds": {
+                  "command": 15.48000000000096,
+                  "value": 0,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "preset": "resonance",
+      "seed": 7,
+      "policy": "attack",
+      "version": 0,
+      "success": false,
+      "boss": {
+        "record": {
+          "version": 1,
+          "engineVersion": 1,
+          "config": {
+            "autoUltimateVersion": 0,
+            "ultimateDiagnosticsVersion": 1,
+            "ultimateRulesVersion": 1,
+            "signatureMode": "standard",
+            "contentRulesVersion": 0,
+            "identityVersion": 1,
+            "party": [
+              {
+                "slot": 0,
+                "characterId": "guardian"
+              },
+              {
+                "slot": 1,
+                "characterId": "serin"
+              },
+              {
+                "slot": 2,
+                "characterId": "ranger"
+              },
+              {
+                "slot": 3,
+                "characterId": "medic"
+              }
+            ],
+            "combatRulesVersion": 1,
+            "spatialRulesVersion": 1,
+            "formationVersion": 2,
+            "targetingRulesVersion": 1,
+            "formation": [
+              1,
+              2,
+              4,
+              11
+            ],
+            "seed": 295425186,
+            "levels": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "hp": [
+              157,
+              129,
+              0,
+              106
+            ],
+            "stances": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "depth": 5,
+            "elite": false,
+            "encounter": {
+              "name": "낙하 수호자의 문",
+              "strategy": "boss",
+              "hint": "7초 주기의 원형 낙하 뒤 HP 50%에서 8초 주기의 부상자 중심 직선 공격으로 바뀝니다. 차단·보호·회복 또는 이동 카드로 대응하고 빈틈에 공격하세요. 모든 위험을 무료로 회피하지 않습니다.",
+              "mechanic": {
+                "actor": "e0",
+                "radius": 155,
+                "power": 95,
+                "windup": 1.6,
+                "interval": 7,
+                "start": 8,
+                "recovery": 3,
+                "maxRecovery": 5,
+                "vulnerability": 0.4,
+                "shape": "circle"
+              },
+              "enemies": [
+                {
+                  "role": 1,
+                  "name": "낙하의 수호자",
+                  "hp": 400,
+                  "boss": true
+                }
+              ],
+              "phase2": {
+                "actor": "e0",
+                "attackKey": "line_zone",
+                "radius": 155,
+                "power": 70,
+                "windup": 2.2,
+                "interval": 8,
+                "start": 8,
+                "recovery": 3,
+                "maxRecovery": 5,
+                "vulnerability": 0.4,
+                "shape": "line",
+                "length": 500,
+                "width": 100,
+                "angle": 1.5707963267948966
+              },
+              "threat": "낙하 7초 → HP 50% 직선 8초 · 반복 강공격",
+              "responses": [
+                "차단·보호·회복 후 빈틈 공격",
+                "구출·재배치 + 집중 공격"
+              ],
+              "tradeoff": "공격만 이어가면 전열 체력이 소모되고, 방어만 이어가면 처치가 늦어집니다."
+            },
+            "timing": "mixed",
+            "control": "auto",
+            "autoPolicy": "attack",
+            "autoTraitVersion": 1,
+            "traits": true,
+            "tactic": null
+          },
+          "pool": [
+            {
+              "id": "1:base:0",
+              "key": "bash",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:1",
+              "key": "bash",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:2",
+              "key": "bash",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:3",
+              "key": "serin_dance",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:4",
+              "key": "volley",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:5",
+              "key": "volley",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:6",
+              "key": "volley",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:7",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:8",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:9",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:10",
+              "key": "wave",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:11",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:12",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:13",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:14",
+              "key": "serin_parry",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:15",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:16",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:17",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:18",
+              "key": "serin_cut",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:19",
+              "key": "serin_cut",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:reward:1",
+              "key": "medic_circle",
+              "characterId": "medic",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:reward:2",
+              "key": "ranger_line",
+              "characterId": "ranger",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:reward:3",
+              "key": "boss_retreat",
+              "characterId": "guardian",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:reward:4",
+              "key": "boss_rescue",
+              "characterId": "serin",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 1
+            }
+          ],
+          "deck": [
+            "1:reward:1",
+            "1:base:1",
+            "1:base:2",
+            "1:base:3",
+            "1:reward:4",
+            "1:base:5",
+            "1:base:6",
+            "1:base:7",
+            "1:base:8",
+            "1:base:9",
+            "1:base:10",
+            "1:reward:2",
+            "1:base:12",
+            "1:base:13",
+            "1:base:14",
+            "1:base:15",
+            "1:base:16",
+            "1:reward:3",
+            "1:base:18",
+            "1:base:19"
+          ]
+        },
+        "grown": {
+          "winner": 1,
+          "time": 151.44000000000366,
+          "hp": 0,
+          "opportunities": 0,
+          "missed": 0,
+          "cards": {
+            "serin_cut": 2,
+            "boss_retreat": 1,
+            "heal": 24,
+            "serin_dance": 1
+          },
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 152.04000000000366,
+            "rows": [
+              {
+                "at": 25.71999999999954,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 151.44000000000366,
+                "seconds": {
+                  "command": 14.00000000000107,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        },
+        "plain": {
+          "winner": 1,
+          "time": 151.44000000000366,
+          "hp": 0,
+          "opportunities": 0,
+          "missed": 0,
+          "cards": {
+            "serin_cut": 2,
+            "boss_retreat": 1,
+            "heal": 24,
+            "serin_dance": 1
+          },
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 152.04000000000366,
+            "rows": [
+              {
+                "at": 25.71999999999954,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 151.44000000000366,
+                "seconds": {
+                  "command": 14.00000000000107,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        }
+      },
+      "choices": [
+        {
+          "depth": 0,
+          "kind": "card",
+          "key": "medic_circle",
+          "cardId": "1:reward:1"
+        },
+        {
+          "depth": 1,
+          "kind": "evolve",
+          "key": "shot",
+          "cardId": "1:base:15"
+        },
+        {
+          "depth": 1,
+          "kind": "evolve",
+          "key": "shot",
+          "cardId": "1:base:16"
+        },
+        {
+          "depth": 2,
+          "kind": "card",
+          "key": "ranger_line",
+          "cardId": "1:reward:2"
+        },
+        {
+          "depth": 3,
+          "kind": "card",
+          "key": "boss_retreat",
+          "cardId": "1:reward:3"
+        },
+        {
+          "depth": 4,
+          "kind": "evolve",
+          "key": "guard",
+          "cardId": "1:base:12"
+        },
+        {
+          "depth": 4,
+          "kind": "evolve",
+          "key": "guard",
+          "cardId": "1:base:13"
+        },
+        {
+          "depth": 4,
+          "kind": "card",
+          "key": "boss_rescue",
+          "cardId": "1:reward:4"
+        }
+      ],
+      "results": [
+        {
+          "name": "길목의 추격대",
+          "winner": 0,
+          "hp": [
+            157,
+            129,
+            3.67199999999999,
+            106
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 55,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 17.239999999999736,
+            "rows": [],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 16.639999999999734,
+                "seconds": {}
+              }
+            ]
+          }
+        },
+        {
+          "name": "길목의 추격대",
+          "winner": 0,
+          "hp": [
+            141.69899999999998,
+            129,
+            0,
+            63.24099999999998
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 80,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 24.199999999999587,
+            "rows": [],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 23.599999999999586,
+                "seconds": {}
+              }
+            ]
+          }
+        },
+        {
+          "name": "균열 창기사",
+          "winner": 0,
+          "hp": [
+            150.36160000000012,
+            129,
+            0,
+            101.84099999999998
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 1,
+                "readyAt": null
+              }
+            ],
+            "history": [
+              {
+                "actor": "a1",
+                "key": "serin_ultimate",
+                "actionId": 10,
+                "preparedAt": 31.619999999999415,
+                "at": 34.73999999999983,
+                "target": "e0",
+                "status": "completed",
+                "reason": "대상 처치 · 공격 종료",
+                "damage": 16.760000000000105
+              }
+            ]
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 35.739999999999895,
+            "rows": [
+              {
+                "at": 32.199999999999434,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 34.73999999999983,
+                "actor": "a1",
+                "reason": "selected"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 35.139999999999894,
+                "seconds": {
+                  "command": 2.540000000000397,
+                  "selected": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "낙하 수호자의 문",
+          "winner": 1,
+          "hp": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 152.04000000000366,
+            "rows": [
+              {
+                "at": 25.71999999999954,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 151.44000000000366,
+                "seconds": {
+                  "command": 14.00000000000107,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "preset": "resonance",
+      "seed": 7,
+      "policy": "attack",
+      "version": 1,
+      "success": false,
+      "boss": {
+        "record": {
+          "version": 1,
+          "engineVersion": 1,
+          "config": {
+            "autoUltimateVersion": 1,
+            "ultimateDiagnosticsVersion": 1,
+            "ultimateRulesVersion": 1,
+            "signatureMode": "standard",
+            "contentRulesVersion": 0,
+            "identityVersion": 1,
+            "party": [
+              {
+                "slot": 0,
+                "characterId": "guardian"
+              },
+              {
+                "slot": 1,
+                "characterId": "serin"
+              },
+              {
+                "slot": 2,
+                "characterId": "ranger"
+              },
+              {
+                "slot": 3,
+                "characterId": "medic"
+              }
+            ],
+            "combatRulesVersion": 1,
+            "spatialRulesVersion": 1,
+            "formationVersion": 2,
+            "targetingRulesVersion": 1,
+            "formation": [
+              1,
+              2,
+              4,
+              11
+            ],
+            "seed": 295425186,
+            "levels": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "hp": [
+              157,
+              129,
+              0,
+              106
+            ],
+            "stances": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "depth": 5,
+            "elite": false,
+            "encounter": {
+              "name": "낙하 수호자의 문",
+              "strategy": "boss",
+              "hint": "7초 주기의 원형 낙하 뒤 HP 50%에서 8초 주기의 부상자 중심 직선 공격으로 바뀝니다. 차단·보호·회복 또는 이동 카드로 대응하고 빈틈에 공격하세요. 모든 위험을 무료로 회피하지 않습니다.",
+              "mechanic": {
+                "actor": "e0",
+                "radius": 155,
+                "power": 95,
+                "windup": 1.6,
+                "interval": 7,
+                "start": 8,
+                "recovery": 3,
+                "maxRecovery": 5,
+                "vulnerability": 0.4,
+                "shape": "circle"
+              },
+              "enemies": [
+                {
+                  "role": 1,
+                  "name": "낙하의 수호자",
+                  "hp": 400,
+                  "boss": true
+                }
+              ],
+              "phase2": {
+                "actor": "e0",
+                "attackKey": "line_zone",
+                "radius": 155,
+                "power": 70,
+                "windup": 2.2,
+                "interval": 8,
+                "start": 8,
+                "recovery": 3,
+                "maxRecovery": 5,
+                "vulnerability": 0.4,
+                "shape": "line",
+                "length": 500,
+                "width": 100,
+                "angle": 1.5707963267948966
+              },
+              "threat": "낙하 7초 → HP 50% 직선 8초 · 반복 강공격",
+              "responses": [
+                "차단·보호·회복 후 빈틈 공격",
+                "구출·재배치 + 집중 공격"
+              ],
+              "tradeoff": "공격만 이어가면 전열 체력이 소모되고, 방어만 이어가면 처치가 늦어집니다."
+            },
+            "timing": "mixed",
+            "control": "auto",
+            "autoPolicy": "attack",
+            "autoTraitVersion": 1,
+            "traits": true,
+            "tactic": null
+          },
+          "pool": [
+            {
+              "id": "1:base:0",
+              "key": "bash",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:1",
+              "key": "bash",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:2",
+              "key": "bash",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:3",
+              "key": "serin_dance",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:4",
+              "key": "volley",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:5",
+              "key": "volley",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:6",
+              "key": "volley",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:7",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:8",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:9",
+              "key": "heal",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:10",
+              "key": "wave",
+              "characterId": "medic",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:base:11",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:12",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:13",
+              "key": "guard",
+              "characterId": "guardian",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:base:14",
+              "key": "serin_parry",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:15",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:16",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": true,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:17",
+              "key": "shot",
+              "characterId": "ranger",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:base:18",
+              "key": "serin_cut",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:base:19",
+              "key": "serin_cut",
+              "characterId": "serin",
+              "source": "base",
+              "upgraded": false,
+              "casterSlot": 1
+            },
+            {
+              "id": "1:reward:1",
+              "key": "medic_circle",
+              "characterId": "medic",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 3
+            },
+            {
+              "id": "1:reward:2",
+              "key": "ranger_line",
+              "characterId": "ranger",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 2
+            },
+            {
+              "id": "1:reward:3",
+              "key": "boss_retreat",
+              "characterId": "guardian",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 0
+            },
+            {
+              "id": "1:reward:4",
+              "key": "boss_rescue",
+              "characterId": "serin",
+              "source": "reward",
+              "acquired": true,
+              "upgraded": false,
+              "casterSlot": 1
+            }
+          ],
+          "deck": [
+            "1:reward:1",
+            "1:base:1",
+            "1:base:2",
+            "1:base:3",
+            "1:reward:4",
+            "1:base:5",
+            "1:base:6",
+            "1:base:7",
+            "1:base:8",
+            "1:base:9",
+            "1:base:10",
+            "1:reward:2",
+            "1:base:12",
+            "1:base:13",
+            "1:base:14",
+            "1:base:15",
+            "1:base:16",
+            "1:reward:3",
+            "1:base:18",
+            "1:base:19"
+          ]
+        },
+        "grown": {
+          "winner": 1,
+          "time": 151.44000000000366,
+          "hp": 0,
+          "opportunities": 0,
+          "missed": 0,
+          "cards": {
+            "serin_cut": 2,
+            "boss_retreat": 1,
+            "heal": 24,
+            "serin_dance": 1
+          },
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 152.04000000000366,
+            "rows": [
+              {
+                "at": 25.71999999999954,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 151.44000000000366,
+                "seconds": {
+                  "command": 14.00000000000107,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        },
+        "plain": {
+          "winner": 1,
+          "time": 151.44000000000366,
+          "hp": 0,
+          "opportunities": 0,
+          "missed": 0,
+          "cards": {
+            "serin_cut": 2,
+            "boss_retreat": 1,
+            "heal": 24,
+            "serin_dance": 1
+          },
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 152.04000000000366,
+            "rows": [
+              {
+                "at": 25.71999999999954,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 151.44000000000366,
+                "seconds": {
+                  "command": 14.00000000000107,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        }
+      },
+      "choices": [
+        {
+          "depth": 0,
+          "kind": "card",
+          "key": "medic_circle",
+          "cardId": "1:reward:1"
+        },
+        {
+          "depth": 1,
+          "kind": "evolve",
+          "key": "shot",
+          "cardId": "1:base:15"
+        },
+        {
+          "depth": 1,
+          "kind": "evolve",
+          "key": "shot",
+          "cardId": "1:base:16"
+        },
+        {
+          "depth": 2,
+          "kind": "card",
+          "key": "ranger_line",
+          "cardId": "1:reward:2"
+        },
+        {
+          "depth": 3,
+          "kind": "card",
+          "key": "boss_retreat",
+          "cardId": "1:reward:3"
+        },
+        {
+          "depth": 4,
+          "kind": "evolve",
+          "key": "guard",
+          "cardId": "1:base:12"
+        },
+        {
+          "depth": 4,
+          "kind": "evolve",
+          "key": "guard",
+          "cardId": "1:base:13"
+        },
+        {
+          "depth": 4,
+          "kind": "card",
+          "key": "boss_rescue",
+          "cardId": "1:reward:4"
+        }
+      ],
+      "results": [
+        {
+          "name": "길목의 추격대",
+          "winner": 0,
+          "hp": [
+            157,
+            129,
+            3.67199999999999,
+            106
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 55,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 17.239999999999736,
+            "rows": [],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 16.639999999999734,
+                "seconds": {}
+              }
+            ]
+          }
+        },
+        {
+          "name": "길목의 추격대",
+          "winner": 0,
+          "hp": [
+            141.69899999999998,
+            129,
+            0,
+            63.24099999999998
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 80,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 24.199999999999587,
+            "rows": [],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 23.599999999999586,
+                "seconds": {}
+              }
+            ]
+          }
+        },
+        {
+          "name": "균열 창기사",
+          "winner": 0,
+          "hp": [
+            150.36160000000012,
+            129,
+            0,
+            101.84099999999998
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 1,
+                "readyAt": null
+              }
+            ],
+            "history": [
+              {
+                "actor": "a1",
+                "key": "serin_ultimate",
+                "actionId": 10,
+                "preparedAt": 31.619999999999415,
+                "at": 34.73999999999983,
+                "target": "e0",
+                "status": "completed",
+                "reason": "대상 처치 · 공격 종료",
+                "damage": 16.760000000000105
+              }
+            ]
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 35.739999999999895,
+            "rows": [
+              {
+                "at": 32.199999999999434,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 34.73999999999983,
+                "actor": "a1",
+                "reason": "selected"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 35.139999999999894,
+                "seconds": {
+                  "command": 2.540000000000397,
+                  "selected": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "낙하 수호자의 문",
+          "winner": 1,
+          "hp": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "ultimates": {
+            "version": 1,
+            "signatureMode": "standard",
+            "actors": [
+              {
+                "actor": "a1",
+                "characterId": "serin",
+                "key": "serin_ultimate",
+                "charge": 0,
+                "casts": 0,
+                "readyAt": null
+              }
+            ],
+            "history": []
+          },
+          "diagnostics": {
+            "version": 1,
+            "nextAt": 152.04000000000366,
+            "rows": [
+              {
+                "at": 25.71999999999954,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 31.119999999999425,
+                "actor": "a1",
+                "reason": "command"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "urgent"
+              },
+              {
+                "at": 36.12000000000005,
+                "actor": "a1",
+                "reason": "command"
+              }
+            ],
+            "states": [
+              {
+                "actor": "a1",
+                "reason": null,
+                "at": 151.44000000000366,
+                "seconds": {
+                  "command": 14.00000000000107,
+                  "urgent": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

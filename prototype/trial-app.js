@@ -1,0 +1,16 @@
+'use strict';
+(()=>{
+  const T=window.TrialCore,D=window.GameData,$=id=>document.getElementById(id),spectator=new window.Spectator();let selected='base',battle,done=false,last=0,accum=0;
+  $('presets').innerHTML=Object.entries(T.presets).map(([key,p])=>`<button data-preset="${key}" aria-pressed="false"><strong>${p.name}</strong><span>${p.desc}</span></button>`).join('');
+  function start(preset){selected=preset;battle=T.create(preset);done=false;accum=0;for(const button of document.querySelectorAll('[data-preset]')){button.classList.toggle('active',button.dataset.preset===preset);button.setAttribute('aria-pressed',String(button.dataset.preset===preset));}update();paint();}
+  function paint(){spectator.draw($('field'),battle,$('moment'));}
+  function update(){const s=battle.s;$('trial-status').textContent=`${T.presets[selected].name} · ${s.t.toFixed(1)} / 45초${done?' · 체험 종료':s.paused?' · 일시정지':''}`;$('pause').textContent=s.paused?'계속 보기':'잠시 멈춤';$('pause').disabled=done;$('sound').textContent=spectator.sound?'소리 끄기':'소리 켜기';$('sound').setAttribute('aria-pressed',String(spectator.sound));$('presentation').textContent=spectator.director.mode==='full'?'연출 전체':'연출 간소';$('presentation').setAttribute('aria-pressed',String(spectator.director.mode==='simple'));$('frequency').value=spectator.director.frequency;
+    $('metrics').innerHTML=[['검무 타격',s.stats.signatureHits],['추가 추격',s.stats.chainHits],['엄호 피해',Math.round(s.stats.covered)],['반격',s.stats.counters]].map(([name,value])=>`<div><strong>${value}</strong><span>${name}</span></div>`).join('');
+    $('trial-result').textContent=done?`${s.ended?s.winner===0?'승리':'패배':'45초 관찰 완료'} · 아군 남은 HP ${battle.alive(0).reduce((n,a)=>n+Math.ceil(a.hp),0)}. 다른 구성을 선택해 움직임과 보호·마무리 장면을 비교하세요.`:'분홍 연결은 엄호, 민트 연결은 추격입니다. 타격·회복 숫자는 실제 판정 결과입니다.';
+    const uses=s.stats.cards[0];$('trial-cards').innerHTML=Object.entries(uses).map(([key,n])=>`<span class="chip">${D.cards[key].name} ${n}회</span>`).join(' ')||'아직 명령을 사용하지 않았습니다.';
+  }
+  function step(dt){if(done)return;battle.step(Math.min(dt,Math.max(0,T.duration-battle.s.t)));done=battle.s.ended||battle.s.t>=T.duration-1e-8;update();paint();}
+  $('presets').addEventListener('click',e=>{const button=e.target.closest('[data-preset]');if(button)start(button.dataset.preset);});$('presentation').onclick=()=>{spectator.director.setMode(spectator.director.mode==='full'?'simple':'full');update();paint();};$('frequency').onchange=e=>{spectator.director.setFrequency(e.target.value);update();paint();};$('restart').onclick=()=>start(selected);$('pause').onclick=()=>{battle.pause();update();};$('sound').onclick=async()=>{await spectator.setSound(!spectator.sound);update();};document.addEventListener('visibilitychange',()=>{if(document.hidden&&!done&&!battle.s.paused){battle.pause();update();}});window.addEventListener('pagehide',()=>spectator.setSound(false));
+  function frame(now){const dt=Math.min(.1,(now-last)/1000||0);last=now;if(!done&&!battle.s.paused){accum+=dt;while(accum>=.02){step(.02);accum-=.02;}}paint();requestAnimationFrame(frame);}
+  window.spectatorTrial={get battle(){return battle;},get preset(){return selected;},get done(){return done;},start,step,spectator};start('base');requestAnimationFrame(frame);
+})();

@@ -1,0 +1,22 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),vm=require('vm'),c=vm.createContext({window:{}});
+for(const f of ['data','character-data','actor-ai','engine','character-engine','combat-lab-core'])vm.runInContext(fs.readFileSync(__dirname+'/'+f+'.js','utf8'),c);
+const W=c.window,L=W.CombatLab,D=W.GameData,copy=x=>JSON.parse(JSON.stringify(x));
+const party=b=>b.s.actors.filter(a=>a.side===0).map(({id,hp,max,x,y,stance,level})=>({id,hp,max,x,y,stance,level}));
+const matches=[];for(const key of Object.keys(L.scenarios)){const b=L.create(key),again=L.create(key);assert.deepEqual(b.snapshot(),again.snapshot());assert.equal(b.s.decks[0].hand.length,5);assert.equal(D.validateDeck(L.deck().map(c=>c.id),L.deck()),'');assert.equal(L.deck().length,20);assert.equal(L.deck().filter(c=>c.key==='serin_cover').length,1);matches.push({party:copy(party(b)),deck:copy(b.s.decks[0])});for(const area of ['hand','draw'])for(const card of b.s.decks[1][area])assert(b.get(card.actor).side===1);const result=L.run(key);assert(result.time<=60.01);assert(['승리','패배'].includes(result.status));assert(result.cards>0);assert(result.hp.length===4);assert.equal(result.cards,result.uses.reduce((n,x)=>n+x.n,0));const snapshot=b.snapshot(),summary=L.summarize(b);assert.deepEqual(b.snapshot(),snapshot,'summary is readonly');assert.equal(summary.cards,0);console.log(JSON.stringify({scenario:key,...result}));}
+assert.deepEqual(matches[0],matches[1]);assert.deepEqual(matches[1],matches[2]);
+{
+ const b=L.create('focus'),e=b.get('e0');assert.equal(b.basicTarget(e).id,'a3','focus starts by hunting wounded medic');b.s.taunts[0]={from:0,until:10,actor:'a0'};assert.equal(b.basicTarget(e).id,'a0');const focusCard=b.s.decks[1].hand.find(c=>W.GameCore.single.includes(D.definition(c).kind));assert.equal(b.enemyTarget(focusCard),'a0','focus respects real taunt');assert(L.run('focus').shared>0);assert(L.run('focus').healed>0);
+ const swarm=L.create('swarm');assert.equal(swarm.alive(1).length,5);assert(swarm.alive(1).every(a=>a.hp<70));assert(L.run('swarm').uses.some(c=>c.key==='volley'));assert(L.run('swarm').uses.find(c=>c.key==='volley').damage>0);
+ const heavy=L.create('heavy'),card=heavy.s.decks[1].hand.find(c=>c.key==='quake');assert(card);const enemy=heavy.get(card.actor);assert.equal(heavy.preparation(card,null,1),2.8);heavy.s.enemyReady=true;const hp=heavy.s.actors.filter(a=>a.side===0).map(a=>a.hp);assert(heavy.command(1,card.id,null));for(let i=0;i<20;i++)heavy.step(.02);assert.deepEqual(heavy.s.actors.filter(a=>a.side===0).map(a=>a.hp),hp,'telegraphed card does not hit during windup');assert(heavy.s.events.some(e=>e.actor===enemy.id));assert(L.run('heavy').blocked>0);
+}
+{
+ const b=L.create('heavy');for(let i=0;i<410;i++)b.step(.02);const saved=b.snapshot(),resumed=new b.constructor({},saved);for(let i=0;i<500&&!b.s.ended;i++){b.step(.02);resumed.step(.02);}assert.deepEqual(b.snapshot(),resumed.snapshot());
+ const manual=L.create('swarm','manual');for(let i=0;i<300&&!manual.s.ready;i++)manual.step(.02);assert(manual.s.paused);const paused=manual.snapshot();manual.step(.1);assert.deepEqual(manual.snapshot(),paused);const card=manual.s.decks[0].hand.find(c=>c.key==='serin_cover');assert(manual.select(card.id));assert(manual.confirm());assert.equal(L.summarize(manual,1).method,'수동');manual.resumeAuto();assert.equal(L.summarize(manual,1).method,'개입');assert.equal(L.summarize(manual,0,true).method,'개입');
+ assert.throws(()=>L.create('unknown'));assert.throws(()=>L.create('focus','invalid'));
+}
+{
+ const b=L.create('heavy','manual');for(let i=0;i<600&&b.s.t<7.4;i++){if(b.s.paused)b.wait();b.step(.02);}const guard=b.s.decks[0].hand.find(c=>c.key==='guard');assert(guard);assert(b.s.events.some(e=>e.key==='quake'));assert(b.select(guard.id));assert(b.confirm());for(let i=0;i<200&&b.s.t<10;i++)b.step(.02);assert.equal(b.s.stats.blocked[0],1,'holding a command and guarding near impact really blocks the first heavy card');assert.equal(b.s.stats.byCard[1].quake||0,0,'blocked card has no recorded damage');
+}
+assert.notDeepEqual(L.run('focus').uses,L.run('swarm').uses);assert.notDeepEqual(L.run('swarm').uses,L.run('heavy').uses);
+console.log('PASS: fixed common party/deck/seed, genuine focus/taunt, five enemies and real area damage, 2.8s windup/guard, different actual card uses, readonly summaries, deterministic replay/resume, manual pause/one-card command and intervention labels.');

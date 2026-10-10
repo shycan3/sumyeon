@@ -1,0 +1,41 @@
+{
+  "checks": 9,
+  "stats": {
+    "battle": {
+      "count": {
+        "common": 7189,
+        "uncommon": 4428,
+        "rare": 383
+      },
+      "seen": 100,
+      "rarePercent": 3.191666666666667
+    },
+    "elite": {
+      "count": {
+        "common": 5943,
+        "uncommon": 4811,
+        "rare": 1246
+      },
+      "seen": 100,
+      "rarePercent": 10.383333333333333
+    },
+    "shop": {
+      "count": {
+        "common": 6437,
+        "uncommon": 4432,
+        "rare": 1131
+      },
+      "seen": 100,
+      "rarePercent": 9.425
+    },
+    "event": {
+      "count": {
+        "common": 5320,
+        "uncommon": 5434,
+        "rare": 1246
+      },
+      "seen": 100,
+      "rarePercent": 10.383333333333333
+    }
+  }
+}

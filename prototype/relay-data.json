@@ -1,0 +1,5042 @@
+{
+  "rows": [
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 36.60000000000012,
+      "hp": 320.4916,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 29.359999999999463,
+      "hp": 298.73576,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 34.85999999999985,
+      "hp": 325.24260000000015,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 28.839999999999474,
+      "hp": 334.0742000000002,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 28.05999999999949,
+      "hp": 442.5182000000002,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 33.2799999999996,
+      "hp": 374.9892,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 31.119999999999425,
+      "hp": 293.0970000000001,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 33.77999999999968,
+      "hp": 369.80780000000004,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 36.96000000000018,
+      "hp": 343.6933999999999,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 31.479999999999418,
+      "hp": 367.59119999999996,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 36.360000000000085,
+      "hp": 258.4964,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 34.83999999999985,
+      "hp": 316.81843999999995,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 31.81999999999941,
+      "hp": 246.35811999999993,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 38.160000000000366,
+      "hp": 350.1714,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 37.30000000000023,
+      "hp": 234.52683999999994,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 38.14000000000036,
+      "hp": 399.36140000000006,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 36.60000000000012,
+      "hp": 320.4916,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 29.359999999999463,
+      "hp": 298.73576,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 34.85999999999985,
+      "hp": 325.24260000000015,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 28.839999999999474,
+      "hp": 334.0742000000002,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 28.05999999999949,
+      "hp": 442.5182000000002,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 33.2799999999996,
+      "hp": 374.9892,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 31.119999999999425,
+      "hp": 293.0970000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 33.77999999999968,
+      "hp": 369.80780000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 36.96000000000018,
+      "hp": 343.6933999999999,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 31.479999999999418,
+      "hp": 367.59119999999996,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 36.360000000000085,
+      "hp": 258.4964,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 34.83999999999985,
+      "hp": 316.81843999999995,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 31.81999999999941,
+      "hp": 246.35811999999993,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 38.160000000000366,
+      "hp": 350.1714,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 37.30000000000023,
+      "hp": 234.52683999999994,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 38.14000000000036,
+      "hp": 399.36140000000006,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 61.420000000004,
+      "hp": 287.6644,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 54.48000000000292,
+      "hp": 344.5040000000001,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 49.920000000002204,
+      "hp": 434.279,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 44.7600000000014,
+      "hp": 442.47639999999996,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 38.080000000000354,
+      "hp": 399.6324,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 54.780000000002964,
+      "hp": 340.1349,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 47.14000000000177,
+      "hp": 328.4213,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 63.3400000000043,
+      "hp": 340.219,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 52.02000000000253,
+      "hp": 317.41200000000003,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 60.220000000003814,
+      "hp": 352.2734,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 52.64000000000263,
+      "hp": 442.57939999999996,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 46.62000000000169,
+      "hp": 373.3034,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 51.04000000000238,
+      "hp": 407.084,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 62.780000000004215,
+      "hp": 328.9039,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 52.860000000002664,
+      "hp": 400.09720000000004,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 64.5000000000043,
+      "hp": 354.6358000000001,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 61.420000000004,
+      "hp": 287.6644,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 54.48000000000292,
+      "hp": 344.5040000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 49.920000000002204,
+      "hp": 434.279,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 44.7600000000014,
+      "hp": 442.47639999999996,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 38.080000000000354,
+      "hp": 399.6324,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 54.780000000002964,
+      "hp": 340.1349,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 47.14000000000177,
+      "hp": 328.4213,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 63.3400000000043,
+      "hp": 340.219,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 52.02000000000253,
+      "hp": 317.41200000000003,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 60.220000000003814,
+      "hp": 352.2734,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 52.64000000000263,
+      "hp": 442.57939999999996,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 46.62000000000169,
+      "hp": 373.3034,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 51.04000000000238,
+      "hp": 407.084,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 62.780000000004215,
+      "hp": 328.9039,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 52.860000000002664,
+      "hp": 400.09720000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 64.5000000000043,
+      "hp": 354.6358000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 24.35999999999957,
+      "hp": 373.14549999999997,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 28.179999999999488,
+      "hp": 422.0392999999999,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 28.399999999999483,
+      "hp": 378.12760000000003,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 28.61999999999948,
+      "hp": 350.56296000000003,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 28.53999999999948,
+      "hp": 376.5792,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 25.33999999999955,
+      "hp": 371.5552,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 27.359999999999506,
+      "hp": 353.98794999999996,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 26.71999999999952,
+      "hp": 365.2265,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 33.939999999999706,
+      "hp": 374.56584,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 32.139999999999425,
+      "hp": 357.57395999999994,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 28.319999999999485,
+      "hp": 350.1607,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 30.51999999999944,
+      "hp": 271.50599,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 30.659999999999435,
+      "hp": 296.80088000000006,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 28.399999999999483,
+      "hp": 296.57079999999996,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 30.199999999999445,
+      "hp": 419.9866999999999,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 31.499999999999417,
+      "hp": 346.5768,
+      "stats": null
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 24.35999999999957,
+      "hp": 373.14549999999997,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 28.179999999999488,
+      "hp": 422.0392999999999,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 28.399999999999483,
+      "hp": 378.12760000000003,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 28.61999999999948,
+      "hp": 350.56296000000003,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 28.53999999999948,
+      "hp": 376.5792,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 25.33999999999955,
+      "hp": 371.5552,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 27.359999999999506,
+      "hp": 353.98794999999996,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 26.71999999999952,
+      "hp": 365.2265,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 33.939999999999706,
+      "hp": 374.56584,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 32.139999999999425,
+      "hp": 357.57395999999994,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 28.319999999999485,
+      "hp": 350.1607,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 30.51999999999944,
+      "hp": 271.50599,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 30.659999999999435,
+      "hp": 296.80088000000006,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 28.399999999999483,
+      "hp": 296.57079999999996,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 30.199999999999445,
+      "hp": 419.9866999999999,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "escort",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 31.499999999999417,
+      "hp": 346.5768,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 30.599999999999437,
+      "hp": 340.70199999999994,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 24.29999999999957,
+      "hp": 215.87800000000001,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 27.359999999999506,
+      "hp": 297.16420000000005,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 28.279999999999486,
+      "hp": 309.5428,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 26.519999999999524,
+      "hp": 323.488,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 34.71999999999983,
+      "hp": 325.0160000000001,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 33.39999999999962,
+      "hp": 420.62200000000007,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 31.459999999999418,
+      "hp": 354.1482,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 36.32000000000008,
+      "hp": 357.7636,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 29.639999999999457,
+      "hp": 250.76471999999998,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 32.85999999999954,
+      "hp": 316.02108,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 31.939999999999408,
+      "hp": 293.41268,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 35.459999999999944,
+      "hp": 296.23907999999994,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 40.56000000000074,
+      "hp": 275.0816,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 40.62000000000075,
+      "hp": 363.60940000000005,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 41.360000000000866,
+      "hp": 414.15599999999995,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 26.69999999999952,
+      "hp": 286.3574,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 4,
+        "transfers": 2,
+        "links": 1,
+        "seen": [
+          "basic:a1:e0:13.239999999999977",
+          "basic:a1:e1:21.219999999999807"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 8.979999999999897,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e1"
+          },
+          {
+            "kind": "link",
+            "at": 9.039999999999896,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e1"
+          },
+          {
+            "kind": "transfer",
+            "at": 14.259999999999785,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e3"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 30.259999999999444,
+      "hp": 273.44140000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 3,
+        "links": 1,
+        "seen": [
+          "base:serin:serin_dash:2:5",
+          "base:ranger:shot:0:7",
+          "base:ranger:shot:1:11"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 13.279999999999806,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e2"
+          },
+          {
+            "kind": "link",
+            "at": 17.079999999999725,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e2"
+          },
+          {
+            "kind": "transfer",
+            "at": 17.079999999999725,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e1"
+          },
+          {
+            "kind": "transfer",
+            "at": 26.119999999999532,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e3"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 26.23999999999953,
+      "hp": 282.3352,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 2,
+        "links": 1,
+        "seen": [
+          "basic:a2:e2:22.05999999999979",
+          "basic:a1:e1:26.2399999999997"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 17.179999999999723,
+            "key": "shot",
+            "actor": "a0",
+            "target": "e1"
+          },
+          {
+            "kind": "link",
+            "at": 18.2399999999997,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e1"
+          },
+          {
+            "kind": "transfer",
+            "at": 20.919999999999643,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e3"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 29.97999999999945,
+      "hp": 270.98440000000005,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 4,
+        "transfers": 3,
+        "links": 0,
+        "seen": [
+          "basic:a1:e4:17.199999999999893",
+          "base:serin:serin_cut:0:7",
+          "base:ranger:shot:0:9"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 14.879999999999772,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e2"
+          },
+          {
+            "kind": "transfer",
+            "at": 19.23999999999968,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e3"
+          },
+          {
+            "kind": "transfer",
+            "at": 24.099999999999575,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e3"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 24.85999999999956,
+      "hp": 290.9984,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 4,
+        "links": 0,
+        "seen": [
+          "basic:a1:e0:13.179999999999978",
+          "basic:a1:e4:18.19999999999987",
+          "basic:a2:e2:23.059999999999768",
+          "basic:a1:e3:27.299999999999677"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 8.939999999999898,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e1"
+          },
+          {
+            "kind": "transfer",
+            "at": 12.559999999999821,
+            "key": "serin_cut",
+            "actor": "a2",
+            "target": "e2"
+          },
+          {
+            "kind": "transfer",
+            "at": 15.87999999999975,
+            "key": "shot",
+            "actor": "a1",
+            "target": "e3"
+          },
+          {
+            "kind": "transfer",
+            "at": 21.199999999999637,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 33.099999999999575,
+      "hp": 367.80260000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e2:21.219999999999807"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 17.179999999999723,
+            "key": "serin_cut",
+            "actor": "a0",
+            "target": "e3"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 31.77999999999941,
+      "hp": 328.30379999999997,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e4:17.199999999999893"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 14.879999999999772,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 30.699999999999434,
+      "hp": 262.63060000000013,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 4,
+        "transfers": 2,
+        "links": 1,
+        "seen": [
+          "basic:a1:e2:22.219999999999786",
+          "base:ranger:shot:0:9"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 18.419999999999696,
+            "key": "serin_cut",
+            "actor": "a0",
+            "target": "e3"
+          },
+          {
+            "kind": "link",
+            "at": 24.099999999999575,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e3"
+          },
+          {
+            "kind": "transfer",
+            "at": 24.099999999999575,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 34.87999999999985,
+      "hp": 296.644,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 2,
+        "transfers": 1,
+        "links": 1,
+        "seen": [
+          "basic:a1:e0:13.239999999999977"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 8.979999999999897,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e1"
+          },
+          {
+            "kind": "link",
+            "at": 9.039999999999896,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 28.839999999999474,
+      "hp": 314.74379999999996,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 4,
+        "transfers": 2,
+        "links": 0,
+        "seen": [
+          "basic:a1:e1:17.25999999999989",
+          "base:ranger:shot:0:7"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 15.619999999999756,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e3"
+          },
+          {
+            "kind": "transfer",
+            "at": 18.079999999999703,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 34.119999999999735,
+      "hp": 178.59979999999996,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 2,
+        "links": 0,
+        "seen": [
+          "base:ranger:shot:0:3",
+          "base:serin:serin_cut:1:5"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 10.039999999999875,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e1"
+          },
+          {
+            "kind": "transfer",
+            "at": 14.219999999999786,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 32.5999999999995,
+      "hp": 154.09168,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e1:17.199999999999893"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 15.91999999999975,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e3"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 34.699999999999825,
+      "hp": 257.31087999999994,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 2,
+        "transfers": 2,
+        "links": 1,
+        "seen": [
+          "base:ranger:shot:0:8",
+          "basic:a1:e3:35.31999999999951"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 23.079999999999597,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e3"
+          },
+          {
+            "kind": "link",
+            "at": 27.319999999999506,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e3"
+          },
+          {
+            "kind": "transfer",
+            "at": 30.279999999999443,
+            "key": "serin_dash",
+            "actor": "a0",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 40.56000000000074,
+      "hp": 275.0816,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 40.62000000000075,
+      "hp": 363.60940000000005,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 38.160000000000366,
+      "hp": 348.92568,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 2,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "base:serin:serin_dash:0:3"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 10.25999999999987,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 52.14000000000255,
+      "hp": 405.52184,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 36.4600000000001,
+      "hp": 442.57939999999996,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 47.240000000001785,
+      "hp": 444.3084,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 43.30000000000117,
+      "hp": 391.69428000000005,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 43.18000000000115,
+      "hp": 443.72528,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 52.06000000000254,
+      "hp": 202.26440000000002,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 64.66000000000427,
+      "hp": 421.031,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 57.64000000000341,
+      "hp": 323.0074,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 62.140000000004115,
+      "hp": 350.5442,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 49.96000000000221,
+      "hp": 445,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 45.16000000000146,
+      "hp": 440.40160000000003,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 50.10000000000223,
+      "hp": 365.6868,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 65.34000000000414,
+      "hp": 341.41540000000015,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 72.02000000000281,
+      "hp": 399.5807000000001,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 57.32000000000336,
+      "hp": 385.1562,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 68.36000000000354,
+      "hp": 286.6419,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 63.12000000000427,
+      "hp": 416.07144000000005,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 7,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 48.620000000002,
+      "hp": 372.0381000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 8,
+        "transfers": 2,
+        "links": 0,
+        "seen": [
+          "base:serin:serin_cut:1:12",
+          "basic:a1:e0:43.339999999999925"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 30.299999999999443,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e0"
+          },
+          {
+            "kind": "transfer",
+            "at": 36.70000000000014,
+            "key": "serin_dash",
+            "actor": "a2",
+            "target": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 49.14000000000208,
+      "hp": 343.68988,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 7,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "base:serin:serin_dash:0:8"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 23.31999999999959,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 49.70000000000217,
+      "hp": 352.6276200000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 2,
+        "links": 1,
+        "seen": [
+          "basic:a2:e1:37.119999999999465",
+          "basic:a2:e0:41.11999999999958"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 29.219999999999466,
+            "key": "shot",
+            "actor": "a1",
+            "target": "e0"
+          },
+          {
+            "kind": "link",
+            "at": 33.11999999999958,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e0"
+          },
+          {
+            "kind": "transfer",
+            "at": 37.520000000000266,
+            "key": "shot",
+            "actor": "a1",
+            "target": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 45.14000000000146,
+      "hp": 410.85910000000007,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 2,
+        "links": 0,
+        "seen": [
+          "base:ranger:shot:0:6",
+          "basic:a1:e2:36.339999999999485"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 20.07999999999966,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e0"
+          },
+          {
+            "kind": "transfer",
+            "at": 32.43999999999947,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 53.28000000000273,
+      "hp": 245.1344,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 6,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e1:47.28000000000054"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 41.30000000000086,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 62.90000000000423,
+      "hp": 333.58,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "base:serin:serin_cut:0:18"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 50.28000000000226,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 61.380000000003996,
+      "hp": 362.559,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 7,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e1:48.2800000000007"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 48.10000000000192,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 64.24000000000436,
+      "hp": 418.97608,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 6,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e1:48.2800000000007"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 41.46000000000088,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 51.60000000000247,
+      "hp": 366.19342000000006,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 7,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "base:serin:serin_cut:0:12"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 30.299999999999443,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 57.10000000000333,
+      "hp": 426.2382,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 49.70000000000217,
+      "hp": 411.2475200000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a2:e1:37.119999999999465"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 29.219999999999466,
+            "key": "shot",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 74.16000000000238,
+      "hp": 425.5932,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 7,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "base:ranger:shot:2:24"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 70.14000000000318,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 68.00000000000361,
+      "hp": 257.668,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e1:53.30000000000148"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 49.08000000000207,
+            "key": "serin_dash",
+            "actor": "a0",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 54.56000000000293,
+      "hp": 386.2916000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 4,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e1:40.27999999999945"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 33.8799999999997,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e0"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 67.74000000000366,
+      "hp": 279.304,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 6,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 27.339999999999506,
+      "hp": 360.9253,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 24.79999999999956,
+      "hp": 368.83265,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 21.11999999999964,
+      "hp": 252.75086000000002,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 24.119999999999575,
+      "hp": 317.19108000000006,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 20.739999999999647,
+      "hp": 266.08925,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 21.279999999999635,
+      "hp": 268.65090000000004,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 31.89999999999941,
+      "hp": 396.1972,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 20.719999999999647,
+      "hp": 267.70450000000005,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 30.51999999999944,
+      "hp": 294.94487,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 29.139999999999468,
+      "hp": 349.89936,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 28.399999999999483,
+      "hp": 372.665,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 31.35999999999942,
+      "hp": 340.05514,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 30.119999999999447,
+      "hp": 324.67470000000003,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 30.199999999999445,
+      "hp": 370.1959,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 33.01999999999956,
+      "hp": 386.40675,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 33.939999999999706,
+      "hp": 375.9024,
+      "stats": null
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 27.979999999999492,
+      "hp": 341.8009,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 4,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e0:13.239999999999977"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 13.09999999999981,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 26.119999999999532,
+      "hp": 335.2056,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 26.67999999999952,
+      "hp": 318.34619999999995,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e0:17.199999999999893"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 13.05999999999981,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 28.339999999999485,
+      "hp": 347.66369999999995,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "base:serin:serin_cut:1:5"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 14.219999999999786,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 23.31999999999959,
+      "hp": 266.57155,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 1,
+        "links": 1,
+        "seen": [
+          "basic:a1:e0:18.19999999999987"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 11.69999999999984,
+            "key": "serin_cut",
+            "actor": "a1",
+            "target": "e1"
+          },
+          {
+            "kind": "link",
+            "at": 15.059999999999768,
+            "key": "shot",
+            "actor": "a2",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 22.319999999999613,
+      "hp": 261.91690000000006,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 27.259999999999508,
+      "hp": 356.59854999999993,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e0:13.239999999999977"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 13.09999999999981,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 28.279999999999486,
+      "hp": 364.3782,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 31.33999999999942,
+      "hp": 342.57258,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e0:13.239999999999977"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 13.09999999999981,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 26.119999999999532,
+      "hp": 335.2056,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 5,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 34.87999999999985,
+      "hp": 345.4532499999999,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 2,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 28.279999999999486,
+      "hp": 370.82789999999994,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 3,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 34.67999999999982,
+      "hp": 326.14716000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 1,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 37.66000000000029,
+      "hp": 326.63339999999994,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 33.01999999999956,
+      "hp": 396.2933499999999,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 1,
+        "transfers": 1,
+        "links": 0,
+        "seen": [
+          "basic:a1:e0:13.239999999999977"
+        ],
+        "history": [
+          {
+            "kind": "transfer",
+            "at": 13.09999999999981,
+            "key": "serin_dash",
+            "actor": "a1",
+            "target": "e1"
+          }
+        ]
+      }
+    },
+    {
+      "start": "pursuit",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 33.939999999999706,
+      "hp": 380.7254,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 1,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 15.379999999999761,
+      "hp": 338.1408,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 21.11999999999964,
+      "hp": 370.19559999999996,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 13.959999999999791,
+      "hp": 336.2844,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 18.599999999999692,
+      "hp": 296.9436,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 14.099999999999788,
+      "hp": 337.2126,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 14.099999999999788,
+      "hp": 337.2126,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 16.939999999999728,
+      "hp": 332.5494,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 14.339999999999783,
+      "hp": 372.4868,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 25.459999999999546,
+      "hp": 393.9150000000001,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 20.939999999999642,
+      "hp": 322.3366000000001,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 24.079999999999576,
+      "hp": 343.7478000000001,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 24.439999999999568,
+      "hp": 343.12900000000013,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 18.73999999999969,
+      "hp": 292.9214,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 14.099999999999788,
+      "hp": 337.2126,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 16.939999999999728,
+      "hp": 332.5494,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 17.31999999999972,
+      "hp": 393.54820000000007,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 15.379999999999761,
+      "hp": 338.1408,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 21.11999999999964,
+      "hp": 370.19559999999996,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 13.959999999999791,
+      "hp": 336.2844,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 18.599999999999692,
+      "hp": 296.9436,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 14.099999999999788,
+      "hp": 337.2126,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 14.099999999999788,
+      "hp": 337.2126,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 16.939999999999728,
+      "hp": 332.5494,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 14.339999999999783,
+      "hp": 372.4868,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 25.459999999999546,
+      "hp": 393.9150000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 20.939999999999642,
+      "hp": 322.3366000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 24.079999999999576,
+      "hp": 343.7478000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 24.439999999999568,
+      "hp": 343.12900000000013,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 18.73999999999969,
+      "hp": 292.9214,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 14.099999999999788,
+      "hp": 337.2126,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 16.939999999999728,
+      "hp": 332.5494,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 3,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 17.31999999999972,
+      "hp": 393.54820000000007,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 41.860000000000944,
+      "hp": 439.31759999999997,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 41.480000000000885,
+      "hp": 440.14088,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 39.680000000000604,
+      "hp": 416.9779000000001,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 44.1200000000013,
+      "hp": 350.5961000000001,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 35.8,
+      "hp": 326.53310000000005,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 39.14000000000052,
+      "hp": 424.6588,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 38.76000000000046,
+      "hp": 426.39008,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 35.139999999999894,
+      "hp": 361.65430000000003,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 57.10000000000333,
+      "hp": 311.90600000000006,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 45.4000000000015,
+      "hp": 423.126,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 49.860000000002195,
+      "hp": 339.62160000000006,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 61.64000000000404,
+      "hp": 416.09640000000013,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 35.11999999999989,
+      "hp": 358.7046000000001,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 42.92000000000111,
+      "hp": 295.668,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 41.480000000000885,
+      "hp": 425.42910000000006,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 44.08000000000129,
+      "hp": 363.7516200000001,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 41.860000000000944,
+      "hp": 439.31759999999997,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 41.480000000000885,
+      "hp": 440.14088,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 39.680000000000604,
+      "hp": 416.9779000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 44.1200000000013,
+      "hp": 350.5961000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 35.8,
+      "hp": 326.53310000000005,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 39.14000000000052,
+      "hp": 424.6588,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 38.76000000000046,
+      "hp": 426.39008,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 35.139999999999894,
+      "hp": 361.65430000000003,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 57.10000000000333,
+      "hp": 311.90600000000006,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 45.4000000000015,
+      "hp": 423.126,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 49.860000000002195,
+      "hp": 339.62160000000006,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 61.64000000000404,
+      "hp": 416.09640000000013,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 35.11999999999989,
+      "hp": 358.7046000000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 42.92000000000111,
+      "hp": 295.668,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 41.480000000000885,
+      "hp": 425.42910000000006,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 6,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 44.08000000000129,
+      "hp": 363.7516200000001,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 26.339999999999527,
+      "hp": 354.50415000000004,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 26.339999999999527,
+      "hp": 357.18140000000005,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 29.119999999999468,
+      "hp": 377.7587,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 21.07999999999964,
+      "hp": 234.94398,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 22.699999999999605,
+      "hp": 256.9483,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 26.119999999999532,
+      "hp": 313.91560000000004,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 25.499999999999545,
+      "hp": 351.1,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 29.119999999999468,
+      "hp": 351.41290000000004,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 32.67999999999951,
+      "hp": 383.15950000000004,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 27.339999999999506,
+      "hp": 376.6128,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 29.359999999999463,
+      "hp": 312.00698,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 29.45999999999946,
+      "hp": 337.71448,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 28.13999999999949,
+      "hp": 395.3763,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 26.119999999999532,
+      "hp": 313.91560000000004,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 25.499999999999545,
+      "hp": 351.1,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": null,
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 27.11999999999951,
+      "hp": 317.2074,
+      "stats": null
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 1,
+      "winner": 0,
+      "time": 26.339999999999527,
+      "hp": 354.50415000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 2,
+      "winner": 0,
+      "time": 26.339999999999527,
+      "hp": 357.18140000000005,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 3,
+      "winner": 0,
+      "time": 29.119999999999468,
+      "hp": 377.7587,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 4,
+      "winner": 0,
+      "time": 21.07999999999964,
+      "hp": 234.94398,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 5,
+      "winner": 0,
+      "time": 22.699999999999605,
+      "hp": 256.9483,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 6,
+      "winner": 0,
+      "time": 26.119999999999532,
+      "hp": 313.91560000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 7,
+      "winner": 0,
+      "time": 25.499999999999545,
+      "hp": 351.1,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "attack",
+      "seed": 8,
+      "winner": 0,
+      "time": 29.119999999999468,
+      "hp": 351.41290000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 1,
+      "winner": 0,
+      "time": 32.67999999999951,
+      "hp": 383.15950000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 2,
+      "winner": 0,
+      "time": 27.339999999999506,
+      "hp": 376.6128,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 3,
+      "winner": 0,
+      "time": 29.359999999999463,
+      "hp": 312.00698,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 4,
+      "winner": 0,
+      "time": 29.45999999999946,
+      "hp": 337.71448,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 5,
+      "winner": 0,
+      "time": 28.13999999999949,
+      "hp": 395.3763,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 6,
+      "winner": 0,
+      "time": 26.119999999999532,
+      "hp": 313.91560000000004,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 7,
+      "winner": 0,
+      "time": 25.499999999999545,
+      "hp": 351.1,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    },
+    {
+      "start": "resonance",
+      "scenario": 7,
+      "tactic": "relay",
+      "mode": "protect",
+      "seed": 8,
+      "winner": 0,
+      "time": 27.11999999999951,
+      "hp": 317.2074,
+      "stats": {
+        "version": 1,
+        "id": "relay",
+        "commands": 0,
+        "transfers": 0,
+        "links": 0,
+        "seen": [],
+        "history": []
+      }
+    }
+  ],
+  "expeditions": [
+    {
+      "start": "escort",
+      "choice": "relay",
+      "seed": 1,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "escort",
+      "choice": "relay",
+      "seed": 2,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "escort",
+      "choice": "relay",
+      "seed": 3,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "escort",
+      "choice": "relay",
+      "seed": 4,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "escort",
+      "choice": "evolve",
+      "seed": 1,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "escort",
+      "choice": "evolve",
+      "seed": 2,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "escort",
+      "choice": "evolve",
+      "seed": 3,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "escort",
+      "choice": "evolve",
+      "seed": 4,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "pursuit",
+      "choice": "relay",
+      "seed": 1,
+      "success": false,
+      "transfers": 1,
+      "links": 0
+    },
+    {
+      "start": "pursuit",
+      "choice": "relay",
+      "seed": 2,
+      "success": true,
+      "transfers": 1,
+      "links": 0
+    },
+    {
+      "start": "pursuit",
+      "choice": "relay",
+      "seed": 3,
+      "success": true,
+      "transfers": 1,
+      "links": 0
+    },
+    {
+      "start": "pursuit",
+      "choice": "relay",
+      "seed": 4,
+      "success": true,
+      "transfers": 1,
+      "links": 0
+    },
+    {
+      "start": "pursuit",
+      "choice": "evolve",
+      "seed": 1,
+      "success": false,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "pursuit",
+      "choice": "evolve",
+      "seed": 2,
+      "success": false,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "pursuit",
+      "choice": "evolve",
+      "seed": 3,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "pursuit",
+      "choice": "evolve",
+      "seed": 4,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "resonance",
+      "choice": "relay",
+      "seed": 1,
+      "success": false,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "resonance",
+      "choice": "relay",
+      "seed": 2,
+      "success": false,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "resonance",
+      "choice": "relay",
+      "seed": 3,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "resonance",
+      "choice": "relay",
+      "seed": 4,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "resonance",
+      "choice": "evolve",
+      "seed": 1,
+      "success": false,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "resonance",
+      "choice": "evolve",
+      "seed": 2,
+      "success": false,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "resonance",
+      "choice": "evolve",
+      "seed": 3,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    },
+    {
+      "start": "resonance",
+      "choice": "evolve",
+      "seed": 4,
+      "success": true,
+      "transfers": 0,
+      "links": 0
+    }
+  ]
+}

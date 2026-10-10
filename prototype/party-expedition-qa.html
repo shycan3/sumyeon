@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>수면 · 독립 QA 연습</title>
+  <link rel="stylesheet" href="party-expedition.css?v=tactics-final1">
+  <link rel="stylesheet" href="party-expedition-map.css?v=tactics-final1">
+</head>
+<body data-qa="true">
+<main id="game">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <header>
+    <a class="brand" href="party-expedition.html"><small>수면</small><strong>심층 원정</strong></a>
+    <div class="journey"><span id="progress-label"></span><div id="progress" aria-label="원정 진행"></div></div>
+    <nav><button id="map-open">지도</button><button id="deck-open">덱</button><button id="inventory-open">장비</button><button id="professions-open">문양</button><button id="auto-toggle" aria-pressed="false" title="카드·실행자·대상을 자동 선택하며 전투가 끝나면 멈춥니다." hidden>자동 전투</button><button id="help-open" aria-label="규칙 보기">?</button><button id="settings-open">설정</button><button id="new-run">새 원정</button></nav>
+  </header>
+  <section id="screen" aria-live="polite"></section>
+  <section id="battle-board" hidden aria-label="전투">
+    <section id="enemies" aria-label="적과 다음 행동"></section>
+    <section id="allies" aria-label="실행자와 아군 대상"></section>
+    <footer id="dock">
+      <div class="toolbar"><span class="energy-block"><strong id="energy"></strong><small id="next-energy"></small></span><span id="selection" aria-live="polite"></span><button id="cancel" hidden>취소</button><button id="basic">기본 공격</button><button id="end">라운드 종료</button></div>
+      <div id="card-choices" class="card-choices" hidden></div><div id="ongoing-effects" class="ongoing-effects" hidden></div><div id="action-detail" class="action-detail" hidden></div>
+      <section id="hand" aria-label="공용 손패"></section>
+      <div id="voyage-tray" class="voyage-tray"></div><div class="deckline"><span id="deck-count"></span><span id="reserved"></span></div>
+    </footer>
+  </section>
+  <div id="notice" role="status" aria-live="polite"></div>
+</main>
+<dialog id="deck-dialog"><div class="dialog-heading"><h2 id="deck-title">공용 덱</h2><button data-close="deck-dialog" aria-label="덱 닫기">×</button></div><div class="catalog-tools"><button id="catalog-open">전체 카드 보기</button><select id="catalog-family" aria-label="카드 계열" hidden><option value="all">전체 계열</option><option value="assault">돌파</option><option value="ward">수호</option><option value="disrupt">교란</option><option value="cycle">순환</option><option value="repair">정비</option></select><select id="catalog-rarity" aria-label="카드 희귀도" hidden><option value="all">전체 희귀도</option><option value="common">일반</option><option value="uncommon">고급</option><option value="rare">희귀</option></select></div><p id="deck-description"></p><div id="deck-list"></div></dialog>
+<dialog id="map-dialog"><div class="dialog-heading"><h2>심층 항로</h2><button data-close="map-dialog" aria-label="지도 닫기">×</button></div><div id="map-dialog-content" class="map-layout"></div></dialog>
+<dialog id="professions-dialog"><div class="dialog-heading"><h2>동료에게 무엇을 맡길까요?</h2><button data-close="professions-dialog" aria-label="문양 닫기">×</button></div><div id="profession-guide"></div></dialog>
+<dialog id="help-dialog"><div class="dialog-heading"><h2>네 명, 하나의 덱</h2><button data-close="help-dialog" aria-label="규칙 닫기">×</button></div>
+  <p>카드 계열은 돌파·수호·교란·순환·정비입니다. 모든 동료가 모든 계열을 사용할 수 있습니다. 덱의 ‘전체 카드 보기’에서 계열별 카드와 강화 효과를 살펴볼 수 있습니다.</p>
+  <p>계열과 희귀도는 별개입니다. 일반 전투는 계열을 고정하지 않고 희귀도를 먼저 뽑아 3장을 제시합니다. 희귀 카드가 생성되지 않을수록 다음 전투의 희귀 확률이 높아집니다. 획득 여부가 아닌 제시 기준이며, 상점과 관측실은 이 보정값을 바꾸지 않습니다. 강적과 관측실 기록의 보상 특징은 지도에서 미리 확인할 수 있습니다.</p><p>보존은 쓰지 않은 카드를 손패에 남깁니다. 다음 손패의 일부를 차지하며, 사용한 카드를 되돌리는 보관과 다릅니다. 지속 카드는 사용 후 소진되고 이번 전투 동안 파티 효과를 유지합니다. 같은 지속 효과는 큰 값만 적용합니다.</p>
+  <p>X코스트는 현재 에너지를 전부 쓰며 효과의 X는 실제 지불량입니다. 에너지 0에서는 사용할 수 없고 인계 할인과 도선사의 인쇄 비용 2 이상 효과는 적용하지 않습니다. 선택형 카드는 효과를 고른 뒤 실행자와 대상을 고릅니다. 선택지에 적힌 소진 등 규칙은 선택한 효과에만 적용됩니다.</p>
+  <p>카드 → 실행자 → 대상을 선택합니다. 대상 선택으로 실행됩니다. 카드는 누구에게든 맡길 수 있고, 같은 동료가 여러 번 사용할 수 있습니다.</p>
+  <p>시작 에너지 4. 다음 라운드에 잔량을 이월하고 2를 회복합니다. 최대 5입니다. 예약 카드를 먼저 돌려받고 손패 5장까지 뽑습니다. 측심사가 살아 있으면 6장까지 뽑은 뒤 적의 의도를 보고 한 장을 버립니다. 사용하지 않은 카드는 라운드 종료 시 버립니다.</p>
+  <p>적의 행동과 대상은 미리 보이며 이번 라운드 중 바뀌지 않습니다. 적의 보호·회복은 고정된 동료 적을 지원합니다. 두 대상 공격은 표시된 동료만 타격합니다. 준비는 다음 라운드의 행동을 예고하며, 대상을 격파하면 해당 공격이나 지원이 취소됩니다. 적을 처치하면 행동이 취소됩니다. 보호는 적 행동 후 사라지지만, 등대지기가 살아 있으면 남은 보호가 가장 많은 동료 한 명에게 최대 4를 남깁니다. 약화는 다음 실제 공격까지 남습니다.</p>
+  <p>실행 특성은 조건에 맞는 첫 유료 카드에서 라운드당 한 번 발동합니다. 조건이 맞지 않으면 기회를 유지합니다. 0비용 카드와 기본 공격은 발동하지 않습니다. 인양사는 소진 카드를 예약할 수 없으며, 그 카드로 인양 기회를 소비하지도 않습니다.</p>
+  <p>인양한 카드 사본은 다음 손패 한 자리를 차지합니다. 다른 동료가 그 사본을 사용하면 비용이 1 줄며 최소 비용은 1입니다. 카드를 인양했던 동료가 사용하면 할인되지 않습니다. 화면에는 원래 비용과 인계 시 비용을 함께 표시합니다.</p>
+  <p>적은 화면 왼쪽부터 순서대로 행동합니다. 전체 공격은 모든 피해를 먼저 적용한 뒤 살아남은 동료가 반격합니다. 소진 카드는 이번 전투에서 다시 뽑지 않고 다음 전투에 돌아옵니다. 광역 카드의 노출·브레이크·추가 피해와 균형 감소는 선택한 적에게 적용합니다.</p>
+  <p>전투 후 HP와 덱은 이어집니다. 얻을 카드 세 장 중 하나를 고르거나 건너뛸 수 있습니다. 정비와 상점에서 회복·강화·삭제를 선택합니다. 쓰러진 동료도 회복 선택으로 복귀할 수 있습니다.</p>
+  <p>지도는 아래에서 위로 진행합니다. 빛나는 전투 지점을 선택하고 ‘이 경로로 진입’을 누르세요. 선택한 경로에 따라 다음에 갈 수 있는 갈림길이 달라집니다. 전투·정비 중에는 위쪽 ‘지도’ 버튼으로 이후 항로를 살펴볼 수 있습니다.</p>
+  <p>노출은 다음 카드 타격이 소비합니다. 틈새 추적은 공격 전 노출이 있을 때 추가로 뽑습니다. 등불 아래는 사용 전 대상에게 보호가 있어야 추가로 뽑고, 압력 전환은 실행자의 보호를 소비합니다. 총력 정비는 최근 버린 사본을 다음 손패로 가져오며 소진 카드는 가져오지 않습니다.</p>
+  <p>자동 전투는 카드·실행자·대상과 측심의 버릴 카드를 자동으로 고릅니다. 위쪽 자동 중지 버튼이나 수동 카드 선택으로 해제합니다. 설명창을 열거나 탭을 숨기면 잠시 멈추며 전투가 끝나면 해제됩니다. 지도·보상·정비는 직접 선택합니다. 새로고침 후에는 자동으로 재개하지 않습니다.</p>
+  <p>원정 유물은 파티 전체에 작동합니다. 각인은 카드당 하나이며 원정 종료 시 초기화됩니다. 전술 도구는 두 개 휴대하며 ‘장비’에서 자동 사용을 설정합니다. 시작 유물과 중간 계약, 사건과 보물 경로가 매 원정의 방향을 바꿉니다.</p><div id="role-guide"></div>
+  <details><summary>브레이크 규칙</summary><p>원정 시작 시 선택할 수 있습니다. 적의 균형은 라운드 사이에 남습니다. 균형이 0이면 현재 공격 피해가 절반으로 줄고, 그 적에게 다음 카드 공격 피해가 4 증가합니다. 적 행동 후 균형이 복구됩니다. 브레이크가 적 행동을 취소하지는 않습니다.</p></details>
+  <details><summary>키보드 조작</summary><p>1~9: 손패 선택 · A/S/D/F: 실행자 또는 아군 대상 · Q/W: 적 대상 · E: 라운드 종료 · Esc: 선택 취소. 마우스만으로도 모두 플레이할 수 있습니다.</p></details>
+  <p><a href="party-v3.html">이전 단일 전투로 이동</a></p>
+</dialog>
+<dialog id="settings-dialog"><div class="dialog-heading"><h2>설정</h2><button data-close="settings-dialog" aria-label="설정 닫기">×</button></div><label>연출 속도 <select id="speed" aria-label="연출 속도"><option value="1">1×</option><option value="2">2×</option><option value="0">연출 끄기</option></select></label><label class="check-label"><input id="show-keys" type="checkbox"> 단축키 표시</label><p>진행 상황은 선택할 때마다 이 브라우저에 저장됩니다.</p></dialog>
+<script src="party-expedition-catalog.js?v=tactics-final1"></script>
+<script src="party-expedition-core.js?v=tactics-final1"></script>
+<script src="party-expedition-voyage-combat.js?v=tactics-final1"></script>
+<script src="party-expedition-run.js?v=tactics-final1"></script>
+<script src="party-expedition-encounters.js?v=tactics-final1"></script>
+<script src="party-expedition-voyage.js?v=tactics-final1"></script>
+<script src="party-expedition-map.js?v=tactics-final1"></script>
+<script src="party-v3-stage.js?v=tactics-final1"></script>
+<script src="party-expedition-guide.js?v=tactics-final1"></script>
+<script src="party-expedition-presentation.js?v=tactics-final1"></script>
+<script src="party-expedition-auto.js?v=tactics-final1"></script>
+<script src="party-expedition-voyage-ui.js?v=tactics-final1"></script>
+<script src="party-expedition-app.js?v=tactics-final1"></script>
+</body></html>

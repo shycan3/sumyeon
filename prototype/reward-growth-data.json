@@ -1,0 +1,5435 @@
+{
+  "reach": [
+    {
+      "start": "escort",
+      "traits": [
+        {
+          "trait": "escort",
+          "initial": 3,
+          "toFirst": 0,
+          "toSecond": 2,
+          "available": [
+            "serin_cover",
+            "boss_rescue"
+          ]
+        },
+        {
+          "trait": "pursuit",
+          "initial": 2,
+          "toFirst": 1,
+          "toSecond": 2,
+          "available": [
+            "serin_cut",
+            "serin_chain"
+          ]
+        },
+        {
+          "trait": "resonance",
+          "initial": 2,
+          "toFirst": 3,
+          "toSecond": 4,
+          "available": [
+            "bash",
+            "boss_retreat",
+            "serin_dance",
+            "volley",
+            "ranger_line",
+            "medic_circle"
+          ]
+        }
+      ]
+    },
+    {
+      "start": "pursuit",
+      "traits": [
+        {
+          "trait": "escort",
+          "initial": 2,
+          "toFirst": 1,
+          "toSecond": 3,
+          "available": [
+            "serin_parry",
+            "serin_cover",
+            "boss_rescue"
+          ]
+        },
+        {
+          "trait": "pursuit",
+          "initial": 3,
+          "toFirst": 0,
+          "toSecond": 1,
+          "available": [
+            "serin_chain"
+          ]
+        },
+        {
+          "trait": "resonance",
+          "initial": 2,
+          "toFirst": 3,
+          "toSecond": 4,
+          "available": [
+            "bash",
+            "boss_retreat",
+            "serin_dance",
+            "volley",
+            "ranger_line",
+            "medic_circle"
+          ]
+        }
+      ]
+    },
+    {
+      "start": "resonance",
+      "traits": [
+        {
+          "trait": "escort",
+          "initial": 2,
+          "toFirst": 1,
+          "toSecond": 3,
+          "available": [
+            "taunt",
+            "serin_cover",
+            "boss_rescue"
+          ]
+        },
+        {
+          "trait": "pursuit",
+          "initial": 2,
+          "toFirst": 1,
+          "toSecond": 2,
+          "available": [
+            "serin_dash",
+            "serin_chain"
+          ]
+        },
+        {
+          "trait": "resonance",
+          "initial": 5,
+          "toFirst": 0,
+          "toSecond": 1,
+          "available": [
+            "boss_retreat",
+            "ranger_line",
+            "medic_circle"
+          ]
+        }
+      ]
+    }
+  ],
+  "firstPrimaryExpansionOffersPer100": {
+    "escort": 60,
+    "pursuit": 40,
+    "resonance": 48
+  },
+  "simulations": 96,
+  "wins": 90,
+  "samples": [
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 1,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "serin_cover",
+        "guard",
+        "volley",
+        "serin_cover",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "serin_cover",
+        "volley",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "boss_rescue",
+        "serin_cover",
+        "volley",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 2,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "medic_circle",
+        "guard",
+        "volley",
+        "serin_cover",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "medic_circle",
+        "volley",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "boss_rescue",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 3,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "boss_rescue",
+        "guard",
+        "serin_cover",
+        "serin_cover",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_rescue",
+        "serin_cover",
+        "serin_cover"
+      ],
+      "usedNew": []
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 4,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "boss_rescue",
+        "guard",
+        "serin_chain",
+        "serin_cover",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 2,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_cover",
+        "boss_rescue",
+        "serin_chain",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_cover",
+        "boss_rescue",
+        "serin_chain",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 5,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "ranger_line",
+        "guard",
+        "serin_chain",
+        "serin_cover",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "ranger_line",
+        "serin_chain",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "medic_circle",
+        "ranger_line",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 6,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "boss_rescue",
+        "guard",
+        "serin_cover",
+        "taunt",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 2,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_cover",
+        "boss_rescue",
+        "serin_cover",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_cover",
+        "boss_rescue",
+        "serin_cover",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 7,
+      "success": true,
+      "final": [
+        "volley",
+        "boss_rescue",
+        "guard",
+        "medic_circle",
+        "boss_retreat",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "volley",
+        "boss_rescue",
+        "medic_circle",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "volley",
+        "boss_rescue"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 8,
+      "success": true,
+      "final": [
+        "ranger_line",
+        "boss_rescue",
+        "guard",
+        "medic_circle",
+        "serin_chain",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "ranger_line",
+        "boss_rescue",
+        "medic_circle",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 9,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "boss_retreat",
+        "guard",
+        "boss_rescue",
+        "medic_circle",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_cover",
+        "boss_retreat",
+        "boss_rescue",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "serin_cover",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 10,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "serin_cover",
+        "guard",
+        "boss_rescue",
+        "taunt",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_cover",
+        "serin_cover",
+        "boss_retreat",
+        "boss_rescue"
+      ],
+      "usedNew": [
+        "serin_cover",
+        "serin_cover",
+        "boss_rescue"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 11,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "serin_cover",
+        "guard",
+        "serin_cover",
+        "taunt",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 2,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "serin_cover",
+        "serin_cover",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "boss_rescue",
+        "serin_cover",
+        "serin_cover",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 12,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "serin_cover",
+        "guard",
+        "volley",
+        "serin_cover",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "serin_cover",
+        "volley",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_cover",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 13,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "boss_rescue",
+        "guard",
+        "serin_cover",
+        "taunt",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_retreat",
+        "serin_cover",
+        "serin_cover",
+        "boss_rescue"
+      ],
+      "usedNew": []
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 14,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "boss_retreat",
+        "guard",
+        "ranger_line",
+        "serin_cover",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "boss_retreat",
+        "ranger_line",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "boss_retreat",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 15,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "serin_cover",
+        "guard",
+        "ranger_line",
+        "taunt",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_cover",
+        "serin_cover",
+        "boss_rescue",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_cover",
+        "serin_cover",
+        "boss_rescue"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "escort",
+      "seed": 16,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "boss_retreat",
+        "guard",
+        "serin_cover",
+        "ranger_line",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "boss_retreat",
+        "serin_cover",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "boss_rescue",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 1,
+      "success": true,
+      "final": [
+        "bash",
+        "volley",
+        "guard",
+        "serin_dance",
+        "serin_chain",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "bash",
+        "volley",
+        "serin_dance",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "bash",
+        "serin_dance"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 2,
+      "success": true,
+      "final": [
+        "serin_dance",
+        "medic_circle",
+        "guard",
+        "volley",
+        "boss_retreat",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dance",
+        "medic_circle",
+        "volley",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "serin_dance",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 3,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "volley",
+        "guard",
+        "bash",
+        "boss_retreat",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "volley",
+        "bash",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "bash",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 4,
+      "success": true,
+      "final": [
+        "volley",
+        "ranger_line",
+        "guard",
+        "bash",
+        "medic_circle",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "volley",
+        "ranger_line",
+        "bash",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "volley",
+        "ranger_line",
+        "bash"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 5,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "ranger_line",
+        "guard",
+        "serin_dance",
+        "boss_retreat",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "ranger_line",
+        "serin_dance",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "medic_circle",
+        "ranger_line",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 6,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "boss_retreat",
+        "guard",
+        "serin_dance",
+        "wave",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_retreat",
+        "serin_dance",
+        "wave"
+      ],
+      "usedNew": [
+        "boss_retreat",
+        "serin_dance"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 7,
+      "success": true,
+      "final": [
+        "volley",
+        "bash",
+        "guard",
+        "ranger_line",
+        "boss_retreat",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "volley",
+        "bash",
+        "ranger_line",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "volley",
+        "bash",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 8,
+      "success": true,
+      "final": [
+        "ranger_line",
+        "bash",
+        "guard",
+        "medic_circle",
+        "boss_retreat",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "ranger_line",
+        "bash",
+        "medic_circle",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 9,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "boss_retreat",
+        "guard",
+        "serin_dance",
+        "medic_circle",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_retreat",
+        "serin_dance",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "medic_circle",
+        "boss_retreat",
+        "medic_circle"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 10,
+      "success": true,
+      "final": [
+        "volley",
+        "boss_retreat",
+        "guard",
+        "serin_dance",
+        "medic_circle",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "volley",
+        "boss_retreat",
+        "serin_dance",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "serin_dance"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 11,
+      "success": true,
+      "final": [
+        "bash",
+        "serin_dance",
+        "guard",
+        "volley",
+        "medic_circle",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "bash",
+        "serin_dance",
+        "volley",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "bash",
+        "serin_dance"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 12,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "bash",
+        "guard",
+        "volley",
+        "boss_retreat",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "bash",
+        "volley",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "bash",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 13,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "serin_cover",
+        "guard",
+        "serin_dance",
+        "ranger_line",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "boss_retreat",
+        "serin_cover",
+        "serin_dance",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_dance",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 14,
+      "success": true,
+      "final": [
+        "serin_dance",
+        "volley",
+        "guard",
+        "ranger_line",
+        "medic_circle",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dance",
+        "volley",
+        "ranger_line",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "serin_dance",
+        "volley",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 15,
+      "success": true,
+      "final": [
+        "volley",
+        "bash",
+        "guard",
+        "serin_dance",
+        "boss_retreat",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "volley",
+        "bash",
+        "serin_dance",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "volley",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "escort",
+      "focus": "resonance",
+      "seed": 16,
+      "success": true,
+      "final": [
+        "volley",
+        "boss_retreat",
+        "guard",
+        "ranger_line",
+        "taunt",
+        "taunt",
+        "serin_parry",
+        "serin_parry",
+        "serin_parry",
+        "serin_dash",
+        "serin_dash",
+        "serin_dash",
+        "shot",
+        "shot",
+        "shot",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "volley",
+        "boss_retreat",
+        "wave",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "boss_retreat",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 1,
+      "success": false,
+      "final": [
+        "boss_rescue",
+        "serin_chain",
+        "serin_dash",
+        "boss_retreat",
+        "serin_chain",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "serin_chain",
+        "boss_retreat",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "boss_rescue",
+        "serin_chain",
+        "boss_retreat",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 2,
+      "success": false,
+      "final": [
+        "serin_chain",
+        "medic_circle",
+        "serin_dash",
+        "boss_retreat",
+        "serin_chain",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "medic_circle",
+        "boss_retreat",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "boss_retreat",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 3,
+      "success": true,
+      "final": [
+        "volley",
+        "boss_retreat",
+        "serin_dash",
+        "medic_circle",
+        "serin_chain",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "volley",
+        "boss_retreat",
+        "medic_circle",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "volley",
+        "boss_retreat",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 4,
+      "success": true,
+      "final": [
+        "volley",
+        "ranger_line",
+        "serin_dash",
+        "serin_cover",
+        "medic_circle",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "volley",
+        "ranger_line",
+        "serin_cover",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "volley",
+        "ranger_line",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 5,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "ranger_line",
+        "serin_dash",
+        "serin_chain",
+        "serin_cut",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "ranger_line",
+        "serin_chain",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 6,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "boss_retreat",
+        "serin_dash",
+        "serin_chain",
+        "serin_cut",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "boss_retreat",
+        "serin_chain",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 7,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "boss_rescue",
+        "serin_dash",
+        "volley",
+        "serin_chain",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "boss_rescue",
+        "volley",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "boss_rescue",
+        "volley",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 8,
+      "success": true,
+      "final": [
+        "ranger_line",
+        "serin_chain",
+        "serin_dash",
+        "serin_cut",
+        "serin_cut",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "serin_chain",
+        "serin_chain",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "serin_chain",
+        "serin_chain",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 9,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "boss_retreat",
+        "serin_dash",
+        "serin_chain",
+        "serin_chain",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_retreat",
+        "serin_chain",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 10,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "volley",
+        "serin_dash",
+        "boss_retreat",
+        "serin_chain",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "volley",
+        "boss_retreat",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "boss_retreat",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 11,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "serin_chain",
+        "serin_dash",
+        "volley",
+        "serin_cover",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "serin_chain",
+        "volley",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 12,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "serin_cover",
+        "serin_dash",
+        "volley",
+        "boss_rescue",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "serin_cover",
+        "volley",
+        "boss_rescue"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "volley"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 13,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "serin_cover",
+        "serin_dash",
+        "serin_parry",
+        "ranger_line",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_retreat",
+        "serin_cover",
+        "serin_parry",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_parry",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 14,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "boss_retreat",
+        "serin_dash",
+        "ranger_line",
+        "serin_cover",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "boss_retreat",
+        "ranger_line",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "boss_retreat",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 15,
+      "success": true,
+      "final": [
+        "ranger_line",
+        "serin_cover",
+        "serin_dash",
+        "serin_chain",
+        "serin_cut",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "serin_cover",
+        "serin_chain",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "serin_chain",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "pursuit",
+      "seed": 16,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "boss_retreat",
+        "serin_dash",
+        "serin_chain",
+        "ranger_line",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "boss_retreat",
+        "serin_chain",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "boss_rescue",
+        "boss_retreat",
+        "serin_chain",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 1,
+      "success": true,
+      "final": [
+        "bash",
+        "serin_dance",
+        "serin_dash",
+        "volley",
+        "serin_chain",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "bash",
+        "serin_dance",
+        "volley",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "bash",
+        "serin_dance",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 2,
+      "success": false,
+      "final": [
+        "serin_dance",
+        "medic_circle",
+        "serin_dash",
+        "volley",
+        "boss_retreat",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dance",
+        "medic_circle",
+        "volley",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "serin_dance",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 3,
+      "success": true,
+      "final": [
+        "volley",
+        "boss_retreat",
+        "serin_dash",
+        "medic_circle",
+        "serin_chain",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "volley",
+        "boss_retreat",
+        "medic_circle",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "volley",
+        "boss_retreat",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 4,
+      "success": true,
+      "final": [
+        "volley",
+        "ranger_line",
+        "serin_dash",
+        "bash",
+        "medic_circle",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "volley",
+        "ranger_line",
+        "bash",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "volley",
+        "ranger_line",
+        "bash"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 5,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "ranger_line",
+        "serin_dash",
+        "serin_dance",
+        "boss_retreat",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "ranger_line",
+        "serin_dance",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "ranger_line",
+        "serin_dance"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 6,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "boss_retreat",
+        "serin_dash",
+        "serin_dance",
+        "serin_cover",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_retreat",
+        "serin_dance",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "boss_retreat",
+        "serin_dance",
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 7,
+      "success": true,
+      "final": [
+        "serin_dance",
+        "bash",
+        "serin_dash",
+        "ranger_line",
+        "boss_retreat",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dance",
+        "bash",
+        "ranger_line",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "serin_dance",
+        "bash",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 8,
+      "success": true,
+      "final": [
+        "ranger_line",
+        "bash",
+        "serin_dash",
+        "medic_circle",
+        "boss_retreat",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "ranger_line",
+        "bash",
+        "medic_circle",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 9,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "boss_retreat",
+        "serin_dash",
+        "bash",
+        "medic_circle",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_retreat",
+        "bash",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 10,
+      "success": true,
+      "final": [
+        "volley",
+        "serin_dance",
+        "serin_dash",
+        "boss_retreat",
+        "medic_circle",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "volley",
+        "serin_dance",
+        "boss_retreat",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "volley",
+        "serin_dance",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 11,
+      "success": true,
+      "final": [
+        "bash",
+        "serin_dance",
+        "serin_dash",
+        "volley",
+        "medic_circle",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "bash",
+        "serin_dance",
+        "volley",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "bash",
+        "serin_dance"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 12,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "serin_chain",
+        "serin_dash",
+        "volley",
+        "boss_retreat",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "serin_chain",
+        "volley",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "volley",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 13,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "serin_cover",
+        "serin_dash",
+        "serin_parry",
+        "ranger_line",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 4,
+          "level": 0
+        }
+      ],
+      "cards": [
+        "boss_retreat",
+        "serin_cover",
+        "serin_parry",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_parry",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 14,
+      "success": true,
+      "final": [
+        "volley",
+        "boss_retreat",
+        "serin_dash",
+        "ranger_line",
+        "medic_circle",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "volley",
+        "boss_retreat",
+        "ranger_line",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 15,
+      "success": true,
+      "final": [
+        "serin_dance",
+        "bash",
+        "serin_dash",
+        "volley",
+        "ranger_line",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dance",
+        "bash",
+        "volley",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_dance",
+        "volley",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "pursuit",
+      "focus": "resonance",
+      "seed": 16,
+      "success": false,
+      "final": [
+        "serin_dance",
+        "boss_retreat",
+        "serin_dash",
+        "volley",
+        "ranger_line",
+        "serin_cut",
+        "shot",
+        "shot",
+        "shot",
+        "guard",
+        "guard",
+        "guard",
+        "taunt",
+        "taunt",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "wave",
+        "wave"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dance",
+        "boss_retreat",
+        "volley",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_dance",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 1,
+      "success": false,
+      "final": [
+        "boss_rescue",
+        "boss_retreat",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "wave",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "boss_retreat",
+        "serin_chain",
+        "wave"
+      ],
+      "usedNew": [
+        "boss_retreat",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 2,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "medic_circle",
+        "bash",
+        "serin_dance",
+        "boss_retreat",
+        "ranger_line",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 8,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "medic_circle",
+        "boss_retreat",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "boss_rescue",
+        "boss_retreat",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 3,
+      "success": true,
+      "final": [
+        "wave",
+        "boss_retreat",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_retreat",
+        "medic_circle",
+        "wave"
+      ],
+      "usedNew": []
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 4,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "ranger_line",
+        "bash",
+        "serin_dance",
+        "taunt",
+        "medic_circle",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_cover",
+        "ranger_line",
+        "taunt",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 5,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "ranger_line",
+        "bash",
+        "serin_dance",
+        "boss_retreat",
+        "wave",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 8,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "ranger_line",
+        "boss_retreat",
+        "wave"
+      ],
+      "usedNew": [
+        "ranger_line",
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 6,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "boss_retreat",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "wave",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_retreat",
+        "serin_chain",
+        "wave"
+      ],
+      "usedNew": [
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 7,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "boss_rescue",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "boss_retreat",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "boss_rescue",
+        "medic_circle",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "boss_rescue"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 8,
+      "success": true,
+      "final": [
+        "ranger_line",
+        "boss_rescue",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "boss_retreat",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 8,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "ranger_line",
+        "boss_rescue",
+        "medic_circle",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 9,
+      "success": true,
+      "final": [
+        "medic_circle",
+        "boss_retreat",
+        "bash",
+        "serin_dance",
+        "boss_rescue",
+        "medic_circle",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "medic_circle",
+        "boss_retreat",
+        "boss_rescue",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "medic_circle",
+        "boss_retreat",
+        "medic_circle"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 10,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "boss_retreat",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_cover",
+        "wave",
+        "boss_retreat",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 11,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "serin_cover",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "wave",
+        "serin_cover",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "serin_cover"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 12,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "serin_chain",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "boss_retreat",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "serin_chain",
+        "medic_circle",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 13,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "serin_cover",
+        "bash",
+        "serin_dance",
+        "ranger_line",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "boss_retreat",
+        "serin_cover",
+        "wave",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 14,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "ranger_line",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 8,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "wave",
+        "boss_retreat",
+        "ranger_line",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "boss_retreat"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 15,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "taunt",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "boss_retreat",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_cover",
+        "taunt",
+        "serin_chain",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "serin_cover",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "resonance",
+      "seed": 16,
+      "success": true,
+      "final": [
+        "boss_rescue",
+        "boss_retreat",
+        "bash",
+        "serin_dance",
+        "ranger_line",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "boss_rescue",
+        "boss_retreat",
+        "wave",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 1,
+      "success": false,
+      "final": [
+        "serin_dash",
+        "serin_chain",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "serin_dash",
+        "serin_chain",
+        "serin_chain",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "serin_chain",
+        "serin_chain",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 2,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "serin_dash",
+        "bash",
+        "serin_dance",
+        "boss_rescue",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "serin_dash",
+        "serin_dash",
+        "serin_chain",
+        "boss_rescue"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "serin_dash",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 3,
+      "success": true,
+      "final": [
+        "serin_dash",
+        "boss_retreat",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "serin_chain",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dash",
+        "boss_retreat",
+        "medic_circle",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "serin_dash"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 4,
+      "success": true,
+      "final": [
+        "serin_dash",
+        "ranger_line",
+        "bash",
+        "serin_dance",
+        "medic_circle",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dash",
+        "ranger_line",
+        "serin_cut",
+        "medic_circle"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 5,
+      "success": true,
+      "final": [
+        "serin_cover",
+        "serin_dash",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "serin_dash",
+        "serin_chain",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "serin_dash",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 6,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "serin_cover",
+        "bash",
+        "serin_dance",
+        "serin_dash",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "serin_dash",
+        "serin_dash",
+        "serin_cover"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "serin_dash"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 7,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "boss_rescue",
+        "bash",
+        "serin_dance",
+        "serin_dash",
+        "serin_chain",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "boss_rescue",
+        "serin_dash",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "boss_rescue",
+        "serin_dash",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 8,
+      "success": true,
+      "final": [
+        "serin_dash",
+        "boss_rescue",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "serin_chain",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "serin_dash",
+        "boss_rescue",
+        "serin_chain",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "serin_chain",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 9,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "serin_dash",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_cut",
+        "boss_retreat",
+        "serin_dash",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "boss_retreat",
+        "serin_dash"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 10,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "serin_cover",
+        "bash",
+        "serin_dance",
+        "serin_dash",
+        "ranger_line",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "serin_cover",
+        "serin_dash",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "serin_dash"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 11,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "serin_dash",
+        "bash",
+        "serin_dance",
+        "boss_rescue",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "serin_dash",
+        "serin_dash",
+        "serin_chain",
+        "boss_rescue"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "serin_dash",
+        "serin_chain",
+        "boss_rescue"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 12,
+      "success": true,
+      "final": [
+        "serin_dash",
+        "serin_chain",
+        "bash",
+        "serin_dance",
+        "boss_rescue",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "serin_chain",
+        "serin_dash",
+        "boss_rescue"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "serin_chain",
+        "serin_dash",
+        "boss_rescue"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 13,
+      "success": true,
+      "final": [
+        "boss_retreat",
+        "serin_dash",
+        "bash",
+        "serin_dance",
+        "ranger_line",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "resonance",
+          "count": 7,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "boss_retreat",
+        "serin_dash",
+        "serin_cut",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "ranger_line"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 14,
+      "success": true,
+      "final": [
+        "serin_chain",
+        "serin_dash",
+        "bash",
+        "serin_dance",
+        "ranger_line",
+        "serin_chain",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_chain",
+        "serin_dash",
+        "ranger_line",
+        "serin_chain"
+      ],
+      "usedNew": [
+        "serin_chain",
+        "ranger_line",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 15,
+      "success": true,
+      "final": [
+        "serin_dash",
+        "serin_cover",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "boss_retreat",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dash",
+        "serin_cover",
+        "serin_chain",
+        "boss_retreat"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "serin_chain"
+      ]
+    },
+    {
+      "start": "resonance",
+      "focus": "pursuit",
+      "seed": 16,
+      "success": true,
+      "final": [
+        "serin_dash",
+        "ranger_line",
+        "bash",
+        "serin_dance",
+        "serin_chain",
+        "volley",
+        "volley",
+        "heal",
+        "heal",
+        "heal",
+        "wave",
+        "guard",
+        "guard",
+        "guard",
+        "serin_parry",
+        "shot",
+        "shot",
+        "shot",
+        "serin_cut",
+        "serin_cut"
+      ],
+      "traits": [
+        {
+          "id": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "id": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "id": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ],
+      "cards": [
+        "serin_dash",
+        "serin_chain",
+        "serin_chain",
+        "ranger_line"
+      ],
+      "usedNew": [
+        "serin_dash",
+        "serin_chain",
+        "serin_chain"
+      ]
+    }
+  ]
+}

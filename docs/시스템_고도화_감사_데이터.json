@@ -1,0 +1,251 @@
+{
+  "rewardKeys": [
+    "boss_retreat",
+    "serin_chain",
+    "serin_cover",
+    "boss_rescue"
+  ],
+  "reachable": [
+    {
+      "name": "호위 출발",
+      "initial": [
+        {
+          "trait": "escort",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "trait": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "trait": "resonance",
+          "count": 2,
+          "level": 0
+        }
+      ],
+      "upperBound": [
+        {
+          "trait": "escort",
+          "count": 5,
+          "level": 2
+        },
+        {
+          "trait": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "trait": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ]
+    },
+    {
+      "name": "추격 출발",
+      "initial": [
+        {
+          "trait": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "trait": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "trait": "resonance",
+          "count": 2,
+          "level": 0
+        }
+      ],
+      "upperBound": [
+        {
+          "trait": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "trait": "pursuit",
+          "count": 4,
+          "level": 2
+        },
+        {
+          "trait": "resonance",
+          "count": 3,
+          "level": 0
+        }
+      ]
+    },
+    {
+      "name": "공명 출발",
+      "initial": [
+        {
+          "trait": "escort",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "trait": "pursuit",
+          "count": 2,
+          "level": 0
+        },
+        {
+          "trait": "resonance",
+          "count": 5,
+          "level": 1
+        }
+      ],
+      "upperBound": [
+        {
+          "trait": "escort",
+          "count": 4,
+          "level": 1
+        },
+        {
+          "trait": "pursuit",
+          "count": 3,
+          "level": 1
+        },
+        {
+          "trait": "resonance",
+          "count": 6,
+          "level": 2
+        }
+      ]
+    }
+  ],
+  "fullHP": [
+    {
+      "name": "legacy",
+      "scenario": "focus",
+      "wins": 24,
+      "total": 24,
+      "time": 21.4,
+      "hp": 381.71
+    },
+    {
+      "name": "legacy",
+      "scenario": "swarm",
+      "wins": 24,
+      "total": 24,
+      "time": 27.87,
+      "hp": 302.2
+    },
+    {
+      "name": "legacy",
+      "scenario": "line",
+      "wins": 24,
+      "total": 24,
+      "time": 26.28,
+      "hp": 413.97
+    },
+    {
+      "name": "legacy",
+      "scenario": "boss",
+      "wins": 24,
+      "total": 24,
+      "time": 35.66,
+      "hp": 358.68
+    },
+    {
+      "name": "escort",
+      "scenario": "focus",
+      "wins": 24,
+      "total": 24,
+      "time": 23.86,
+      "hp": 369.07
+    },
+    {
+      "name": "escort",
+      "scenario": "swarm",
+      "wins": 24,
+      "total": 24,
+      "time": 33.86,
+      "hp": 307.12
+    },
+    {
+      "name": "escort",
+      "scenario": "line",
+      "wins": 24,
+      "total": 24,
+      "time": 28.57,
+      "hp": 413.77
+    },
+    {
+      "name": "escort",
+      "scenario": "boss",
+      "wins": 24,
+      "total": 24,
+      "time": 39.74,
+      "hp": 364.39
+    },
+    {
+      "name": "pursuit",
+      "scenario": "focus",
+      "wins": 24,
+      "total": 24,
+      "time": 22.35,
+      "hp": 376.34
+    },
+    {
+      "name": "pursuit",
+      "scenario": "swarm",
+      "wins": 24,
+      "total": 24,
+      "time": 32.37,
+      "hp": 317.55
+    },
+    {
+      "name": "pursuit",
+      "scenario": "line",
+      "wins": 24,
+      "total": 24,
+      "time": 26.77,
+      "hp": 421.66
+    },
+    {
+      "name": "pursuit",
+      "scenario": "boss",
+      "wins": 24,
+      "total": 24,
+      "time": 37.35,
+      "hp": 376.53
+    },
+    {
+      "name": "resonance",
+      "scenario": "focus",
+      "wins": 24,
+      "total": 24,
+      "time": 19.48,
+      "hp": 364.14
+    },
+    {
+      "name": "resonance",
+      "scenario": "swarm",
+      "wins": 24,
+      "total": 24,
+      "time": 18.65,
+      "hp": 341.19
+    },
+    {
+      "name": "resonance",
+      "scenario": "line",
+      "wins": 24,
+      "total": 24,
+      "time": 27.76,
+      "hp": 419.94
+    },
+    {
+      "name": "resonance",
+      "scenario": "boss",
+      "wins": 24,
+      "total": 24,
+      "time": 37.87,
+      "hp": 370.79
+    }
+  ]
+}

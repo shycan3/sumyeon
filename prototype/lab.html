@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>카드 전투 실험실</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0d1423;color:#e7edf6;font:15px system-ui,sans-serif}main{max-width:1060px;margin:auto;padding:22px}h1{font-size:24px;margin:0 0 6px}p{color:#a5b6cc;margin:8px 0}button{font:inherit;color:inherit;background:#22314a;border:1px solid #445671;border-radius:9px;padding:10px;cursor:pointer}button:hover:enabled{background:#324866}button:disabled{opacity:.4;cursor:default}button.active{border-color:#70e0cb;background:#234b51}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.top{justify-content:space-between}.panel{background:#162136;border:1px solid #2a3c57;border-radius:14px;padding:14px;margin:12px 0}canvas{width:100%;display:block;background:radial-gradient(ellipse,#23354a,#111d2f);border-radius:10px}#status{font-size:18px;font-weight:700;color:#8de8d8}#hand{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:12px 0}.card{text-align:left;min-height:108px}.card strong,.card small{display:block;margin:5px 0}.card small{color:#b9c7db}#stances{display:flex;gap:8px;flex-wrap:wrap}.stance{font-size:13px}.meter{height:9px;background:#283953;border-radius:8px;overflow:hidden;flex:1;min-width:120px}.meter div{height:100%;background:#70e0cb}#log{height:95px;overflow:auto;font-size:13px;color:#bacade;line-height:1.6}#hint{min-height:23px}footer{color:#8093af;font-size:12px}@media(max-width:620px){main{padding:10px}#hand{grid-template-columns:repeat(2,1fr)}}
+</style>
+<main>
+<div class="row top"><div><h1>카드 전투 실험실</h1><p>자동 전투를 관찰하고, 준비된 명령으로 개입하세요.</p></div><button id="restart">같은 전투 다시 시작</button></div>
+<div class="panel"><div class="row"><span id="status"></span><div class="meter"><div id="bar"></div></div><span id="clock"></span></div><p id="telegraph"></p><p id="aggro"></p><canvas id="field" width="960" height="390"></canvas></div>
+<div class="panel"><div id="stances"></div><div id="hand"></div><p id="hint"></p><div class="row"><button id="confirm">카드 확정</button><button id="reroll" title="선택한 한 장을 교체합니다. 같은 종류의 다른 카드가 나올 수 있습니다.">선택 카드 교체 · 2회</button><button id="wait">대기 · 명령 보유</button><button id="command">명령 선택으로 돌아가기</button><span id="deck"></span></div></div>
+<div class="panel" id="log" aria-live="polite"></div><footer>전투만 구현한 검증용 프리셋입니다. 카드 선택 후 전장의 대상을 클릭하고 확정하세요. 강화·출정·수집은 다음 단계입니다.</footer>
+</main>
+<script>
+const $=id=>document.getElementById(id), canvas=$('field'),ctx=canvas.getContext('2d');
+const defs={
+ guard:{name:'차단 방패',owner:0,time:5,prep:.2,kind:'guard',text:'2초 동안 적 카드 공격 1회 차단'},
+ bash:{name:'방패 강타',owner:0,time:4,prep:.4,kind:'attack',power:22,text:'적 하나에 22 피해'},
+ taunt:{name:'도발',owner:0,time:5,prep:.2,kind:'taunt',duration:4,text:'4초간 적 기본·단일 카드 공격을 자신에게 유도'},
+ dash:{name:'돌진',owner:1,time:3,prep:.35,kind:'attack',power:24,text:'적 하나에 돌진 · 24 피해'},
+ heavy:{name:'강격',owner:1,time:6,prep:.7,kind:'attack',power:46,text:'적 하나에 46 피해'},
+ shot:{name:'속사',owner:2,time:3,prep:.3,kind:'attack',power:21,text:'적 하나에 21 피해'},
+ volley:{name:'화살비',owner:2,time:6,prep:.6,kind:'area',power:23,text:'적 전체에 23 피해'},
+ heal:{name:'집중 회복',owner:3,time:5,prep:.4,kind:'heal',power:36,text:'아군 하나의 HP 36 회복'},
+ wave:{name:'전체 회복',owner:3,time:8,prep:.6,kind:'healAll',power:25,text:'생존 아군 전체 HP 25 회복'}
+};
+let s,seed;const rng=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};
+function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(rng()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function actors(){return [
+ ['방패병',0,130,180,115,4,55,1.8],['검사',0,110,210,265,6,55,1.7],['사수',0,90,90,80,5,220,2],['지원가',0,90,90,300,4,210,2.2],
+ ['전열 괴수',1,180,720,180,8,55,1.9],['적 사수',1,125,850,95,7,210,2.2],['적 주술사',1,150,850,295,5,210,2.4]
+ ].map((a,id)=>({id,name:a[0],side:a[1],max:a[2],hp:a[2],x:a[3],y:a[4],damage:a[5],range:a[6],period:a[7],stance:0,cool:.5+id*.12,busy:0,flash:0}))}
+function say(msg){s.logs.unshift(`[${s.t.toFixed(1)}초] ${msg}`);s.logs=s.logs.slice(0,16);$('log').textContent='';s.logs.slice(0,5).forEach(line=>{let e=document.createElement('div');e.textContent=line;$('log').append(e)})}
+function reset(){seed=2026;s={t:0,paused:false,ready:false,waiting:false,due:6,span:6,enemyDue:8,rerolls:2,actors:actors(),draw:[],discard:[],hand:[],events:[],fx:[],guards:[{until:0,n:0},{until:0,n:0}],taunts:[{from:0,until:0,actor:null},{from:0,until:0,actor:null}],selected:-1,target:null,ended:false,logs:[],history:[]};
+ let n=0;for(const [key,count] of Object.entries({guard:2,bash:1,taunt:2,dash:3,heavy:2,shot:3,volley:2,heal:3,wave:2}))for(let j=0;j<count;j++)s.draw.push({key,id:n++});shuffle(s.draw);draw();buildStances();say('전투 시작 · 첫 명령까지 6초');ui();paint()}
+const alive=side=>s.actors.filter(a=>a.side===side&&a.hp>0);
+function forcedTarget(side,at=s.t){let effect=s.taunts[1-side],a=s.actors[effect.actor];return at>=effect.from&&at<effect.until&&a?.hp>0?a:null}
+function basicTarget(a){let forced=forcedTarget(a.side);if(forced)return forced;let score=b=>a.id===1&&a.stance===1?b.hp:Math.hypot(a.x-b.x,a.y-b.y)*(a.side===1&&b.id===0&&b.stance===0?.65:1);return alive(1-a.side).sort((b,c)=>score(b)-score(c))[0]}
+function eventTarget(e){return (e.kind==='attack'?forcedTarget(e.side,e.at):null)||s.actors[e.target]}
+function draw(){s.hand=s.hand.filter(c=>s.actors[defs[c.key].owner].hp>0);s.draw=s.draw.filter(c=>s.actors[defs[c.key].owner].hp>0);s.discard=s.discard.filter(c=>s.actors[defs[c.key].owner].hp>0);while(s.hand.length<5){if(!s.draw.length){if(!s.discard.length)break;s.draw=shuffle(s.discard.splice(0))}s.hand.push(s.draw.pop())}}
+function buildStances(){let names=[['보호','압박'],['견제','추격'],['기동','집중'],['지원','방해']];$('stances').replaceChildren();s.actors.slice(0,4).forEach(a=>{let b=document.createElement('button');b.className='stance';b.textContent=`${a.name} · ${names[a.id][a.stance]}`;if(a.id===0)b.title='보호: 가까운 적의 기본 공격 대상으로 더 우선되며 자신의 피해 35% 감소';b.disabled=a.hp<=0;b.onclick=()=>{a.stance=1-a.stance;say(`${a.name}: ${names[a.id][a.stance]}`);buildStances();ui()};$('stances').append(b)})}
+function pick(index){if(!s.ready||s.ended)return;s.paused=true;s.waiting=false;s.selected=index;let d=defs[s.hand[index].key];s.target=['guard','taunt','area','healAll'].includes(d.kind)?null:(d.kind==='heal'?alive(0).sort((a,b)=>a.hp/a.max-b.hp/b.max):alive(1).sort((a,b)=>a.hp-b.hp))[0]?.id??null;ui()}
+function canReroll(){let c=s.hand[s.selected];return s.paused&&s.ready&&!s.ended&&s.rerolls>0&&!!c&&s.actors[defs[c.key].owner].hp>0&&[...s.draw,...s.discard].some(c=>s.actors[defs[c.key].owner].hp>0)}
+function reroll(){if(!canReroll())return;let index=s.selected,old=s.hand[index];s.draw=s.draw.filter(c=>s.actors[defs[c.key].owner].hp>0);s.discard=s.discard.filter(c=>s.actors[defs[c.key].owner].hp>0);if(!s.draw.length)s.draw=shuffle(s.discard.splice(0));let next=s.draw.pop();s.hand[index]=next;s.discard.push(old);s.rerolls--;s.selected=-1;s.target=null;s.history.push({type:'reroll',at:s.t,from:old.id,to:next.id});say(`손패 교체: ${defs[old.key].name} → ${defs[next.key].name} / 남은 ${s.rerolls}회`);ui()}
+function confirm(){if(!s.paused||!s.ready||s.selected<0||s.ended)return;let c=s.hand[s.selected],d=defs[c.key],a=s.actors[d.owner];if(a.hp<=0)return;let target=s.actors[s.target];if(['attack','heal'].includes(d.kind)&&(!target||target.hp<=0||target.side!==(d.kind==='heal'?0:1)))return;
+ s.hand.splice(s.selected,1);s.discard.push(c);s.events.push({at:s.t+d.prep,side:0,actor:a.id,target:s.target,key:c.key,...d});a.busy=s.t+d.prep+.15;s.due=s.t+d.time;s.span=d.time;s.ready=false;s.paused=false;s.waiting=false;s.selected=-1;s.history.push({type:'card',at:s.t,key:c.key,recovery:d.time});draw();say(`${a.name} → ${d.name} / 다음 명령 ${d.time}초`);ui()}
+function wait(){if(!s.ready||s.ended)return;s.paused=false;s.waiting=true;s.selected=-1;s.history.push({type:'wait',at:s.t});say('명령을 보유하고 대기');ui()}
+function hurt(a,n){if(a.hp<=0)return;if(a.id===0&&a.stance===0)n*=.65;a.hp=Math.max(0,a.hp-n);a.flash=.25;if(a.hp===0)say(`${a.name} 전투불능`)}
+function heal(a,n){if(a.hp>0){a.hp=Math.min(a.max,a.hp+n);a.flash=.25}}
+function resolve(e){let a=s.actors[e.actor];if(!a||a.hp<=0)return;let opponents=alive(1-e.side),friends=alive(e.side),target=eventTarget(e);
+ if(e.kind==='guard'){s.guards[e.side]={until:s.t+2,n:1};say(`${a.name}: 카드 공격 차단 준비`);return}
+ if(e.kind==='taunt'){s.taunts[e.side]={from:e.at,until:e.at+e.duration,actor:a.id};say(`${a.name}: 도발 발동 · ${e.duration}초간 공격 유도`);s.history.push({type:'effect',at:e.at,kind:'taunt'});return}
+ if(e.kind==='heal'){if(target&&target.hp>0)heal(target,e.power)}else if(e.kind==='healAll'){friends.forEach(b=>heal(b,e.power))}else{
+ let targets=e.kind==='area'?opponents:(target&&target.hp>0?[target]:[]);if(!targets.length)return;let g=s.guards[1-e.side];if(g.n&&g.until>=e.at){g.n--;say(`${a.name}의 ${e.name} 차단!`);s.history.push({type:'block',at:s.t});return}
+ targets.forEach(b=>{hurt(b,e.power);s.fx.push({x:a.x,y:a.y,tx:b.x,ty:b.y,life:.4,color:e.side?'#ffb07b':'#8df1dc'})});if(e.key==='dash'&&target){a.x=target.x-40;a.y=target.y}
+ }say(`${e.name} 발동`);s.history.push({type:'effect',at:s.t,kind:e.kind})}
+function enemy(){if(s.t<s.enemyDue||!alive(1).length)return;let fighters=alive(1),pending=s.events.some(e=>e.side===0&&['attack','area'].includes(e.kind)),front=s.actors[4],mage=s.actors[6],e;
+ if(pending&&front.hp>0){e={actor:4,name:'적 차단 방패',kind:'guard',prep:.2,time:5}}
+ else if(mage.hp>0&&fighters.some(a=>a.hp<a.max*.45)){e={actor:6,name:'적 전체 회복',kind:'healAll',power:22,prep:1.5,time:8}}
+ else {let a=fighters[Math.floor(rng()*fighters.length)],target=alive(0).sort((a,b)=>a.hp-b.hp)[0];if(!target)return;e={actor:a.id,target:target.id,name:a.id===6?'암흑 폭발':'강한 일격',kind:a.id===6?'area':'attack',power:a.id===6?22:38,prep:1.5,time:7}}
+ e.side=1;e.at=s.t+e.prep;s.events.push(e);s.actors[e.actor].busy=e.at+.15;s.enemyDue=s.t+e.time;say(`적 예고: ${e.name}`);if(s.ready&&s.waiting){s.paused=true;s.waiting=false;say('새 적 카드 예고 · 명령 선택')} }
+function basic(dt){for(let a of s.actors){if(a.hp<=0)continue;a.flash=Math.max(0,a.flash-dt);if(s.t<a.busy)continue;a.cool-=dt;
+ if(a.id===3&&a.stance===0){let b=alive(0).sort((a,b)=>a.hp/a.max-b.hp/b.max)[0];if(b&&b.hp<b.max&&a.cool<=0){heal(b,4);a.cool=a.period;s.fx.push({x:a.x,y:a.y,tx:b.x,ty:b.y,life:.2,color:'#a5f0a0'});continue}}
+ let target=basicTarget(a);if(!target)continue;let dx=target.x-a.x,dy=target.y-a.y,dist=Math.hypot(dx,dy),range=a.range;
+ if(dist>range){let speed=a.range<100?70:45;a.x+=dx/dist*speed*dt;a.y+=dy/dist*speed*dt}else if(a.id===2&&a.stance===0&&dist<130){a.x-=dx/dist*45*dt;a.y-=dy/dist*45*dt}
+ a.x=Math.max(35,Math.min(925,a.x));a.y=Math.max(35,Math.min(355,a.y));if(dist<=range+5&&a.cool<=0){let mult=a.id===1&&a.stance===1?1.2:a.id===2&&a.stance===1?1.35:1;hurt(target,a.damage*mult);a.cool=a.period;s.fx.push({x:a.x,y:a.y,tx:target.x,ty:target.y,life:.16,color:a.side?'#fc9478':'#6bcabc'})}
+ }}
+function step(dt){if(s.paused||s.ended)return;s.t+=dt;let priority=e=>['guard','taunt'].includes(e.kind)?0:1,due=s.events.filter(e=>e.at<=s.t).sort((a,b)=>a.at-b.at||priority(a)-priority(b));s.events=s.events.filter(e=>e.at>s.t);due.forEach(resolve);basic(dt);s.fx.forEach(f=>f.life-=dt);s.fx=s.fx.filter(f=>f.life>0);draw();
+ if(!alive(0).length||!alive(1).length){s.ended=true;s.paused=true;say(alive(0).length?'승리! 다시 시작해서 다른 선택을 시험하세요.':'패배 · 회복과 방어 시점을 바꿔보세요.');ui();buildStances();return}
+ enemy();if(!s.ready&&s.t>=s.due){s.ready=true;s.paused=true;s.waiting=false;say('명령 준비 완료 · 시간 정지')}ui()}
+function ui(){let remain=Math.max(0,s.due-s.t);$('status').textContent=s.ended?(alive(0).length?'승리':'패배'):s.paused?'명령 선택 · 시간 정지':s.ready?'대기 중 · 명령 보유':`명령 회복 ${remain.toFixed(1)}초`;$('bar').style.width=`${s.ready?100:Math.max(0,100*(1-remain/s.span))}%`;$('clock').textContent=`전투 ${s.t.toFixed(1)}초`;
+ let incoming=s.events.filter(e=>e.side===1);$('telegraph').textContent=incoming.length?incoming.map(e=>`⚠ ${e.name}${e.kind==='attack'?' → '+(eventTarget(e)?.name||'대상 없음'):e.kind==='area'?' → 아군 전체':''} · ${Math.max(0,e.at-s.t).toFixed(1)}초 뒤`).join(' / '):'적의 준비 동작을 보고 방어와 회복 시점을 판단하세요.';
+ let taunter=forcedTarget(1);$('aggro').textContent=(taunter?`도발 ${(s.taunts[0].until-s.t).toFixed(1)}초 · `:'')+'적 기본 공격 대상: '+alive(1).map(a=>`${a.name} → ${basicTarget(a)?.name||'없음'}`).join(' / ');
+ let handKey=s.hand.map(c=>c.id).join(',')+`/${s.ready}/${s.selected}/${s.ended}`;if(s.handKey!==handKey){s.handKey=handKey;$('hand').replaceChildren();s.hand.forEach((c,i)=>{let d=defs[c.key],b=document.createElement('button');b.className='card'+(s.selected===i?' active':'');b.disabled=!s.ready||s.ended;b.innerHTML=`<small>${s.actors[d.owner].name}</small><strong>${d.name}</strong><small>${d.text}</small><small>다음 명령 ${d.time}초 · 준비 ${d.prep}초</small>`;b.onclick=()=>pick(i);$('hand').append(b)})}
+ let d=s.selected>=0?defs[s.hand[s.selected]?.key]:null;$('hint').textContent=d?`${d.name} 선택 · ${['guard','taunt','area','healAll'].includes(d.kind)?'대상 자동 적용':'대상: '+(s.actors[s.target]?.name||'선택 필요')+' / 전장의 캐릭터를 클릭해 변경'}`:'손패에서 카드를 선택하세요. 대기는 카드와 게이지를 소비하지 않습니다.';
+ $('confirm').disabled=!s.paused||!s.ready||!d||s.ended;$('reroll').disabled=!canReroll();$('reroll').textContent=`선택 카드 교체 · ${s.rerolls}회`;$('wait').disabled=!s.paused||!s.ready||s.ended;$('command').disabled=!s.ready||s.paused||s.ended;$('deck').textContent=`뽑기 ${s.draw.length} · 버림 ${s.discard.length} · 손패 ${s.hand.length}`;
+ for(let b of $('stances').children){let id=Array.from($('stances').children).indexOf(b);b.disabled=s.ended||s.actors[id].hp<=0}}
+function paint(){ctx.clearRect(0,0,960,390);ctx.strokeStyle='#294057';for(let x=40;x<960;x+=80){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,390);ctx.stroke()}
+ for(let f of s.fx){ctx.strokeStyle=f.color;ctx.lineWidth=3;ctx.globalAlpha=Math.min(1,f.life*5);ctx.beginPath();ctx.moveTo(f.x,f.y);ctx.lineTo(f.tx,f.ty);ctx.stroke()}ctx.globalAlpha=1;
+ for(let a of s.actors){ctx.globalAlpha=a.hp>0?1:.25;ctx.fillStyle=a.flash>0?'#fff':a.side?'#ea896a':'#67cbbf';ctx.beginPath();ctx.arc(a.x,a.y,a.id===0||a.id===4?23:18,0,Math.PI*2);ctx.fill();if(s.selected>=0&&s.target===a.id){ctx.strokeStyle='#fce397';ctx.lineWidth=3;ctx.beginPath();ctx.arc(a.x,a.y,28,0,Math.PI*2);ctx.stroke()}let g=s.guards[a.side];if(g.n&&g.until>=s.t){ctx.strokeStyle='#a6d7ff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(a.x,a.y,33,0,Math.PI*2);ctx.stroke()}ctx.fillStyle='#101827';ctx.fillRect(a.x-32,a.y-39,64,7);ctx.fillStyle=a.side?'#ffb291':'#8fe4bf';ctx.fillRect(a.x-32,a.y-39,64*a.hp/a.max,7);ctx.font='12px system-ui';ctx.textAlign='center';ctx.fillStyle='#ecf2ff';ctx.fillText(`${a.name} ${Math.ceil(a.hp)}`,a.x,a.y+39);if(s.t<a.busy)ctx.fillText('준비 중',a.x,a.y-49)}ctx.globalAlpha=1}
+canvas.onclick=e=>{if(!s.paused||s.selected<0||s.ended)return;let rect=canvas.getBoundingClientRect(),x=(e.clientX-rect.left)*960/rect.width,y=(e.clientY-rect.top)*390/rect.height,d=defs[s.hand[s.selected].key];if(!['attack','heal'].includes(d.kind))return;let a=alive(d.kind==='heal'?0:1).find(a=>Math.hypot(a.x-x,a.y-y)<36);if(a){s.target=a.id;ui();paint()}};
+$('restart').onclick=reset;$('confirm').onclick=confirm;$('reroll').onclick=reroll;$('wait').onclick=wait;$('command').onclick=()=>{if(s.ready&&!s.ended){s.paused=true;s.waiting=false;ui()}};
+window.game={get state(){return s},reset,step,pick,confirm,reroll,wait};
+let last=0;function frame(now){let dt=Math.min(.05,(now-last)/1000||0);last=now;step(dt);paint();requestAnimationFrame(frame)}reset();requestAnimationFrame(frame);
+</script></html>

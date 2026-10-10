@@ -1,0 +1,4 @@
+.flow-guide{display:flex;gap:12px;align-items:flex-start;padding:10px 14px;border-left:3px solid #b9d9bd;background:#b9d9bd0a;border-radius:6px;margin:0 0 12px;color:#c7d1d5;font-size:13px;line-height:1.5}
+.flow-guide strong{color:#dcebdc;white-space:nowrap}.flow-next button{margin:5px 8px 5px 0}.flow-next p{line-height:1.6}
+.final-boss-plan{padding:10px 14px;border-left:3px solid #d8c18e}.final-boss-plan>strong{font-size:13px}.final-boss-plan>.note{margin:5px 0;font-size:12px}.final-boss-plan>.ui-details{margin:4px 0 0}.final-boss-plan>.ui-details>summary{min-height:18px;font-size:12px}
+@media(max-width:600px){.flow-guide{gap:8px;padding:8px 10px;font-size:12px}.flow-next button{max-width:100%;white-space:normal}}

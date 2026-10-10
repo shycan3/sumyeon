@@ -1,0 +1,22 @@
+'use strict';
+const assert=require('node:assert/strict');
+const {Battle,ROLES,CARDS}=require('./party-expedition-core.js');
+const {Run}=require('./party-expedition-run.js');
+let count=0;function test(name,fn){fn();count++;console.log('PASS '+name);}
+function make(kinds,party=['navigator','pilot','salvager','lightkeeper']){
+ const all=[...kinds,'strike','guard','suppress','burst'];
+ const b=new Battle({party,deck:all.map((kind,i)=>({id:'c'+i,kind})),enemies:[{id:'e',hp:100,pattern:'hunter',damage:12}]});
+ b.s.zones={hand:kinds.map((_,i)=>'c'+i),draw:all.slice(kinds.length).map((_,i)=>'c'+(i+kinds.length)),discard:[],reserve:[],exhaust:[],resolving:[]};b.s.needsTrim=false;b.assert();return b;
+}
+test(' 노출 준비 뒤 공격과 드로우가 함께 달라짐',()=>{const b=make(['expose','pursuit']);b.play('c0','lightkeeper','e');const before=b.actor('e').hp;b.play('c1','lightkeeper','e');assert.equal(before-b.actor('e').hp,9);assert.equal(b.s.zones.hand.length,2);assert.equal(b.actor('e').exposure,0);});
+test('노출 없는 추적도 기본 공격으로 사용 가능',()=>{const b=make(['pursuit']);b.play('c0','lightkeeper','e');assert.equal(b.actor('e').hp,95);assert.equal(b.s.zones.hand.length,0);});
+test('추적이 처치해도 준비의 드로우를 얻음',()=>{const b=make(['pursuit']);b.actor('e').hp=4;b.actor('e').exposure=4;b.play('c0','lightkeeper','e');assert.equal(b.s.status,'won');assert.equal(b.s.zones.hand.length,2);});
+test('약화 전환은 자기 보호를 소비하고 보호 없는 기본 사용도 가능',()=>{const b=make(['pressurevalve']);b.play('c0','lightkeeper','e');assert.equal(b.actor('e').weak,3);assert.equal(b.actor('lightkeeper').shield,4);const prepared=make(['guard','pressurevalve']);prepared.play('c0','lightkeeper','lightkeeper');prepared.play('c1','lightkeeper','e');assert.equal(prepared.actor('e').weak,7);assert.equal(prepared.actor('lightkeeper').shield,6);assert.equal(prepared.intentDamage(prepared.s.intents[0]),5);});
+test('잘못된 대상은 보호·에너지·난수를 소비하지 않음',()=>{const b=make(['pressurevalve']);b.actor('lightkeeper').shield=8;const before=b.snapshot();assert.throws(()=>b.play('c0','lightkeeper','navigator'));assert.deepEqual(b.snapshot(),before);});
+test('보호 연결은 카드 사용 전 대상의 보호를 봄',()=>{const b=make(['beacon']);b.play('c0','lightkeeper','navigator');assert.equal(b.s.zones.hand.length,0);assert.equal(b.actor('navigator').shield,4);const p=make(['guard','beacon']);p.play('c0','lightkeeper','navigator');p.play('c1','lightkeeper','navigator');assert.equal(p.actor('navigator').shield,10);assert.equal(p.s.zones.hand.length,1);});
+test('강화된 준비 활용은 실제 추가 뽑기와 보호 지출 한도를 변경',()=>{const b=make(['pursuit','pressurevalve']);b.s.cards.c0.upgraded=true;b.actor('e').exposure=4;b.play('c0','lightkeeper','e');assert.equal(b.s.zones.hand.length,4);b.s.cards.c1.upgraded=true;b.actor('lightkeeper').shield=8;b.play('c1','lightkeeper','e');assert.equal(b.actor('lightkeeper').shield,2);assert.equal(b.actor('e').weak,10);});
+test('연결 카드 미리보기는 실제 결과와 같고 원본에는 영향 없음',()=>{for(const kind of ['pursuit','pressurevalve','beacon']){const b=make([kind]);b.actor('e').exposure=4;b.actor('lightkeeper').shield=8;b.actor('navigator').shield=3;const target=CARDS[kind].target==='enemy'?'e':'navigator',before=b.snapshot(),preview=b.preview('c0','lightkeeper',target);assert.deepEqual(b.snapshot(),before);b.play('c0','lightkeeper',target);assert.deepEqual(b.snapshot(),preview);assert.deepEqual(Battle.restore(b.snapshot()).snapshot(),b.snapshot());}});
+test('모든 문양이 연결 카드를 사용할 수 있으며 귀속을 추가하지 않음',()=>{for(const r of ROLES){const roster=[r.id,...ROLES.filter(x=>x.id!==r.id).slice(0,3).map(x=>x.id)];for(const kind of ['pursuit','pressurevalve','beacon']){const b=make([kind],roster);b.play('c0',r.id,CARDS[kind].target==='enemy'?'e':r.id);b.assert();assert.ok(!('owner' in b.s.cards.c0));}}});
+test('새 원정의 초반 보상에서 준비·활용의 입구를 제공',()=>{for(let seed=1;seed<=64;seed++){const r=new Run({seed,contentVersion:'tactics-1'});assert.ok(['expose','beacon','pressurevalve','salvage'].includes(r.rewardOffers()[2]));assert.deepEqual(Run.restore(r.snapshot()).snapshot(),r.snapshot());}});
+test('기존 콘텐츠 버전 없는 원정의 보상 풀과 난수를 보존',()=>{for(let seed=1;seed<=64;seed++){const r=new Run({seed,contentVersion:'tactics-1'});delete r.s.contentVersion;const restored=Run.restore(r.snapshot());const before=r.s.seed,offers=r.rewardOffers();assert.deepEqual(offers,restored.rewardOffers());assert.ok(!offers.some(k=>['pursuit','pressurevalve','beacon','deepdive','bastion','mobilize'].includes(k)));assert.equal(r.s.seed,restored.s.seed);assert.notEqual(r.s.seed,before);}});
+console.log(`${count} preparation/link checks passed`);

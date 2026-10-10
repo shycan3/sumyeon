@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),path=require('path');
+const recipe=JSON.parse(fs.readFileSync(path.join(__dirname,'support-content.json'),'utf8'));
+const context=vm.createContext({window:{}});
+for(const name of ['data','character-data','trial-character','content-authoring'])vm.runInContext(fs.readFileSync(path.join(__dirname,name+'.js'),'utf8'),context);
+const errors=context.window.ContentAuthoring.validate(recipe);
+if(recipe.status!=='live'||recipe.character?.id!=='noa'||recipe.character.role!==3)errors.push('현재 실전 등록본은 노아 지원가 키트입니다.');
+if(errors.length)throw Error(errors.join('\n'));
+const file=path.join(__dirname,'support-content.js'),source=fs.readFileSync(file,'utf8');
+if(!/const recipe=.*;\r?\n const K=/.test(source))throw Error('실전 등록본의 생성 위치를 확인하세요.');
+fs.writeFileSync(file,source.replace(/const recipe=.*;\r?\n const K=/,()=>`const recipe=${JSON.stringify(recipe)};\n const K=`));
+console.log('PASS validated JSON -> synchronous live registration');

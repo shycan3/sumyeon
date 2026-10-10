@@ -1,0 +1,107 @@
+{
+  "320": {
+    "slotHeight": 26,
+    "scrollHeight": 40,
+    "text": "세린 · 대표 기술\n잔광 검무\n“한 줄기 빛이면 충분해.”\n마무리",
+    "children": [
+      {
+        "class": "skill-portrait",
+        "height": 32,
+        "top": 144.78125,
+        "bottom": 176.78125,
+        "clipped": true
+      },
+      {
+        "class": "SMALL",
+        "height": 12.140625,
+        "top": 137.84375,
+        "bottom": 149.984375,
+        "clipped": true
+      },
+      {
+        "class": "STRONG",
+        "height": 18.890625,
+        "top": 149.984375,
+        "bottom": 168.875,
+        "clipped": false
+      },
+      {
+        "class": "skill-dialogue",
+        "height": 14.84375,
+        "top": 168.875,
+        "bottom": 183.71875,
+        "clipped": true
+      }
+    ]
+  },
+  "844": {
+    "slotHeight": 26,
+    "scrollHeight": 43,
+    "text": "세린 · 대표 기술\n잔광 검무\n“한 줄기 빛이면 충분해.”\n마무리",
+    "children": [
+      {
+        "class": "skill-portrait",
+        "height": 32,
+        "top": 151.78125,
+        "bottom": 183.78125,
+        "clipped": true
+      },
+      {
+        "class": "SMALL",
+        "height": 13.5,
+        "top": 141.46875,
+        "bottom": 154.96875,
+        "clipped": true
+      },
+      {
+        "class": "STRONG",
+        "height": 22.9375,
+        "top": 154.96875,
+        "bottom": 177.90625,
+        "clipped": false
+      },
+      {
+        "class": "skill-dialogue",
+        "height": 16.1875,
+        "top": 177.90625,
+        "bottom": 194.09375,
+        "clipped": true
+      }
+    ]
+  },
+  "1280": {
+    "slotHeight": 36,
+    "scrollHeight": 48,
+    "text": "세린 · 대표 기술\n잔광 검무\n“한 줄기 빛이면 충분해.”\n마무리",
+    "children": [
+      {
+        "class": "skill-portrait",
+        "height": 32,
+        "top": 264.46875,
+        "bottom": 296.46875,
+        "clipped": false
+      },
+      {
+        "class": "SMALL",
+        "height": 13.5,
+        "top": 254.15625,
+        "bottom": 267.65625,
+        "clipped": true
+      },
+      {
+        "class": "STRONG",
+        "height": 22.9375,
+        "top": 267.65625,
+        "bottom": 290.59375,
+        "clipped": false
+      },
+      {
+        "class": "skill-dialogue",
+        "height": 16.1875,
+        "top": 290.59375,
+        "bottom": 306.78125,
+        "clipped": true
+      }
+    ]
+  }
+}

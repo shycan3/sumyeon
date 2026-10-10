@@ -1,0 +1,23 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),vm=require('vm'),ctx=vm.createContext({window:{}});
+for(const f of ['data','character-data','actor-ai','engine','campaign','character-engine','character-campaign'])vm.runInContext(fs.readFileSync(__dirname+'/'+f+'.js','utf8'),ctx);
+const W=ctx.window,C=W.CharacterCampaign,copy=x=>JSON.parse(JSON.stringify(x));
+function make(){const c=new C.Campaign();c.start(1);c.enter(c.run.map[0][0].id);c.battle.s.ended=true;c.battle.s.winner=0;c.observe();c.reward();return c;}
+{
+ const c=make(),base=copy(c.meta.template),before=c.snapshot();assert(c.pick('serin_cover'));const out=c.run.deck.find(id=>c.run.pool.find(x=>x.id===id).key==='serin_cut'),savedCard=copy(c.run.pool.find(x=>x.id===out));assert(c.swap(out));assert.equal(c.run.deck.length,20);assert.equal(c.reserve().length,1);assert(c.reserve().some(x=>x.id===out));assert(c.discard(out));assert(!c.run.pool.some(x=>x.id===out));assert.equal(c.run.disposals.length,1);C.validate(c.snapshot());assert.deepEqual(copy(c.meta.template),base);assert(c.meta.discovered.includes('serin_cover'));assert(c.restore(out));assert.deepEqual(copy(c.run.pool.find(x=>x.id===out)),savedCard);assert(!c.restore(out));
+ const selected=c.run.deck[0],frozen=c.snapshot();assert(!c.discard(selected));assert(!c.discard('missing'));assert.deepEqual(c.snapshot(),frozen);assert(c.discard(out));const restored=new C.Campaign(copy(C.validate(c.snapshot())));assert(restored.restore(out));assert.equal(restored.run.deck.length,20);assert.deepEqual(copy(restored.run.pool.find(x=>x.id===out)),savedCard);
+ assert(c.next());const next=c.run.map[c.run.depth][0];assert(c.enter(next.id));assert.equal(c.run.disposals.length,1,'noncombat room retains undo');c.next();const pending=c.snapshot();assert(!c.enter('invalid'));assert.deepEqual(c.snapshot(),pending);assert(c.enter(c.run.map[c.run.depth][0].id));assert.equal(c.run.disposals.length,0);assert(!c.restore(out));assert(!c.discard(c.run.pool[0].id));C.validate(c.snapshot());
+}
+{
+ const c=make();c.pick('serin_chain');const id=c.run.reward.cardId;const accepted=c.snapshot();assert(!c.discard(id),'unresolved reward cannot break loot save link');assert.deepEqual(c.snapshot(),accepted);c.next();const levels=copy(c.meta.levels),xp=copy(c.meta.xp);assert(c.reserve().some(x=>x.id===id));assert(c.discard(id));assert(c.meta.discovered.includes('serin_chain'));assert.deepEqual(copy(c.meta.levels),levels);assert.deepEqual(copy(c.meta.xp),xp);assert.equal(c.run.deck.length,20);assert(c.restore(id));assert(c.discard(id));c.finish(false);assert.equal(c.run,null);c.start(2);assert(c.run.pool.every(x=>x.source==='base'&&!x.upgraded));assert(c.meta.discovered.includes('serin_chain'));assert.equal(c.run.disposals.length,0);
+}
+{
+ const c=make();c.pick('serin_cover');c.next();const card=c.run.pool.find(x=>x.key==='serin_cover');card.upgraded=true;assert(c.discard(card.id));for(let i=0;i<3;i++)c.run.pool.push({...copy(card),id:'limit-'+i,upgraded:false});C.validate(c.snapshot());const before=c.snapshot();assert(c.restoreCheck(card.id).includes('상한'));assert(!c.restore(card.id));assert.deepEqual(c.snapshot(),before);assert(c.discard('limit-0'));assert(c.restore(card.id));assert(c.run.pool.find(x=>x.id===card.id).upgraded);C.validate(c.snapshot());
+ for(const mutate of [d=>d.run.disposals[0].card.id=d.run.pool[0].id,d=>d.run.disposals[0].card.source='wrong',d=>d.run.disposals[0].index=-1,d=>d.run.disposals.push(copy(d.run.disposals[0]))]){const bad=copy(c.snapshot());mutate(bad);assert.throws(()=>C.validate(bad));}
+ const legacy=copy(c.snapshot());delete legacy.run.disposals;C.validate(legacy);const old=new C.Campaign(legacy);assert.equal(old.run.disposals.length,0);C.validate(old.snapshot());
+}
+{
+ const c=make();assert(!c.complete());assert(c.skip());const r=c.run;r.depth=5;r.current=r.map[5][0];r.stage='result';const count=r.pool.length,xp=copy(c.meta.xp);assert(c.reward());assert.equal(c.run,null);assert(c.meta.history[0].success);assert.equal(c.meta.history[0].cards.length,0);assert.deepEqual(copy(c.meta.xp),xp);assert.equal(count,20);assert(!c.complete());
+ const old=make();old.run.depth=5;old.run.current=old.run.map[5][0];old.run.stage='reward';old.run.reward.id=old.run.current.id;assert(old.complete(),'old saved final boss reward can complete without new card selection');assert.equal(old.run,null);
+}
+console.log('PASS: fixed20 reward swap/reserve/skip, atomic spare-only discard/undo with original upgrades, saved undo and prior-save migration, next-combat deadline, family limit rejection, base/discovery/XP/reset isolation and no final-boss unusable reward.');

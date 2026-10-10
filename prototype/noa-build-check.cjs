@@ -1,0 +1,30 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),assert=require('assert'),copy=x=>JSON.parse(JSON.stringify(x));
+const ctx=vm.createContext({window:{}});
+for(const f of ['data','character-data','trial-character','content-authoring','support-content','ultimate-data','strategy-encounters','expedition-growth','presentation-data','actor-ai','engine','campaign','character-engine','ultimate-engine','ultimate-diagnostics','discovery','character-campaign','content-catalog','battle-practice'])vm.runInContext(fs.readFileSync(__dirname+'/'+f+'.js','utf8'),ctx);
+const W=ctx.window,{CharacterCampaign:C,CharacterData:K,CharacterBattle:B,GameData:D}=W;
+function campaign(key='noa_shelter'){const c=new C.Campaign(),party=K.defaultParty();party[3].characterId='noa';assert(c.start(37,W.SupportContent.template(K.startingDecks[1].template,'noa'),null,party));const old=c.run.pool.find(c=>c.key==='noa_guard');Object.assign(old,{key,source:'reward'});c.enter(c.run.map[0][0].id);return c;}
+for(const key of ['noa_shelter','noa_circle']){
+ const c=campaign(key);assert.equal(c.run.buildRulesVersion,1);assert(!c.run.initialDeck.some(x=>x.key===key));assert(K.canCast({key},K.character('noa')));assert(!K.canCast({key},K.character('medic')));assert.equal(D.cards[key].limit,1);assert(D.cards[key].traits.length);assert(fs.existsSync(__dirname+'/'+W.ContentAuthoring.art[key]));
+ for(let i=0;i<150;i++)c.battle.step(.02);const save=copy(c.snapshot()),resume=new C.Campaign(C.validate(copy(save)));for(let i=0;i<10000&&!c.battle.s.ended;i++){c.battle.step(.02);resume.battle.step(.02);}assert.deepEqual(copy(c.battle.snapshot()),copy(resume.battle.snapshot()));c.observe();c.finish(false);C.validate(c.snapshot());const result=c.meta.history[0].results[0],practice=new W.BattlePractice.Session(result);practice.start();assert.equal(practice.current.config.buildRulesVersion,1);assert(practice.pool.some(x=>x.key===key));
+ const bad=copy(save);delete bad.run.buildRulesVersion;assert.throws(()=>C.validate(bad));const badRecord=copy(result.practice);delete badRecord.config.buildRulesVersion;assert(!C.validBattleRecord(badRecord));const badHistory=copy(c.snapshot());delete badHistory.meta.history[0].buildRulesVersion;assert.throws(()=>C.validate(badHistory));
+ assert(c.start(37,W.SupportContent.template(K.startingDecks[1].template,'noa'),null,c.run?.party||K.defaultParty().map(p=>p.slot===3?{...p,characterId:'noa'}:p)));assert(!c.run.pool.some(x=>x.source==='reward'));
+}
+// Actual shared execution: protection moves the caster, absorbs then shares remaining injury.
+const c=campaign(),b=c.battle,noa=b.get('a3'),ally=b.get('a1'),enemy=b.get('e0');
+const event={...D.definition({key:'noa_shelter'}),key:'noa_shelter',actor:noa.id,target:ally.id,side:0,at:0};const from={x:noa.x,y:noa.y};
+b.resolveEffect(event);assert.notDeepEqual({x:noa.x,y:noa.y},from);assert.equal(noa.purpose.kind,'cover');assert.equal(noa.purpose.target,ally.id);const before=[noa.hp,ally.hp];b.damage(ally,62,1,'card',false,'heavy',enemy.id);assert(b.s.insights.rows.noa_shelter.shared>0);assert(noa.hp<before[0]);assert(ally.hp<before[1]);assert.equal(b.s.insights.rows.noa_shelter.damage,8);assert(!noa.counter||noa.counter.used);
+// Actual circle recipients, boundary included, injured out-of-range/dead ally cannot inflate AI.
+const h=campaign('noa_circle').battle;for(const a of h.alive(0)){a.x=700;a.y=195;a.hp=a.max-40;}h.get('a3').x=200;h.get('a0').x=370;h.get('a1').x=370.1;h.get('a2').hp=0;
+const heal={...D.definition({key:'noa_circle'}),key:'noa_circle',actor:'a3',side:0};assert.deepEqual(Array.from(h.spatialFriends(heal),a=>a.id).sort(),['a0','a3']);assert.equal(h.tacticalScore({key:'noa_circle'},null),26*2*1.5/6.5);h.observedResolve(heal);assert.equal(h.s.insights.rows.noa_circle.healed,52);assert.equal(h.get('a1').hp,h.get('a1').max-40);assert.equal(h.get('a2').hp,0);
+// Old ongoing Noa runs keep candidate order AND seeded offers exactly as before.
+const old=campaign();old.run.pool=copy(old.run.initialDeck);old.run.deck=old.run.pool.map(c=>c.id);old.run.battle=null;old.run.battleStart=null;old.run.stage='reward';old.run.reward={};delete old.run.buildRulesVersion;
+const oldKeys=K.rewardOptions(old.run);assert(!oldKeys.some(k=>D.cards[k].buildVersion));const offers=copy(K.rewardOffers(old.run));assert(!offers.candidates?.some(k=>D.cards[k].buildVersion));assert.deepEqual(copy(K.rewardOffers(old.run)),offers);
+const invalid=copy(old.snapshot());invalid.run.buildRulesVersion=2;assert.throws(()=>C.validate(invalid));
+const recipe=JSON.parse(fs.readFileSync(__dirname+'/support-content.json','utf8'));const isolated=vm.createContext({window:{}});for(const f of ['data','character-data','trial-character','content-authoring'])vm.runInContext(fs.readFileSync(__dirname+'/'+f+'.js','utf8'),isolated);assert.deepEqual(copy(isolated.window.ContentAuthoring.validate(recipe)),[]);recipe.cards.noa_circle.radius=500;assert(isolated.window.ContentAuthoring.validate(recipe).length);recipe.cards.noa_circle.radius=170;recipe.skills.noa_shelter.target='self';assert(isolated.window.ContentAuthoring.validate(recipe).length);
+// Save during each real pending cast, rather than only after the effect has ended.
+for(const key of ['noa_shelter','noa_circle']){
+ const c=campaign(key),b=c.battle,deck=b.s.decks[0];let card=deck.hand.find(x=>x.key===key);if(!card){const index=deck.draw.findIndex(x=>x.key===key);assert(index>=0);card=deck.draw[index];deck.draw[index]=deck.hand[0];deck.hand[0]=card;}
+ b.s.ready=true;assert(b.command(0,card.id,key==='noa_shelter'?'a1':null));assert(b.s.events.some(e=>e.key===key));const save=copy(c.snapshot());C.validate(copy(save));const resume=new C.Campaign(C.validate(copy(save)));for(let i=0;i<100;i++){b.step(.02);resume.battle.step(.02);}assert.deepEqual(copy(b.snapshot()),copy(resume.battle.snapshot()));
+}
+console.log('PASS Noa protection movement/share/counter, actual circle recipients/scoring, owner/limits/traits/art, exact save/practice/reset, new-only rewards/version validation, constrained authoring schema');
