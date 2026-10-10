@@ -1,6 +1,7 @@
 (function(root){
   'use strict';
   const C=typeof module!=='undefined'?require('./party-expedition-core.js'):root.PartyExpedition;
+  const L=typeof module!=='undefined'?require('./exploration-laws.js'):root.ExplorationLaws;
   const clone=x=>JSON.parse(JSON.stringify(x));
   const TRAITS={
     torrent:{name:'격류',family:'assault',steps:[2,4,6],effects:['돌파 카드의 직접 피해 +1','직접 피해 +2로 강화','라운드 첫 노출 대상 돌파의 직접 피해 +4']},
@@ -16,11 +17,15 @@
   for(const [id,t]of Object.entries(TRAITS))t.breakpoints=t.steps.map((requiredCopies,i)=>({requiredCopies,effectId:id+'-'+(i+1),stackingMode:i===2?'stack':'replace',bonus:i<2?i+1:0}));
   function counts(deck){const result=Object.fromEntries(Object.keys(TRAITS).map(id=>[id,0]));for(const card of deck){const id=traitFor(card.kind);if(id)result[id]++;}return result;}
   class Battle extends C.Battle{
-    constructor(options={}){super({...options,cardSet:'draft-1'});this.s.exploration={counts:counts(options.deck||Object.values(this.s.cards)),used:{},round:this.s.round};this.assert();}
+    constructor(options={}){super({...options,cardSet:'draft-1'});this.s.lawId=options.lawId??null;L.get(this.s.lawId);this.s.exploration={counts:counts(options.deck||Object.values(this.s.cards)),used:{},round:this.s.round};this.assert();}
     stage(id){const n=this.s.exploration?.counts[id]||0;return TRAITS[id]?.breakpoints.filter(b=>n>=b.requiredCopies).length||0;}
     flatBonus(id){return TRAITS[id]?.breakpoints.slice(0,Math.min(this.stage(id),2)).reduce((value,b)=>b.stackingMode==='stack'?value+b.bonus:b.bonus,0)||0;}
     definition(card,choice){const base=super.definition(card,choice);if(!base)return base;const d={...clone(base),...cardMetadata(this.s.cards[card]?.kind||'basic')};if(!this.s.exploration)return d;const id=traitFor(this.s.cards[card]?.kind),bonus=this.flatBonus(id),keys=id==='torrent'?['damage','areaDamage']:id==='beacon'?['shield','allShield']:id==='echo'?['weak','allWeak']:id==='repair'?['heal','selfHeal','allHeal']:[];for(const key of keys)if(d[key]&&!d.xScale?.includes(key))d[key]+=bonus;return d;}
-    startRound(){super.startRound();if(this.s.exploration){this.s.exploration.used={};this.s.exploration.round=this.s.round;}}
+    startRound(){if(this.residuePending)this.applyResidue();super.startRound();if(this.s.exploration){this.s.exploration.used={};this.s.exploration.round=this.s.round;}}
+    hit(target,amount,info={}){const law=L.get(this.s.lawId),unit=this.actor(target);if(law?.id==='excess'&&unit?.hp>0){if(info.direct){this.s.events.push({type:'law',law:'excess',target,source:info.source,base:amount,bonus:law.damageBonus,result:amount+law.damageBonus});amount+=law.damageBonus;}else if(this.s.enemies.some(e=>e.id===info.source)&&this.s.allies.some(a=>a.id===target))this.s.events.push({type:'law',law:'excess',target,source:info.source,base:Math.max(0,amount-law.damageBonus),bonus:law.damageBonus,result:amount});}return super.hit(target,amount,info);}
+    intentDamage(intent){const amount=super.intentDamage(intent);return L.get(this.s.lawId)?.id==='excess'&&!['prepare','ward','heal'].includes(intent.type)&&this.actor(intent.actor)?.hp>0?amount+L.DEFINITIONS.excess.damageBonus:amount;}
+    applyResidue(){const pending=this.residuePending;delete this.residuePending;for(const a of this.s.allies){const before=pending[a.id]||0,retained=a.hp>0?Math.floor(before*L.DEFINITIONS.residue.shieldRetention):0;a.shield=Math.max(a.shield,retained);if(before)this.s.events.push({type:'law',law:'residue',target:a.id,base:before,result:a.shield,retained});}for(const e of this.s.enemies){const before=e.shield;e.shield=e.hp>0?Math.floor(before*L.DEFINITIONS.residue.shieldRetention):0;if(before)this.s.events.push({type:'law',law:'residue',target:e.id,base:before,result:e.shield,retained:e.shield});}}
+    endRound(){if(this.s.lawId!=='residue')return super.endRound();if(this.s.status!=='playing'||this.s.needsTrim)return super.endRound();const baseHit=this.hit;this.residuePending=Object.fromEntries(this.s.allies.map(a=>[a.id,a.shield]));this.hit=function(...args){const result=baseHit.apply(this,args);this.residuePending=Object.fromEntries(this.s.allies.map(a=>[a.id,a.shield]));return result;};const held=this.s.enemies.map(e=>{let value=e.shield,first=true;Object.defineProperty(e,'shield',{enumerable:true,configurable:true,get:()=>value,set:v=>{if(first&&v===0){first=false;return;}first=false;value=v;}});return e;});try{super.endRound();if(this.residuePending)this.applyResidue();}finally{this.hit=baseHit;delete this.residuePending;for(const e of held){const value=e.shield;Object.defineProperty(e,'shield',{value,writable:true,enumerable:true,configurable:true});}}this.assert();return clone(this.s.events);}
     play(card,actor,target,choice){
       const d=this.definition(card,choice),kind=this.s.cards[card]?.kind,id=traitFor(kind),stage=this.stage(id),unit=this.actor(target),paid=this.costFor(card,actor)>0,earlier=this.s.paidEnergy;
       const ready=paid&&stage===3&&!this.s.exploration.used[id+'high'],condition=id==='beacon'?unit?.shield>0:id==='echo'?unit?.weak>0:id==='repair'?unit?.hp<unit?.max:false;
@@ -46,8 +51,8 @@
       const id='temporary-'+Object.keys(this.s.cards).length;if(this.s.cards[id])throw Error('임시 사본 ID 충돌');
       this.s.cards[id]={...clone(source),id,temporary:true,sourceCardId:source.sourceCardId||sourceId};this.s.zones.hand.push(id);this.s.events.push({type:'temporary-copy',card:id,source:sourceId});this.assert();return id;
     }
-    static restore(state){const b=Object.create(Battle.prototype);b.s=clone(state);b.assert();return b;}
-    assert(){super.assert();const e=this.s.exploration;if(e&&(e.round!==this.s.round||Object.keys(e.counts).sort().join(',')!==Object.keys(TRAITS).sort().join(',')||Object.values(e.counts).some(n=>!Number.isInteger(n)||n<0)||!e.used||Object.entries(e.used).some(([k,v])=>!Object.keys(TRAITS).some(id=>k===id||k===id+'high')||v!==true)))throw Error('덱 특성 상태 오류');}
+    static restore(state){const b=Object.create(Battle.prototype);b.s=clone(state);if(b.s.lawId===undefined)b.s.lawId=null;b.assert();return b;}
+    assert(){super.assert();L.get(this.s.lawId);const e=this.s.exploration;if(e&&(e.round!==this.s.round||Object.keys(e.counts).sort().join(',')!==Object.keys(TRAITS).sort().join(',')||Object.values(e.counts).some(n=>!Number.isInteger(n)||n<0)||!e.used||Object.entries(e.used).some(([k,v])=>!Object.keys(TRAITS).some(id=>k===id||k===id+'high')||v!==true)))throw Error('덱 특성 상태 오류');}
   }
   const api={Battle,TRAITS,traitFor,cardMetadata,DEFINITIONS,counts,CARDS:C.CARDS,ROLES:C.ROLES};if(typeof module!=='undefined')module.exports=api;root.ExplorationCombat=api;
 })(typeof globalThis!=='undefined'?globalThis:this);
