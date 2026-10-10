@@ -2,19 +2,23 @@
 
 《수면》은 네 명의 동료가 하나의 덱을 공유하는 원정형 카드 전술 게임 프로토타입입니다. 플레이어는 카드, 실행자, 대상을 선택해 전투에 개입하고, 적의 공개된 행동을 읽으며 원정의 경로와 보상을 결정합니다. 전투 자동 운영도 제공해 카드·실행자·대상 판단을 관전할 수 있습니다.
 
-현재 플레이 버전은 `prototype/party-expedition.html`입니다. 이전 시스템과 실험은 `prototype/` 안에 보존되어 있으며, 최신 플레이 버전과 구분해서 보세요.
+새 탐험 통합 버전은 `prototype/exploration.html`입니다. 화살표로 방을 탐색하며 탐험 시간·체력·귀환을 판단하고, 기존 4인 카드 전투와 원정 덱 특성·지상 해금을 연결했습니다. 비교 기준인 기존 8전투 원정은 `prototype/party-expedition.html`에서 계속 실행됩니다. 이전 시스템과 실험은 `prototype/` 안에 보존되어 있습니다.
 
 ## 실행
 
-Python 3가 설치되어 있다면 저장소 루트에서 다음 명령을 실행한 뒤 브라우저에서 `http://localhost:8765/prototype/party-expedition.html`을 여세요.
+Python 3가 설치되어 있다면 저장소 루트에서 다음 명령을 실행한 뒤 브라우저에서 `http://localhost:8765/prototype/exploration.html`을 여세요.
 
 ```powershell
 python -m http.server 8765
 ```
 
-게임은 정적 HTML/CSS/JavaScript로 동작하며 별도 패키지 설치가 필요하지 않습니다. 진행 저장은 현재 브라우저의 로컬 저장소에 기록됩니다.
+기존 비교 원정은 `http://localhost:8765/prototype/party-expedition.html`에서 실행할 수 있습니다. 게임은 정적 HTML/CSS/JavaScript로 동작하며 별도 패키지 설치가 필요하지 않습니다. 진행 저장은 현재 브라우저의 로컬 저장소에 기록되며, 새 탐험과 기존 원정의 저장은 구분됩니다.
 
-## 현재 플레이 버전의 규칙
+탐험 GDD E0~E6 기능 및 E7 관찰 도구를 구현했습니다. 절차적 심층3개, 발견 지도·무전·조사, 선택/필수 전투, 시간 초과 HP 탐험, 귀환·부분 손실 정산, 사본 수에 따른 덱 특성5종, 선호0~3계열, 지상 골드 카드 해금을 제공합니다. 수치·조건부 정책은 시험 설정이고 E7 사람 재미 관문은 아직 미검증입니다. [구현·검증 대조](docs/화살표_탐험_통합_구현_2026-10-10.md), [직접 플레이 관찰 준비](docs/탐험_E7_플레이_관찰_프로토콜.md)를 참고하세요.
+
+2026-10-11 UI 개선: 조사 대상을 방향 버튼 사이 중앙으로 배치했습니다. 조사 비용과 실행 버튼을 같은 카드에 표시하며, PC·모바일에서 통로 버튼과 겹치지 않도록 구성했습니다.
+
+## 기존 8전투 비교 원정의 규칙
 
 - 4인 파티, 6개 문양 중 편성, 공용 덱과 공용 손패
 - 카드 계열 5종: 돌파·수호·교란·순환·정비
@@ -48,7 +52,9 @@ python -m http.server 8765
 
 ## 검증
 
-현재 심층 원정 규칙을 확인하는 주요 Node 검사 스크립트는 `prototype/party-expedition-*-check.cjs`입니다. 예를 들어 다음 검사를 실행할 수 있습니다.
+새 탐험의 도메인 검사는 `node prototype/exploration-check.cjs`, 브라우저 검사는 `node prototype/exploration-browser-check.cjs`, 자동 원정 실험은 `node prototype/exploration-study.cjs 30`으로 실행합니다. 브라우저 검사는 Playwright/Chromium이 필요합니다.
+
+기존 심층 원정 규칙을 확인하는 주요 Node 검사 스크립트는 `prototype/party-expedition-*-check.cjs`입니다. 예를 들어 다음 검사를 실행할 수 있습니다.
 
 ```powershell
 node prototype/party-expedition-rules-check.cjs

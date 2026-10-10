@@ -1,0 +1,110 @@
+(function(root){
+  'use strict';
+  const M=typeof module!=='undefined'?require('./exploration-map.js'):root.ExplorationMap;
+  const C=typeof module!=='undefined'?require('./exploration-combat.js'):root.ExplorationCombat;
+  const clone=x=>JSON.parse(JSON.stringify(x)),SCALE=1000000,VERSION='exploration-session-1';
+  const DEFAULTS=Object.freeze({version:'exploration-trial-1',initialTime:65,minExitDistance:15,maxDepth:3,moveCost:1,inspectCost:2,combatEntryCost:3,descendCost:1,regenRate:.005,hpCostRate:.03,lossRate:.4,preferenceWeight:1.5,unlockCost:12,costPolicy:'mixed',failurePolicy:'all-downed'});
+  // GDD §14 unresolved policies are deliberately named experimental contracts.
+  // TODO: replace only after observation/user decision, not as final world rules.
+  const TRIAL_POLICIES=Object.freeze({hpDistribution:'living-max-hp-proportional',naturalRevival:false,combatEscape:false,victoryHealing:0,unlockDuplicates:'new-only',traitDomain:'combat-only',initialTraitCount:'include-starting-copies'});
+  const INITIAL_DECK=['strike','strike','strike','strike','guard','guard','guard','guard','check','suppress'];
+  const BASE_POOL=['strike','guard','check','suppress','burst','draw','jab','fortress','sweep','sunder','riposte','bulwark','mend','focus','hold','finisher','expose','echo','feint','rally','lockdown','undertow','salvage','impale'];
+  const GOLD_KEYS=['gold','bank','lost','received'];
+  const ENEMY_NAMES={hunter:'사냥꾼',sweep:'파문체',sentinel:'연결구 수문장',leech:'흡수체',warder:'방파의 파수',mender:'봉합의 잔향',pursuer:'잠항 추적자',boss:'심층의 파수꾼',tideheart:'해류의 심장',abyssjudge:'침수의 집행자'};
+  function enemiesFor(run,node){return node.encounter.patterns.map((pattern,i)=>({id:'enemy-'+i,name:ENEMY_NAMES[pattern],pattern,hp:(node.encounter.mandatory?(run.depth===3?65:35):pattern==='warder'||pattern==='mender'?18:26)+run.depth*4,damage:node.encounter.mandatory?9+run.depth:5+run.depth,areaDamage:2+run.depth,toughnessMax:6}));}
+  function config(values={}){const c={...DEFAULTS,...values};if(!['mixed','hp-if-insufficient'].includes(c.costPolicy)||!['all-downed','any-downed'].includes(c.failurePolicy))throw Error('시험 정책 오류');if(c.version!==DEFAULTS.version)throw Error('시험 설정 버전 오류');for(const k of ['initialTime','minExitDistance','maxDepth','moveCost','inspectCost','combatEntryCost','descendCost','unlockCost'])if(!Number.isInteger(c[k])||c[k]<0)throw Error('시험 설정 오류: '+k);if(c.initialTime>10000||c.minExitDistance<3||c.minExitDistance>40||c.maxDepth<1||c.maxDepth>3||c.unlockCost<1)throw Error('시험 범위 오류');for(const k of ['regenRate','hpCostRate','lossRate','preferenceWeight'])if(!Number.isFinite(c[k])||c[k]<0)throw Error('시험 비율 오류');if(c.regenRate>1||c.hpCostRate>1||c.lossRate>=1||c.preferenceWeight<1||c.preferenceWeight>10)throw Error('시험 비율 범위 오류');return c;}
+  function applyCost(run,cost){
+    const time=run.config.costPolicy==='hp-if-insufficient'&&run.timeRemaining<cost?0:Math.min(run.timeRemaining,cost),units=cost-time,changes=[];run.timeRemaining-=time;run.timeSpent+=time;
+    for(const ally of run.allies){if(ally.hp<=0)continue;const before=ally.hp;
+      const recover=ally.healCarry+Math.round(time*run.config.regenRate*ally.max*SCALE),gain=Math.floor(recover/SCALE);
+      ally.hp=Math.min(ally.max,ally.hp+gain);ally.healCarry=ally.hp===ally.max?0:recover%SCALE;
+      const payment=ally.costCarry+Math.round(units*run.config.hpCostRate*ally.max*SCALE),loss=Math.floor(payment/SCALE);
+      ally.hp=Math.max(0,ally.hp-loss);ally.costCarry=ally.hp===0?0:payment%SCALE;if(ally.hp===0)ally.healCarry=0;
+      changes.push({id:ally.id,before,after:ally.hp,recovered:Math.min(gain,ally.max-before),lost:Math.min(loss,before+gain),hpCost:units*run.config.hpCostRate*ally.max});
+    }
+    return {cost,timeSpent:time,hpUnits:units,changes,lethal:run.config.failurePolicy==='any-downed'?run.allies.some(a=>a.hp===0):run.allies.every(a=>a.hp===0)};
+  }
+  function staticMap(map){const value=clone(map);for(const n of value.nodes){n.visited=false;for(const i of n.interactions)i.resolved=false;if(n.encounter)n.encounter.cleared=false;}return value;}
+  function canonicalMap(map,seed,c){M.validate(map,c.minExitDistance);if(JSON.stringify(staticMap(map))!==JSON.stringify(staticMap(M.generate(seed,map.depth,c.minExitDistance))))throw Error('생성 맵 기록 불일치');}
+  class Session{
+    constructor(){this.s={version:VERSION,account:{gold:0,unlocked:[...BASE_POOL],seed:20261010,nextRun:1,settlements:[],unlockHistory:[]},run:null};}
+    snapshot(){return clone(this.s);}
+    static restore(state){const s=new Session();s.s=clone(state);s.assert();return s;}
+    transaction(fn){const old=this.snapshot();try{const result=fn();this.assert();return result;}catch(e){this.s=old;throw e;}}
+    node(){const r=this.s.run;return r?.map.nodes.find(n=>n.id===r.nodeId);}
+    battle(){return this.s.run?.battle?C.Battle.restore(this.s.run.battle):null;}
+    encounterPreview(){return this.node()?.encounter?clone(enemiesFor(this.s.run,this.node())):[];}
+    active(){if(this.s.run?.phase!=='EXPLORING')throw Error('안전한 탐험 중에만 가능합니다.');return this.s.run;}
+    record(type,data={}){const r=this.s.run;if(!r)return;r.telemetry.push({seq:r.telemetry.length+1,type,depth:r.depth,node:r.nodeId,time:r.timeRemaining,gold:r.gold,...clone(data)});}
+    begin(options={}){return this.transaction(()=>{
+      if(this.s.run&&!['RETURNED','FAILED'].includes(this.s.run.phase))throw Error('진행 중인 원정을 먼저 귀환하세요.');
+      const party=options.party||['navigator','diver','sounder','lightkeeper'],preferred=options.preferred||[],seed=options.seed??20261010,c=config(options.config);
+      if(!Number.isInteger(seed)||seed<0||seed>4294967295||party.length!==4||new Set(party).size!==4||party.some(id=>!C.ROLES.some(a=>a.id===id)))throw Error('출발 파티·시드 오류');
+      if(preferred.length>3||new Set(preferred).size!==preferred.length||preferred.some(id=>!C.TRAITS[id]))throw Error('선호 계열은 서로 다른 0~3개입니다.');
+      const map=M.generate(seed,1,c.minExitDistance),id='expedition-'+this.s.account.nextRun++;
+      this.s.run={id,seed,config:c,phase:'EXPLORING',timeRemaining:c.initialTime,timeSpent:0,depth:1,map,nodeId:map.entry,pastMaps:[],preferred:[...preferred],breakMode:!!options.breakMode,party:[...party],allies:party.map(id=>({id,hp:30,max:30,healCarry:0,costCarry:0})),deck:INITIAL_DECK.map((kind,i)=>({id:'r'+i,kind,upgraded:false})),nextCard:10,gold:0,rewardSeed:M.hash(seed+':rewards')||1,offers:[],battle:null,battleNode:null,settlement:null,telemetry:[],moves:0,hint:null,hintHistory:[],battleHistory:[]};
+      this.record('depart',{seed,preferred,config:c});return id;
+    });}
+    previewCost(cost){const r=this.s.run;if(!r||!Number.isInteger(cost)||cost<0)throw Error('비용 오류');return applyCost(clone(r),cost);}
+    pay(cost,allowFatal=false){const r=this.s.run,p=this.previewCost(cost);if(p.lethal&&!allowFatal)throw Error('체력이 부족합니다. 귀환하거나 위험을 명시적으로 감수하세요.');const actual=applyCost(r,cost);this.record('cost',actual);return actual;}
+    move(direction,allowFatal=false){return this.transaction(()=>{
+      const r=this.active(),target=this.node().exits[direction];if(!M.DIRECTIONS[direction]||!target)throw Error('이 방향에는 통로가 없습니다.');
+      const payment=this.pay(r.config.moveCost,allowFatal);if(payment.lethal)return this.settle('FAILED','초과 탐험 체력 한계');
+      r.nodeId=target;this.node().visited=true;r.moves++;this.record('move',{direction});this.updateHint();return payment;
+    });}
+    updateHint(){const r=this.s.run;if(r.moves%4===0&&!r.hintHistory.some(h=>h.depth===r.depth&&h.move===r.moves)){r.hint={depth:r.depth,move:r.moves,node:r.nodeId,text:M.hint(r.map,r.nodeId)};r.hintHistory.push(clone(r.hint));this.record('radio',r.hint);}}
+    repeatHint(){return clone(this.s.run?.hint);}
+    inspect(id,choice,cardId,allowFatal=false){return this.transaction(()=>{
+      const r=this.active(),i=this.node().interactions.find(i=>i.id===id);if(!i||i.resolved)throw Error('이미 조사했거나 존재하지 않는 물체입니다.');
+      if(i.kind==='workbench'){
+        if(!['upgrade','remove','continue'].includes(choice))throw Error('정비 방법을 선택하세요.');
+        const card=r.deck.find(c=>c.id===cardId);if(choice!=='continue'&&(!card||choice==='upgrade'&&(card.upgraded||!C.CARDS[card.kind].upgrade)||choice==='remove'&&r.deck.length<=6))throw Error('이 카드는 정비할 수 없습니다.');
+      }
+      const payment=this.pay(r.config.inspectCost,allowFatal);if(payment.lethal)return this.settle('FAILED','조사 중 체력 한계');
+      i.resolved=true;r.gold+=i.gold;
+      if(i.kind==='record'){r.offers=this.rewards();r.phase='REWARD';}
+      if(i.kind==='shelter')for(const a of r.allies)if(a.hp>0){a.hp=Math.min(a.max,a.hp+4);if(a.hp===a.max)a.healCarry=0;}
+      if(i.kind==='workbench'){const card=r.deck.find(c=>c.id===cardId);if(choice==='upgrade')card.upgraded=true;if(choice==='remove')r.deck=r.deck.filter(c=>c.id!==cardId);}
+      this.record('investigate',{object:id,kind:i.kind,choice:choice||null,card:cardId||null,gainedGold:i.gold,traits:C.counts(r.deck)});return payment;
+    });}
+    rewards(){const r=this.s.run,random=()=>{let x=r.rewardSeed;x^=x<<13;x^=x>>>17;x^=x<<5;r.rewardSeed=x>>>0;return r.rewardSeed/4294967296;};const pool=this.s.account.unlocked.filter(id=>id!=='basic'&&(!C.CARDS[id].breakOnly||r.breakMode));const offers=[];
+      while(offers.length<3&&pool.length){const weights=pool.map(id=>{const d=C.DEFINITIONS[id],rare=d.rarity==='rare'?.12+r.depth*.06:d.rarity==='uncommon'?.65:1;return d.baseWeight*rare*(r.preferred.includes(C.traitFor(id))?r.config.preferenceWeight:1);}),total=weights.reduce((a,b)=>a+b,0);let target=random()*total,index=0;while(index<weights.length-1&&target>=weights[index])target-=weights[index++];offers.push(pool.splice(index,1)[0]);}return offers;
+    }
+    chooseReward(kind){return this.transaction(()=>{const r=this.s.run;if(r?.phase!=='REWARD'||kind!==null&&!r.offers.includes(kind))throw Error('현재 보상 후보가 아닙니다.');if(kind!==null)r.deck.push({id:'r'+r.nextCard++,kind,upgraded:false});r.offers=[];r.phase='EXPLORING';this.record('reward',{card:kind,traits:C.counts(r.deck)});});}
+    descend(allowFatal=false){return this.transaction(()=>{const r=this.active(),n=this.node();if(n.id!==r.map.exit||!n.encounter.cleared)throw Error('연결구를 발견하고 수문장을 넘어야 합니다.');if(r.depth>=r.config.maxDepth)throw Error('시험 원정의 마지막 심층입니다. 귀환하세요.');const payment=this.pay(r.config.descendCost,allowFatal);if(payment.lethal)return this.settle('FAILED','하강 중 체력 한계');r.pastMaps.push(clone(r.map));r.depth++;r.map=M.generate(r.seed,r.depth,r.config.minExitDistance);r.nodeId=r.map.entry;r.hint=null;this.record('descend');return payment;});}
+    startCombat(allowFatal=false){return this.transaction(()=>{const r=this.active(),n=this.node(),enc=n.encounter;if(!enc||enc.cleared)throw Error('이곳에는 전투 대상이 없습니다.');const payment=this.pay(r.config.combatEntryCost,allowFatal);if(payment.lethal)return this.settle('FAILED','교전 진입 중 체력 한계');
+      const enemies=enemiesFor(r,n);
+      const b=new C.Battle({party:r.party,deck:r.deck,allies:r.allies,enemies,seed:M.hash(r.seed+':'+n.id+':combat'),breakMode:!!r.breakMode});r.battle=b.snapshot();r.battleNode=n.id;r.phase='COMBAT';this.record('combat-enter',{mandatory:enc.mandatory,enemies,traits:C.counts(r.deck)});return payment;
+    });}
+    combatAction(action){return this.transaction(()=>{const r=this.s.run;if(r?.phase!=='COMBAT')throw Error('전투 중이 아닙니다.');const b=this.battle(),time=r.timeRemaining;
+      if(action.type==='play')b.play(action.card,action.actor,action.target,action.choice);else if(action.type==='end')b.endRound();else if(action.type==='trim')b.discardForSounder(action.card);else throw Error('전투 행동 오류');
+      r.battle=b.snapshot();r.allies.forEach(a=>{a.hp=b.actor(a.id).hp;if(a.hp===0){a.healCarry=0;a.costCarry=0;}});this.record('combat-action',{action,cardKind:action.card?b.s.cards[action.card]?.kind||null:null,round:b.s.round,events:b.s.events,allies:r.allies.map(a=>({id:a.id,hp:a.hp}))});
+      if(r.timeRemaining!==time)throw Error('전투 시계 분리 위반');
+      const defeated=b.s.status==='lost'||r.config.failurePolicy==='any-downed'&&r.allies.some(a=>a.hp===0);if(defeated||b.s.status==='won'){r.battleHistory.push({node:r.battleNode,depth:r.depth,result:defeated?'lost':b.s.status,rounds:b.s.round,enemies:b.s.enemies.map(e=>({name:e.name,hp:e.hp})),survivors:r.allies.filter(a=>a.hp>0).length});
+        if(defeated)return this.settle('FAILED',r.config.failurePolicy==='any-downed'?'전투에서 동료 전투불능':'전투에서 전원 전투불능');
+        this.node().encounter.cleared=true;r.gold+=8+r.depth*5+(this.node().encounter.mandatory?8:0);this.record('combat-won',{rounds:b.s.round});r.battle=null;r.battleNode=null;r.offers=this.rewards();r.phase='REWARD';
+      }
+      return b.s.events;
+    });}
+    settle(phase,reason){const r=this.s.run;if(r.settlement)return clone(r.settlement);const lost=phase==='FAILED'?Math.floor(r.gold*r.config.lossRate):0,received=r.gold-lost;const settlement={id:r.id,phase,reason,gold:r.gold,lost,received,bank:this.s.account.gold+received,depth:r.depth};this.s.account.gold+=received;this.s.account.settlements.push(clone(settlement));r.settlement=settlement;r.phase=phase;r.battle=null;r.battleNode=null;r.offers=[];this.record('settlement',settlement);return clone(settlement);}
+    returnHome(){return this.transaction(()=>{this.active();return this.settle('RETURNED','지상 포털로 귀환');});}
+    unlockDraw(){return this.transaction(()=>{if(this.s.run&&!['RETURNED','FAILED'].includes(this.s.run.phase))throw Error('지상에서만 해금할 수 있습니다.');const a=this.s.account,cost=this.s.run?.config.unlockCost||DEFAULTS.unlockCost,pool=Object.keys(C.CARDS).filter(id=>id!=='basic'&&!a.unlocked.includes(id));if(!pool.length)throw Error('모든 카드를 해금했습니다.');if(a.gold<cost)throw Error('지상 골드가 부족합니다.');let x=a.seed;x^=x<<13;x^=x>>>17;x^=x<<5;a.seed=x>>>0;const card=pool[Math.floor(a.seed/4294967296*pool.length)];a.gold-=cost;a.unlocked.push(card);a.unlockHistory.push({card,cost});return card;});}
+    developerUnlock(id){return this.transaction(()=>{if(!C.CARDS[id]||id==='basic')throw Error('카드 정의 오류');if(!this.s.account.unlocked.includes(id))this.s.account.unlocked.push(id);});}
+    feedback(answers){return this.transaction(()=>{if(!this.s.run?.settlement)throw Error('원정 결과 화면에서 기록할 수 있습니다.');if(!answers||typeof answers.notes!=='string'||answers.notes.length>2000||['hint','choice','overtime','retry'].some(k=>!['yes','no','unknown'].includes(answers[k])))throw Error('관찰 응답 오류');this.s.run.feedback=clone(answers);this.record('player-feedback',answers);});}
+    assert(){const s=this.s,a=s.account;if(s.version!==VERSION||!a||!Number.isInteger(a.gold)||a.gold<0||!Number.isInteger(a.nextRun)||a.nextRun<1||!Number.isInteger(a.seed)||a.seed<0||a.seed>4294967295||!Array.isArray(a.unlocked)||new Set(a.unlocked).size!==a.unlocked.length||a.unlocked.some(id=>!C.CARDS[id]||id==='basic')||BASE_POOL.some(id=>!a.unlocked.includes(id))||!Array.isArray(a.settlements)||new Set(a.settlements.map(s=>s.id)).size!==a.settlements.length||!Array.isArray(a.unlockHistory)||a.unlockHistory.some(h=>!a.unlocked.includes(h.card)||!Number.isInteger(h.cost)||h.cost<1))throw Error('지상 저장 오류');
+      for(const v of a.settlements)if(!['RETURNED','FAILED'].includes(v.phase)||GOLD_KEYS.some(k=>!Number.isInteger(v[k])||v[k]<0)||v.gold!==v.lost+v.received)throw Error('정산 기록 오류');
+      const r=s.run;if(!r)return;config(r.config);
+      if(!r.id||!Number.isInteger(r.seed)||r.seed<0||r.seed>4294967295||!['EXPLORING','COMBAT','REWARD','RETURNED','FAILED'].includes(r.phase)||!Number.isInteger(r.depth)||r.depth<1||r.depth>r.config.maxDepth||!Number.isInteger(r.timeRemaining)||r.timeRemaining<0||r.timeRemaining>r.config.initialTime||!Number.isInteger(r.timeSpent)||r.timeSpent+r.timeRemaining!==r.config.initialTime||!Number.isInteger(r.gold)||r.gold<0||!Number.isInteger(r.moves)||r.moves<0||!Number.isInteger(r.rewardSeed)||r.rewardSeed<0||r.rewardSeed>4294967295)throw Error('원정 저장 오류');
+      if(!Array.isArray(r.preferred)||r.preferred.length>3||new Set(r.preferred).size!==r.preferred.length||r.preferred.some(id=>!C.TRAITS[id])||!Array.isArray(r.party)||r.party.length!==4||new Set(r.party).size!==4||r.party.some(id=>!C.ROLES.some(a=>a.id===id))||!Array.isArray(r.allies)||r.allies.length!==4||r.allies.some((a,i)=>a.id!==r.party[i]||!Number.isInteger(a.hp)||a.hp<0||!Number.isInteger(a.max)||a.max<1||a.hp>a.max||[a.healCarry,a.costCarry].some(v=>!Number.isInteger(v)||v<0||v>=SCALE)))throw Error('파티 저장 오류');
+      if(!Array.isArray(r.deck)||r.deck.length<6||new Set(r.deck.map(c=>c.id)).size!==r.deck.length||r.deck.some(c=>!/^r\d+$/.test(c.id)||c.kind==='basic'||!C.CARDS[c.kind]||typeof c.upgraded!=='boolean')||!Number.isInteger(r.nextCard)||r.deck.some(c=>Number(c.id.slice(1))>=r.nextCard))throw Error('원정 덱 오류');
+      if(!Array.isArray(r.offers)||r.offers.length>3||new Set(r.offers).size!==r.offers.length||r.offers.some(id=>!a.unlocked.includes(id))||(r.phase==='REWARD')!==!!r.offers.length)throw Error('보상 저장 오류');
+      canonicalMap(r.map,r.seed,r.config);if(r.map.depth!==r.depth||!r.map.nodes.some(n=>n.id===r.nodeId&&n.visited)||!Array.isArray(r.pastMaps)||r.pastMaps.length!==r.depth-1)throw Error('현재 위치 오류');r.pastMaps.forEach((m,i)=>{if(m.depth!==i+1)throw Error('심층 기록 오류');canonicalMap(m,r.seed,r.config);});
+      if(!Array.isArray(r.telemetry)||r.telemetry.some((e,i)=>e.seq!==i+1)||!Array.isArray(r.hintHistory)||r.hintHistory.some(h=>!Number.isInteger(h.depth)||h.depth<1||h.depth>r.depth||!Number.isInteger(h.move)||h.move<1)||!Array.isArray(r.battleHistory))throw Error('탐험 기록 오류');
+      if(r.hint&&(r.hint.depth!==r.depth||!r.hintHistory.some(h=>JSON.stringify(h)===JSON.stringify(r.hint))))throw Error('무전 기록 오류');
+      if((r.phase==='COMBAT')!==!!r.battle)throw Error('전투 연결 오류');if(r.battle){const b=C.Battle.restore(r.battle);if(b.s.status!=='playing'||r.battleNode!==r.nodeId||!this.node().encounter||this.node().encounter.cleared||JSON.stringify(b.s.exploration.counts)!==JSON.stringify(C.counts(r.deck))||r.allies.some(a=>b.actor(a.id)?.hp!==a.hp)||r.deck.some(d=>!b.s.cards[d.id]||b.s.cards[d.id].kind!==d.kind||b.s.cards[d.id].upgraded!==d.upgraded)||Object.values(b.s.cards).some(c=>!r.deck.some(d=>d.id===c.id)&&!(c.temporary===true&&r.deck.some(d=>d.id===c.sourceCardId&&d.kind===c.kind&&d.upgraded===c.upgraded))))throw Error('전투·원정 불일치');}
+      const terminal=['RETURNED','FAILED'].includes(r.phase);if(terminal!==!!r.settlement||terminal!==a.settlements.some(s=>s.id===r.id)||terminal&&JSON.stringify(r.settlement)!==JSON.stringify(a.settlements.find(s=>s.id===r.id)))throw Error('정산 상태 오류');
+      if(r.phase==='EXPLORING'&&r.allies.every(a=>a.hp===0))throw Error('전멸 상태 오류');
+    }
+  }
+  const api={Session,DEFAULTS,BASE_POOL,INITIAL_DECK,TRIAL_POLICIES,config,applyCost,SCALE};if(typeof module!=='undefined')module.exports=api;root.Exploration=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
